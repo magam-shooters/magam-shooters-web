@@ -148,7 +148,6 @@ export default function AboutUs() {
             title="Core Values"
             subtitle="What We Stand For"
           />
-
           <FeatureGrid features={values} columns={4} />
         </div>
       </section>

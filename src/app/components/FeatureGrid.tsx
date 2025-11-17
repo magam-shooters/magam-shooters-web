@@ -1,7 +1,9 @@
+
+import { ReactNode } from "react";
 import { COLORS } from "@/config/designTokens";
 
 interface FeatureCardProps {
-  readonly icon: string;
+  readonly icon: ReactNode;
   readonly title: string;
   readonly description: string;
   readonly className?: string;

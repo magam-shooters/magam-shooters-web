@@ -19,9 +19,9 @@ interface HeroSectionProps {
 }
 
 const defaultImages = [
-  // IMAGES.HERO_LARGE_1,
-  // IMAGES.HERO_LARGE_2,
-  // IMAGES.HERO_LARGE_3,
+  IMAGES.HERO_LARGE_1,
+  IMAGES.HERO_LARGE_2,
+  IMAGES.HERO_LARGE_3,
 ];
 
 export default function HeroSection({

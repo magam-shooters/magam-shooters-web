@@ -3,15 +3,15 @@
 
 export const IMAGES = {
   // Hero Images (Large backgrounds)
-  HERO_GOLF_1: "https://picsum.photos/1200/600?random=1",
-  HERO_GOLF_2: "https://picsum.photos/1200/600?random=2", 
-  HERO_GOLF_3: "https://picsum.photos/1200/600?random=3",
+  HERO_GOLF_1: "/gallery/img-01.jpeg",
+  HERO_GOLF_2: "/gallery/img-02.jpeg", 
+  HERO_GOLF_3: "/gallery/img-03.jpeg",
   
   // Large Hero Images
-  HERO_LARGE_1: "https://picsum.photos/1200/800?random=4",
-  HERO_LARGE_2: "https://picsum.photos/1200/800?random=5",
-  HERO_LARGE_3: "https://picsum.photos/1200/800?random=6",
-  
+  HERO_LARGE_1: "/gallery/img-01.jpeg",
+  HERO_LARGE_2: "/gallery/img-02.jpeg",
+  HERO_LARGE_3: "/gallery/img-03.jpeg",
+
   // People/Team Images (Square)
   PERSON_MALE_1: "https://picsum.photos/400/400?random=7",
   PERSON_MALE_2: "https://picsum.photos/400/400?random=8", 
@@ -38,6 +38,7 @@ export const IMAGES = {
   GALLERY_1: "/gallery/img-01.jpeg",
   GALLERY_2: "/gallery/img-02.jpeg",
   GALLERY_3: "/gallery/img-03.jpeg",
+  GALLERY_4: "/gallery/img-03.jpeg",
   
   // Large Feature Images
   FEATURE_LARGE_1: "https://picsum.photos/600/500?random=27",
@@ -70,40 +71,37 @@ export const IMAGE_CATEGORIES = {
 } as const;
 
 // Alt text mapping for accessibility
-export const ALT_TEXT = {
-  [IMAGES.HERO_GOLF_1]: "Golf course landscape view 1",
-  [IMAGES.HERO_GOLF_2]: "Golf course landscape view 2", 
-  [IMAGES.HERO_GOLF_3]: "Golf course landscape view 3",
-  [IMAGES.HERO_LARGE_1]: "Professional golf equipment setup",
-  [IMAGES.HERO_LARGE_2]: "Golf training facility",
-  [IMAGES.HERO_LARGE_3]: "Golf course aerial view",
-  [IMAGES.PERSON_MALE_1]: "Male golf instructor",
-  [IMAGES.PERSON_MALE_2]: "Male golf coach",
-  [IMAGES.PERSON_FEMALE_1]: "Female golf instructor", 
-  [IMAGES.PERSON_FEMALE_2]: "Female fitness coach",
-  [IMAGES.GOLF_COURSE_1]: "Golf course during training",
-  [IMAGES.GOLF_COURSE_2]: "Professional golf facility",
-  [IMAGES.GOLF_EQUIPMENT_1]: "Golf clubs and equipment",
-  [IMAGES.GOLF_EQUIPMENT_2]: "Professional golf gear",
-  [IMAGES.SERVICE_1]: "Golf coaching service",
-  [IMAGES.SERVICE_2]: "Golf training program", 
-  [IMAGES.SERVICE_3]: "Golf fitness training",
-  [IMAGES.SERVICE_4]: "Golf equipment service",
-  [IMAGES.SERVICE_5]: "Golf lesson program",
-  [IMAGES.SERVICE_6]: "Golf tournament service",
-  [IMAGES.SERVICE_7]: "Golf club fitting",
-  [IMAGES.SERVICE_8]: "Golf course management",
-  [IMAGES.GALLERY_1]: "Golf action shot 1",
-  [IMAGES.GALLERY_2]: "Golf action shot 2",
-  [IMAGES.GALLERY_3]: "Golf action shot 3", 
-  [IMAGES.GALLERY_4]: "Golf action shot 4",
-  [IMAGES.FEATURE_LARGE_1]: "Golf facility feature",
-  [IMAGES.FEATURE_LARGE_2]: "Golf equipment showcase",
-  [IMAGES.VIDEO_LARGE_1]: "Golf video tutorial",
-  [IMAGES.TIP_SMALL_1]: "Golf swing technique",
-  [IMAGES.TIP_SMALL_2]: "Golf stance tutorial",
-  [IMAGES.TIP_SMALL_3]: "Golf course strategy",
-  [IMAGES.TIP_SMALL_4]: "Golf mental training",
-  [IMAGES.PLAYER_1]: "Golf player portrait 1",
-  [IMAGES.PLAYER_2]: "Golf player portrait 2",
-} as const;
+export const ALT_TEXT: Record<string, string> = {};
+
+ALT_TEXT[IMAGES.HERO_GOLF_1] = "Golf course landscape view 1";
+ALT_TEXT[IMAGES.HERO_GOLF_2] = "Golf course landscape view 2";
+ALT_TEXT[IMAGES.HERO_GOLF_3] = "Golf course landscape view 3";
+ALT_TEXT[IMAGES.PERSON_MALE_1] = "Male golf instructor";
+ALT_TEXT[IMAGES.PERSON_MALE_2] = "Male golf coach";
+ALT_TEXT[IMAGES.PERSON_FEMALE_1] = "Female golf instructor";
+ALT_TEXT[IMAGES.PERSON_FEMALE_2] = "Female fitness coach";
+ALT_TEXT[IMAGES.GOLF_COURSE_1] = "Golf course during training";
+ALT_TEXT[IMAGES.GOLF_COURSE_2] = "Professional golf facility";
+ALT_TEXT[IMAGES.GOLF_EQUIPMENT_1] = "Golf clubs and equipment";
+ALT_TEXT[IMAGES.GOLF_EQUIPMENT_2] = "Professional golf gear";
+ALT_TEXT[IMAGES.SERVICE_1] = "Golf coaching service";
+ALT_TEXT[IMAGES.SERVICE_2] = "Golf training program";
+ALT_TEXT[IMAGES.SERVICE_3] = "Golf fitness training";
+ALT_TEXT[IMAGES.SERVICE_4] = "Golf equipment service";
+ALT_TEXT[IMAGES.SERVICE_5] = "Golf lesson program";
+ALT_TEXT[IMAGES.SERVICE_6] = "Golf tournament service";
+ALT_TEXT[IMAGES.SERVICE_7] = "Golf club fitting";
+ALT_TEXT[IMAGES.SERVICE_8] = "Golf course management";
+ALT_TEXT[IMAGES.GALLERY_1] = "Golf action shot 1";
+ALT_TEXT[IMAGES.GALLERY_2] = "Golf action shot 2";
+ALT_TEXT[IMAGES.GALLERY_3] = "Golf action shot 3";
+ALT_TEXT[IMAGES.GALLERY_4] = "Golf action shot 4";
+ALT_TEXT[IMAGES.FEATURE_LARGE_1] = "Golf facility feature";
+ALT_TEXT[IMAGES.FEATURE_LARGE_2] = "Golf equipment showcase";
+ALT_TEXT[IMAGES.VIDEO_LARGE_1] = "Golf video tutorial";
+ALT_TEXT[IMAGES.TIP_SMALL_1] = "Golf swing technique";
+ALT_TEXT[IMAGES.TIP_SMALL_2] = "Golf stance tutorial";
+ALT_TEXT[IMAGES.TIP_SMALL_3] = "Golf course strategy";
+ALT_TEXT[IMAGES.TIP_SMALL_4] = "Golf mental training";
+ALT_TEXT[IMAGES.PLAYER_1] = "Golf player portrait 1";
+ALT_TEXT[IMAGES.PLAYER_2] = "Golf player portrait 2";

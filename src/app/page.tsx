@@ -1,5 +1,5 @@
-import { COLORS } from "@/config/designTokens";
 import { IMAGES } from "@/config/images";
+import { FaBolt, FaCameraRetro, FaHeadset, FaPenNib, FaTools } from "react-icons/fa";
 import CTASection from "./components/CTASection";
 import FeatureGrid from "./components/FeatureGrid";
 import Features from "./components/Features";
@@ -12,31 +12,31 @@ export default function Home() {
   const features = [
     {
       id: "professional",
-      icon: "📸",
+      icon: <FaCameraRetro className="text-3xl sm:text-4xl md:text-5xl text-[#002B7F]" />,
       title: "Professional Quality",
       description: "Expert expertise",
     },
     {
       id: "turnaround",
-      icon: "⚡",
+      icon: <FaBolt className="text-3xl sm:text-4xl md:text-5xl text-[#002B7F]" />,
       title: "Fast Turnaround",
       description: "Quick delivery",
     },
     {
       id: "support",
-      icon: "💬",
+      icon: <FaHeadset className="text-3xl sm:text-4xl md:text-5xl text-[#002B7F]" />,
       title: "Great Support",
       description: "24/7 availability",
     },
     {
       id: "equipment",
-      icon: "🎥",
+      icon: <FaTools className="text-3xl sm:text-4xl md:text-5xl text-[#002B7F]" />,
       title: "Equipment",
       description: "State-of-art",
     },
     {
       id: "editing",
-      icon: "✏️",
+      icon: <FaPenNib className="text-3xl sm:text-4xl md:text-5xl text-[#002B7F]" />,
       title: "Professional Editing",
       description: "Premium finish",
     },
@@ -46,13 +46,13 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <HeroSection
-        subtitle="ENJOY THE ULTIMATE"
-        title="Photography & Video Services"
-        description="Our legendary photography and videography services are a classic gem that caters exclusively to our members and valued clients."
-        primaryButtonText="Our Services"
-        primaryButtonHref="/services"
-        secondaryButtonText="Book Online Now"
-        secondaryButtonHref="/contact"
+        subtitle="SHOOTING COMPETITION"
+        title="Magam Shooters Championship 2025"
+        description="Welcome to Sri Lanka's premier shooting sports event! Compete in pistol, rifle, and shotgun disciplines. Challenge your accuracy and speed, and join a community of passionate marksmen. Register now to secure your spot!"
+        primaryButtonText="Register Now"
+        primaryButtonHref="/register"
+        secondaryButtonText="View Rules"
+        secondaryButtonHref="/rules"
         backgroundImages={[
           IMAGES.HERO_GOLF_1,
           IMAGES.HERO_GOLF_2,
@@ -62,126 +62,6 @@ export default function Home() {
 
       {/* Features Section */}
       <Features features={features} />
-
-      {/* Next Matches & Match Review Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Next Matches */}
-            <div className={`bg-gradient-to-b from-${COLORS.PRIMARY_LIGHT} to-${COLORS.PRIMARY_MAIN} text-white p-8 md:p-12`}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Next Matches</h2>
-              <p className="text-white/80 text-sm md:text-base mb-8 uppercase tracking-wide">
-                Most golf matches are played on Sundays from 10 AM to approximately 2 PM
-              </p>
-
-              <div className="space-y-6">
-                {/* Match 1 */}
-                <div className="border-l-4 border-white/30 pl-4">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-2xl font-bold">03</span>
-                    <span className="text-sm uppercase tracking-widest font-semibold">MAY</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">McCladrey Classic</h3>
-                  <p className="text-white/80 text-sm">10:00. Kevin Gonzales - Susan Rogers</p>
-                </div>
-
-                {/* Match 2 */}
-                <div className="border-l-4 border-white/30 pl-4">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-2xl font-bold">07</span>
-                    <span className="text-sm uppercase tracking-widest font-semibold">MAY</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">Barracuda Championship</h3>
-                  <p className="text-white/80 text-sm">10:00. Susan Rogers - Robert Ross</p>
-                </div>
-
-                {/* Match 3 */}
-                <div className="border-l-4 border-white/30 pl-4">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-2xl font-bold">20</span>
-                    <span className="text-sm uppercase tracking-widest font-semibold">MAY</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">WGT Virtual Tour</h3>
-                  <p className="text-white/80 text-sm">10:00. Kevin Gonzales - Susan Rogers</p>
-                </div>
-
-                {/* Match 4 */}
-                <div className="border-l-4 border-white/30 pl-4">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-2xl font-bold">28</span>
-                    <span className="text-sm uppercase tracking-widest font-semibold">MAY</span>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">Hero World Challenge</h3>
-                  <p className="text-white/80 text-sm">10:00. Robert Ross - Sharon Carter</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Match Review */}
-            <div className="flex flex-col gap-8">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Match Review</h2>
-                <div className={`w-12 h-1 bg-${COLORS.PRIMARY_MAIN}`}></div>
-                <p className={`text-${COLORS.TEXT_SECONDARY} text-sm md:text-base mt-4 uppercase tracking-widest`}>
-                  WE ARE VERY EXCITED TO GO OVER THIS EXCEPTIONAL TOURNAMENT THAT LITERALLY LEFT THE PLAYERS AND THE CROWD BREATHLESS!
-                </p>
-              </div>
-
-              {/* Match Cards */}
-              <div className="grid sm:grid-cols-2 gap-6">
-                {/* Card 1 - Kevin Gonzales */}
-                <div className="bg-white overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                  <div className="relative">
-                    <img
-                      src={IMAGES.PLAYER_1}
-                      alt="Kevin Gonzales"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className={`absolute top-3 right-3 bg-${COLORS.PRIMARY_MAIN} text-white px-3 py-1 text-sm font-semibold`}>
-                      MX
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <p className={`text-${COLORS.PRIMARY_MAIN} text-sm font-semibold mb-2`}>03 May 10:00</p>
-                    <p className="text-2xl font-bold text-gray-900 mb-2">72-69</p>
-                    <p className={`text-${COLORS.TEXT_SECONDARY} text-xs uppercase tracking-widest font-semibold`}>
-                      Sea Island Golf Club - Seaside Course
-                    </p>
-                  </div>
-                  <div className={`bg-${COLORS.BG_DARK} text-white py-2 px-4 text-center font-semibold text-sm`}>
-                    Kevin Gonzales
-                  </div>
-                </div>
-
-                {/* Card 2 - Susan Rogers */}
-                <div className="bg-white overflow-hidden shadow-md hover:shadow-lg transition duration-300">
-                  <div className="relative">
-                    <img
-                      src={IMAGES.PLAYER_2}
-                      alt="Susan Rogers"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className={`absolute top-3 right-3 bg-${COLORS.PRIMARY_MAIN} text-white px-3 py-1 text-sm font-semibold`}>
-                      CA
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <p className={`text-${COLORS.PRIMARY_MAIN} text-sm font-semibold mb-2`}>03 May 10:00</p>
-                    <p className="text-2xl font-bold text-gray-900 mb-2">72-69</p>
-                    <p className={`text-${COLORS.TEXT_SECONDARY} text-xs uppercase tracking-widest font-semibold`}>
-                      Sea Island Golf Club - Seaside Course
-                    </p>
-                  </div>
-                  <div className={`bg-${COLORS.BG_DARK} text-white py-2 px-4 text-center font-semibold text-sm`}>
-                    Susan Rogers
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* The Latest Photos Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -191,7 +71,7 @@ export default function Home() {
             alignment="center"
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {/* Photo 1 */}
             <div className="relative overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
               <img
@@ -218,15 +98,6 @@ export default function Home() {
                 className="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition duration-300"
               />
             </div>
-
-            {/* Photo 4 */}
-            <div className="relative overflow-hidden shadow-md hover:shadow-xl transition duration-300 group">
-              <img
-                src={IMAGES.GALLERY_4}
-                alt="Golf players"
-                className="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition duration-300"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -242,32 +113,32 @@ export default function Home() {
                 subtitle="Unique Construction"
                 alignment="left"
               />
-              <p className="text-gray-600 text-base leading-relaxed mb-8 uppercase tracking-wide text-sm">
+              <p className="text-gray-900 text-base leading-relaxed mb-8 uppercase tracking-wide text-sm">
                 Extensive upgrades and thorough maintenance have made our course a modern comfortable place for trainings
               </p>
 
               {/* Features List */}
               <div className="space-y-4 mb-10">
                 <div className="flex items-start gap-3">
-                  <div className={`w-5 h-5 border-2 border-${COLORS.PRIMARY_MAIN} flex-shrink-0 mt-0.5`}></div>
-                  <p className="text-gray-700 text-sm">No daily water usage</p>
+                  <div className="w-5 h-5 border-2 border-[#002B7F] flex-shrink-0 mt-0.5"></div>
+                  <p className="text-gray-900 text-sm">No daily water usage</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className={`w-5 h-5 border-2 border-${COLORS.PRIMARY_MAIN} flex-shrink-0 mt-0.5`}></div>
-                  <p className="text-gray-700 text-sm">Not affected by freezing (weather</p>
+                  <div className="w-5 h-5 border-2 border-[#002B7F] flex-shrink-0 mt-0.5"></div>
+                  <p className="text-gray-900 text-sm">Not affected by freezing (weather</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className={`w-5 h-5 border-2 border-${COLORS.PRIMARY_MAIN} flex-shrink-0 mt-0.5`}></div>
-                  <p className="text-gray-700 text-sm">3 Distinct tennis court surface speed-of-play options</p>
+                  <div className="w-5 h-5 border-2 border-[#002B7F] flex-shrink-0 mt-0.5"></div>
+                  <p className="text-gray-900 text-sm">3 Distinct tennis court surface speed-of-play options</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className={`w-5 h-5 border-2 border-${COLORS.PRIMARY_MAIN} flex-shrink-0 mt-0.5`}></div>
-                  <p className="text-gray-700 text-sm">Adjustable court speeds that are great for serves</p>
+                  <div className="w-5 h-5 border-2 border-[#002B7F] flex-shrink-0 mt-0.5"></div>
+                  <p className="text-gray-900 text-sm">Adjustable court speeds that are great for serves</p>
                 </div>
               </div>
 
               {/* Learn More Button */}
-              <button className={`bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white px-8 py-3 font-semibold uppercase text-sm tracking-wider transition duration-300`}>
+              <button className="bg-[#002B7F] hover:bg-[#001A4D] text-white px-8 py-3 font-semibold uppercase text-sm tracking-wider transition duration-300">
                 LEARN MORE
               </button>
             </div>
@@ -286,48 +157,6 @@ export default function Home() {
 
       {/* Testimonials Carousel Section */}
       <TestimonialCarousel />
-
-      {/* Promotional Banner Section */}
-      <section className={`py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-${COLORS.PRIMARY_MAIN} to-${COLORS.PRIMARY_DARK}`}>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-white relative z-10">
-              <div className={`inline-block bg-${COLORS.PRIMARY_DARK} text-white px-6 py-2 mb-6 font-semibold uppercase text-sm tracking-wider`}>
-                OFF
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                Extra 25% Off
-                <br />
-                All Selected Items
-              </h2>
-              
-              <p className={`text-${COLORS.PRIMARY_LIGHT} text-lg font-semibold mb-4`}>3 days Only!</p>
-              
-              <p className="text-white/80 text-base mb-8">
-                Enter Code <span className="font-bold text-blue-200">EXTRAVALUE</span> at checkout
-                <br />
-                for additional 3 days discount
-              </p>
-
-              <button className={`bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-3 px-8 transition duration-300 uppercase tracking-wider`}>
-                Shop Now
-              </button>
-            </div>
-
-            {/* Right Image */}
-            <div className="relative h-80 md:h-96">
-              <img
-                src={IMAGES.FEATURE_LARGE_2}
-                alt="Golf equipment"
-                className="w-full h-full object-cover shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Services */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
@@ -382,18 +211,18 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Starter Plan */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-              <div className={`bg-${COLORS.BG_DARK} text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider`}>
+              <div className="bg-slate-900 text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider">
                 Starter
               </div>
               <div className="p-8">
                 <div className="text-center mb-6">
-                  <span className={`text-4xl font-bold text-${COLORS.PRIMARY_MAIN}`}>$250</span>
+                  <span className="text-4xl font-bold text-[#002B7F]">$250</span>
                   <span className="text-gray-600 text-sm">/mo</span>
                 </div>
-                <p className="text-gray-600 text-sm text-center mb-8 leading-relaxed">
+                <p className="text-gray-900 text-sm text-center mb-8 leading-relaxed">
                   Perfect for beginners looking to enjoy golf and access to basic club facilities and training.
                 </p>
-                <button className={`w-full bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider`}>
+                <button className="w-full bg-[#002B7F] hover:bg-[#001A4D] text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider">
                   Choose Plan
                 </button>
               </div>
@@ -401,18 +230,18 @@ export default function Home() {
 
             {/* Individual Plan */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-              <div className={`bg-${COLORS.BG_DARK} text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider`}>
+              <div className="bg-slate-900 text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider">
                 Individual
               </div>
               <div className="p-8">
                 <div className="text-center mb-6">
-                  <span className={`text-4xl font-bold text-${COLORS.PRIMARY_MAIN}`}>$350</span>
+                  <span className="text-4xl font-bold text-[#002B7F]">$350</span>
                   <span className="text-gray-600 text-sm">/mo</span>
                 </div>
-                <p className="text-gray-600 text-sm text-center mb-8 leading-relaxed">
+                <p className="text-gray-900 text-sm text-center mb-8 leading-relaxed">
                   Ideal for individual members with priority booking and extended facility access all week.
                 </p>
-                <button className={`w-full bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider`}>
+                <button className="w-full bg-[#002B7F] hover:bg-[#001A4D] text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider">
                   Choose Plan
                 </button>
               </div>
@@ -420,18 +249,18 @@ export default function Home() {
 
             {/* Family Plan 1 */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-              <div className={`bg-${COLORS.BG_DARK} text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider`}>
+              <div className="bg-slate-900 text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider">
                 Family
               </div>
               <div className="p-8">
                 <div className="text-center mb-6">
-                  <span className={`text-4xl font-bold text-${COLORS.PRIMARY_MAIN}`}>$450</span>
+                  <span className="text-4xl font-bold text-[#002B7F]">$450</span>
                   <span className="text-gray-600 text-sm">/mo</span>
                 </div>
-                <p className="text-gray-600 text-sm text-center mb-8 leading-relaxed">
+                <p className="text-gray-900 text-sm text-center mb-8 leading-relaxed">
                   Best for families with up to 4 members getting premium access and coaching sessions.
                 </p>
-                <button className={`w-full bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider`}>
+                <button className="w-full bg-[#002B7F] hover:bg-[#001A4D] text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider">
                   Choose Plan
                 </button>
               </div>
@@ -439,18 +268,18 @@ export default function Home() {
 
             {/* Premium Plan */}
             <div className="bg-white overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-              <div className={`bg-${COLORS.BG_DARK} text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider`}>
+              <div className="bg-slate-900 text-white py-3 px-4 text-center font-bold text-sm uppercase tracking-wider">
                 Premium
               </div>
               <div className="p-8">
                 <div className="text-center mb-6">
-                  <span className={`text-4xl font-bold text-${COLORS.PRIMARY_MAIN}`}>$450</span>
+                  <span className="text-4xl font-bold text-[#002B7F]">$450</span>
                   <span className="text-gray-600 text-sm">/mo</span>
                 </div>
-                <p className="text-gray-600 text-sm text-center mb-8 leading-relaxed">
+                <p className="text-gray-900 text-sm text-center mb-8 leading-relaxed">
                   Ultimate membership with all benefits including private lessons and VIP event access.
                 </p>
-                <button className={`w-full bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider`}>
+                <button className="w-full bg-[#002B7F] hover:bg-[#001A4D] text-white font-bold py-2 px-4 transition duration-300 uppercase text-sm tracking-wider">
                   Choose Plan
                 </button>
               </div>
@@ -491,7 +320,7 @@ export default function Home() {
           />
 
           <div className="text-center">
-            <button className={`bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-3 px-8 transition duration-300 uppercase text-sm tracking-wider`}>
+            <button className="bg-[#002B7F] hover:bg-[#001A4D] text-white font-bold py-3 px-8 transition duration-300 uppercase text-sm tracking-wider">
               View All Team
             </button>
           </div>
@@ -503,7 +332,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Video Golf Tips */}
-            <div className={`bg-gradient-to-br from-${COLORS.PRIMARY_LIGHT} to-${COLORS.PRIMARY_MAIN} overflow-hidden shadow-lg`}>
+            <div className="bg-gradient-to-br from-[#4A5EBF] to-[#002B7F] overflow-hidden shadow-lg">
               <img
                 src={IMAGES.VIDEO_LARGE_1}
                 alt="Golf video tips"
@@ -514,7 +343,7 @@ export default function Home() {
                 <p className="text-white/90 text-sm mb-6">
                   Golf videos for Beginners - Learn the fundamentals of golf and improve your game with our comprehensive video tutorials.
                 </p>
-                <button className={`bg-white text-${COLORS.PRIMARY_MAIN} hover:bg-gray-100 font-bold py-2 px-6 transition duration-300 uppercase text-sm tracking-wider`}>
+                <button className="bg-white text-[#002B7F] hover:bg-gray-100 font-bold py-2 px-6 transition duration-300 uppercase text-sm tracking-wider">
                   View Videos
                 </button>
               </div>
@@ -534,7 +363,7 @@ export default function Home() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-gray-900 text-sm mb-2">Golf Swing Tips for Better Performance</h4>
-                    <p className="text-gray-600 text-xs leading-relaxed">
+                    <p className="text-gray-900 text-xs leading-relaxed">
                       Learn how to improve your swing technique with expert coaching.
                     </p>
                   </div>
@@ -549,7 +378,7 @@ export default function Home() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-gray-900 text-sm mb-2">Perfect Grip and Stance Guide</h4>
-                    <p className="text-gray-600 text-xs leading-relaxed">
+                    <p className="text-gray-900 text-xs leading-relaxed">
                       Master the fundamentals with our comprehensive stance guide.
                     </p>
                   </div>
@@ -564,7 +393,7 @@ export default function Home() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-gray-900 text-sm mb-2">Course Strategy Tips for Success</h4>
-                    <p className="text-gray-600 text-xs leading-relaxed">
+                    <p className="text-gray-900 text-xs leading-relaxed">
                       Strategic tips to help you navigate the course efficiently.
                     </p>
                   </div>
@@ -579,7 +408,7 @@ export default function Home() {
                   />
                   <div className="p-4">
                     <h4 className="font-semibold text-gray-900 text-sm mb-2">Mental Game and Confidence Building</h4>
-                    <p className="text-gray-600 text-xs leading-relaxed">
+                    <p className="text-gray-900 text-xs leading-relaxed">
                       Develop mental toughness and confidence on the course.
                     </p>
                   </div>

@@ -4,14 +4,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-700">
+    <footer className="bg-[#002B7F] border-t border-[#001A4D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold text-blue-400 mb-4">Magam Shooters</h3>
-            <p className="text-gray-400">
-              Professional photography and video production services for all your needs.
+            <h3 className="text-xl font-bold text-white mb-4">Magam Shooters</h3>
+            <p className="text-gray-200">
+              Sri Lanka's premier shooting sports club offering professional training, competitions, and world-class facilities.
             </p>
           </div>
 
@@ -22,33 +22,33 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
                   Home
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/aboutus"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
                   About Us
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/events"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
-                  Services
+                  Events
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/blog"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/clubs"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
-                  Blog
+                  Clubs
                 </Link>
               </li>
             </ul>
@@ -60,34 +60,34 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/clubs"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
-                  Photography
+                  Training Programs
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/events"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
-                  Video Production
+                  Competitions
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/clubs"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
-                  Event Coverage
+                  Equipment Rental
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
-                  className="text-gray-400 hover:text-blue-400 transition duration-200"
+                  href="/contact"
+                  className="text-gray-200 hover:text-[#FFD100] transition duration-200"
                 >
-                  Editing
+                  Coaching
                 </Link>
               </li>
             </ul>
@@ -96,11 +96,11 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
+                        <ul className="space-y-2 text-gray-200">
               <li>
                 <a
                   href="tel:+15551234567"
-                  className="hover:text-blue-400 transition duration-200"
+                  className="hover:text-[#FFD100] transition duration-200"
                 >
                   (555) 123-4567
                 </a>
@@ -108,7 +108,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@magamshooters.com"
-                  className="hover:text-blue-400 transition duration-200"
+                  className="hover:text-[#FFD100] transition duration-200"
                 >
                   info@magamshooters.com
                 </a>
@@ -116,7 +116,7 @@ export default function Footer() {
               <li className="mt-4">
                 <Link
                   href="/contact"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 transition duration-200"
+                  className="inline-block bg-[#00AEEF] hover:bg-[#0096C7] text-white font-semibold py-2 px-4 transition duration-200"
                 >
                   Contact Us
                 </Link>
@@ -126,13 +126,13 @@ export default function Footer() {
         </div>
 
         {/* Social Links */}
-        <div className="border-t border-slate-700 pt-8 mb-8">
+        <div className="border-t border-[#3A4E8C] pt-8 mb-8">
           <div className="flex justify-center space-x-6 mb-6">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition duration-200"
+              className="text-gray-200 hover:text-[#FFD100] transition duration-200"
               aria-label="Facebook"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -143,7 +143,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition duration-200"
+              className="text-gray-200 hover:text-[#FFD100] transition duration-200"
               aria-label="Instagram"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,7 @@ export default function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition duration-200"
+              className="text-gray-200 hover:text-[#FFD100] transition duration-200"
               aria-label="Twitter"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -165,7 +165,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition duration-200"
+              className="text-gray-200 hover:text-[#FFD100] transition duration-200"
               aria-label="LinkedIn"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -176,21 +176,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-slate-700 pt-8">
+        <div className="border-t border-[#3A4E8C] pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="text-gray-200 text-sm mb-4 md:mb-0">
               &copy; {currentYear} Magam Shooters. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a
                 href="/privacy"
-                className="text-gray-400 hover:text-blue-400 text-sm transition duration-200"
+                className="text-gray-200 hover:text-[#FFD100] text-sm transition duration-200"
               >
                 Privacy Policy
               </a>
               <a
                 href="/terms"
-                className="text-gray-400 hover:text-blue-400 text-sm transition duration-200"
+                className="text-gray-200 hover:text-[#FFD100] text-sm transition duration-200"
               >
                 Terms of Service
               </a>

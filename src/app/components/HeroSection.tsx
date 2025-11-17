@@ -3,6 +3,7 @@
 import { IMAGES } from "@/config/images";
 import Link from 'next/link';
 import { ReactNode, useEffect, useState } from 'react';
+import { GiPistolGun } from "react-icons/gi";
 
 interface HeroSectionProps {
   readonly title: string;
@@ -18,9 +19,9 @@ interface HeroSectionProps {
 }
 
 const defaultImages = [
-  IMAGES.HERO_LARGE_1,
-  IMAGES.HERO_LARGE_2,
-  IMAGES.HERO_LARGE_3,
+  // IMAGES.HERO_LARGE_1,
+  // IMAGES.HERO_LARGE_2,
+  // IMAGES.HERO_LARGE_3,
 ];
 
 export default function HeroSection({
@@ -86,40 +87,45 @@ export default function HeroSection({
       {/* Content Container */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Shooting Icon */}
+          <div className="flex justify-center mb-4">
+            <GiPistolGun className="text-6xl md:text-7xl" style={{ color: '#D71920', filter: 'drop-shadow(0 2px 8px #D71920AA)' }} />
+          </div>
           {/* Subtitle */}
-          {subtitle && (
-            <div className="mb-3 sm:mb-4 md:mb-6">
-              <p className="text-xs sm:text-sm md:text-base uppercase tracking-widest text-blue-300 md:text-blue-400 font-semibold">
-                {subtitle}
-              </p>
-              <div className="hidden sm:flex justify-center mt-2 md:mt-3">
-                <div className="w-12 sm:w-16 md:w-20 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-              </div>
+
+          <div className="mb-3 sm:mb-4 md:mb-6">
+            <p className="text-xs sm:text-sm md:text-base uppercase tracking-widest font-semibold text-white">
+              {subtitle || "SHOOTING COMPETITION"}
+            </p>
+            <div className="hidden sm:flex justify-center mt-2 md:mt-3">
+              <div className="w-12 sm:w-16 md:w-20 h-px bg-gradient-to-r from-transparent via-[#00AEEF] to-transparent"></div>
             </div>
-          )}
+          </div>
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 md:mb-8 leading-tight">
-            {title}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 md:mb-8 leading-tight saira-extra-condensed text-white">
+            {title || "Magam Shooters Championship 2025"}
           </h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 md:text-gray-300 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto">
-            {description}
+          <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-2xl mx-auto text-white">
+            {description || "Welcome to the premier shooting sports event in Sri Lanka! Compete in pistol, rifle, and shotgun disciplines, challenge your accuracy and speed, and join a community of passionate marksmen. Register now to secure your spot in the Magam Shooters Championship 2025."}
           </p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
             <Link
-              href={primaryButtonHref}
-              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 transition duration-300 transform hover:scale-105 text-center uppercase tracking-wide text-sm sm:text-base border border-blue-600 hover:border-blue-700"
+              href={primaryButtonHref || "/register"}
+              className="w-full sm:w-auto font-bold py-3 sm:py-4 px-6 sm:px-10 transition duration-300 transform hover:scale-105 text-center uppercase tracking-wide text-sm sm:text-base border"
+              style={{ backgroundColor: '#D71920', color: '#fff', borderColor: '#D71920' }}
             >
-              {primaryButtonText}
+              {primaryButtonText || "Register Now"}
             </Link>
             {secondaryButtonText && secondaryButtonHref && (
               <Link
                 href={secondaryButtonHref}
-                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 transition duration-300 border border-white/20 hover:border-white/40 text-center uppercase tracking-wide text-sm sm:text-base"
+                className="w-full sm:w-auto font-bold py-3 sm:py-4 px-6 sm:px-10 transition duration-300 border text-center uppercase tracking-wide text-sm sm:text-base"
+                style={{ backgroundColor: '#FFD100', color: '#000', borderColor: '#FFD100' }}
               >
                 {secondaryButtonText}
               </Link>

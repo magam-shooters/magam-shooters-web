@@ -1,4 +1,5 @@
 import { COLORS } from "@/config/designTokens";
+import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import CTASection from "../components/CTASection";
 import PageHero from "../components/PageHero";
 import SectionHeader from "../components/SectionHeader";
@@ -18,23 +19,23 @@ export default function Contact() {
           <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
             {/* Email Card */}
             <div className="bg-white p-8 sm:p-10 text-center hover:shadow-lg transition duration-300">
-              <div className={`text-5xl md:text-6xl mb-4 text-${COLORS.PRIMARY_MAIN}`}>✉️</div>
+              <MdEmail className="mx-auto mb-4 text-6xl text-[#00AEEF]" />
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Email</h3>
-              <p className={`text-${COLORS.PRIMARY_MAIN} font-semibold text-sm sm:text-base mb-2`}>info@magamshooters.com</p>
+              <p className="text-[#00AEEF] font-semibold text-sm sm:text-base mb-2">info@magamshooters.com</p>
               <p className="text-gray-600 text-sm">www.magamshooters.com</p>
             </div>
 
             {/* Phone Card */}
             <div className="bg-white p-8 sm:p-10 text-center hover:shadow-lg transition duration-300">
-              <div className={`text-5xl md:text-6xl mb-4 text-${COLORS.PRIMARY_MAIN}`}>📱</div>
+              <MdPhone className="mx-auto mb-4 text-6xl text-[#00AEEF]" />
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Phone</h3>
-              <p className={`text-${COLORS.PRIMARY_MAIN} font-semibold text-sm sm:text-base mb-2`}>+1 (800) 123-4567</p>
+              <p className="text-[#00AEEF] font-semibold text-sm sm:text-base mb-2">+1 (800) 123-4567</p>
               <p className="text-gray-600 text-sm">+1 (800) 123-4566</p>
             </div>
 
             {/* Address Card */}
             <div className="bg-white p-8 sm:p-10 text-center hover:shadow-lg transition duration-300">
-              <div className={`text-5xl md:text-6xl mb-4 text-${COLORS.PRIMARY_MAIN}`}>🏠</div>
+              <MdLocationOn className="mx-auto mb-4 text-6xl text-[#00AEEF]" />
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Address</h3>
               <p className="text-gray-600 text-sm leading-relaxed">176 W street name,<br />New York, NY 10014</p>
             </div>
@@ -111,7 +112,7 @@ export default function Contact() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className={`bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white font-bold py-3 px-12 transition duration-300 uppercase text-sm tracking-wider`}
+                className="bg-[#00AEEF] hover:bg-[#0096C7] text-white font-bold py-3 px-12 transition duration-300 uppercase text-sm tracking-wider"
               >
                 Send Message
               </button>

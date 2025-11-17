@@ -1,40 +1,45 @@
 // Design Tokens - Single source of truth for all design values
 // Update these values to change the entire application's appearance
 
-// COLORS
+// COLORS - Brand Color Palette
 export const COLORS = {
-  // Primary Palette
-  PRIMARY_LIGHT: 'blue-400',
-  PRIMARY_MAIN: 'blue-600',
-  PRIMARY_DARK: 'blue-700',
+  // Primary Palette (Navy Blue - Core Identity)
+  PRIMARY_LIGHT: '#3A4E8C', // Lighter shade for hover/backgrounds
+  PRIMARY_MAIN: '#002B7F',  // Navy Blue - Main brand color
+  PRIMARY_DARK: '#001A4D',  // Darker navy for accents
 
-  // Secondary Palette (Accent)
-  SECONDARY_LIGHT: 'orange-500',
-  SECONDARY_MAIN: 'orange-600',
-  SECONDARY_DARK: 'orange-700',
+  // Secondary Palette (Olympic Ring Colors)
+  SECONDARY_RED: '#D71920',     // Red - Passion, energy (buttons, hover effects)
+  SECONDARY_GREEN: '#007A3D',   // Green - Growth, harmony (success indicators, sections)
+  SECONDARY_YELLOW: '#FFD100',  // Yellow - Optimism, visibility (banners, CTAs)
+  SECONDARY_BLUE: '#00AEEF',    // Light Blue - Sport freshness, balance (links, subheadings)
 
-  // Tertiary Palette (Accent 2)
-  TERTIARY_LIGHT: 'lime-500',
-  TERTIARY_MAIN: 'lime-600',
-  TERTIARY_DARK: 'lime-700',
+  // Core Colors
+  BLACK: '#000000',   // Black - Texts & outlines
+  WHITE: '#FFFFFF',   // White - Background or negative space
 
-  // Neutrals - Background
-  BG_DARK: 'slate-900',
-  BG_DARKER: 'slate-800',
-  BG_LIGHT: 'slate-50',
-  BG_WHITE: 'white',
+  // Supporting Neutral Tones
+  GRAY_LIGHT: '#F5F7FA',   // Light gray background panels
+  GRAY_MEDIUM: '#E5E7EB',  // Divider lines, secondary text
+  GRAY_DARK: '#1F2937',    // Main body text
 
-  // Neutrals - Text
-  TEXT_PRIMARY: 'gray-900',
-  TEXT_SECONDARY: 'gray-600',
-  TEXT_LIGHT: 'gray-400',
-  TEXT_LIGHTER: 'gray-300',
-  TEXT_WHITE: 'white',
+  // Backgrounds
+  BG_DARK: '#002B7F',      // Navy blue background
+  BG_DARKER: '#001A4D',    // Darker navy
+  BG_LIGHT: '#F5F7FA',     // Light gray background
+  BG_WHITE: '#FFFFFF',     // White background
 
-  // Neutrals - Borders
-  BORDER_LIGHT: 'gray-100',
-  BORDER_MAIN: 'slate-700',
-  BORDER_DARK: 'slate-600',
+  // Text
+  TEXT_PRIMARY: '#1F2937',   // Dark gray text
+  TEXT_SECONDARY: '#E5E7EB', // Medium gray text
+  TEXT_LIGHT: '#F5F7FA',     // Light gray text
+  TEXT_LIGHTER: '#FFFFFF',   // White text
+  TEXT_WHITE: '#FFFFFF',     // White text
+
+  // Borders
+  BORDER_LIGHT: '#E5E7EB',   // Medium gray borders
+  BORDER_MAIN: '#002B7F',    // Navy blue borders
+  BORDER_DARK: '#001A4D',    // Dark navy borders
 } as const;
 
 // FONTS
@@ -104,17 +109,17 @@ export const SHADOWS = {
 // COMMON PATTERNS
 export const PATTERNS = {
   // Buttons
-  BTN_PRIMARY: `bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-white ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
-  BTN_SECONDARY: `bg-${COLORS.SECONDARY_LIGHT} hover:bg-${COLORS.SECONDARY_MAIN} text-white ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
-  BTN_ACCENT: `bg-${COLORS.TERTIARY_LIGHT} hover:bg-${COLORS.TERTIARY_MAIN} text-white ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
+  BTN_PRIMARY: `bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-${COLORS.WHITE} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
+  BTN_SECONDARY: `bg-${COLORS.SECONDARY_RED} hover:bg-red-800 text-${COLORS.WHITE} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
+  BTN_ACCENT: `bg-${COLORS.SECONDARY_YELLOW} hover:bg-yellow-500 text-${COLORS.BLACK} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
 
   // Cards
-  CARD_LIGHT: `bg-${COLORS.BG_WHITE} border border-${COLORS.BORDER_LIGHT} ${SHADOWS.MD} hover:${SHADOWS.LG} ${TRANSITIONS.NORMAL}`,
+  CARD_LIGHT: `bg-${COLORS.WHITE} border border-${COLORS.BORDER_LIGHT} ${SHADOWS.MD} hover:${SHADOWS.LG} ${TRANSITIONS.NORMAL}`,
   CARD_DARK: `bg-${COLORS.BG_DARKER} border border-${COLORS.BORDER_MAIN} ${SHADOWS.MD} hover:${SHADOWS.LG} ${TRANSITIONS.NORMAL}`,
 
   // Gradients
-  GRADIENT_ACCENT: `bg-gradient-to-b from-${COLORS.TERTIARY_LIGHT} to-${COLORS.TERTIARY_MAIN}`,
-  GRADIENT_SLATE: `bg-gradient-to-br from-${COLORS.BG_LIGHT} to-slate-100`,
+  GRADIENT_ACCENT: `bg-gradient-to-b from-${COLORS.SECONDARY_BLUE} to-${COLORS.PRIMARY_MAIN}`,
+  GRADIENT_SLATE: `bg-gradient-to-br from-${COLORS.BG_LIGHT} to-gray-100`,
   GRADIENT_DARK: `bg-gradient-to-r from-${COLORS.BG_DARKER} to-${COLORS.BG_DARK}`,
 } as const;
 

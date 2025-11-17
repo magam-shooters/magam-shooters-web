@@ -35,10 +35,9 @@ export const IMAGES = {
   SERVICE_8: "https://picsum.photos/500/350?random=22",
   
   // Gallery/Photo Grid Images
-  GALLERY_1: "https://picsum.photos/400/300?random=23",
-  GALLERY_2: "https://picsum.photos/400/300?random=24",
-  GALLERY_3: "https://picsum.photos/400/300?random=25", 
-  GALLERY_4: "https://picsum.photos/400/300?random=26",
+  GALLERY_1: "/gallery/img-01.jpeg",
+  GALLERY_2: "/gallery/img-02.jpeg",
+  GALLERY_3: "/gallery/img-03.jpeg",
   
   // Large Feature Images
   FEATURE_LARGE_1: "https://picsum.photos/600/500?random=27",

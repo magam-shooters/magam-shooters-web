@@ -59,8 +59,8 @@ export function ExampleGradientSection() {
     <section
       className={`
         bg-gradient-to-r
-        from-${COLORS.TERTIARY_LIGHT}
-        to-${COLORS.TERTIARY_MAIN}
+        from-${COLORS.PRIMARY_LIGHT}
+        to-${COLORS.PRIMARY_MAIN}
         text-${COLORS.TEXT_WHITE}
         py-20 px-8
       `}
@@ -69,7 +69,7 @@ export function ExampleGradientSection() {
         Featured Section
       </h2>
       <p className={`${FONTS.SIZE_LG}`}>
-        This section uses the tertiary accent color
+        This section uses the primary navy color scheme
       </p>
     </section>
   );
@@ -138,8 +138,8 @@ export function ExampleMultiColor() {
 
       <button
         className={`
-          bg-${COLORS.SECONDARY_LIGHT}
-          hover:bg-${COLORS.SECONDARY_MAIN}
+          bg-${COLORS.SECONDARY_RED}
+          hover:bg-${COLORS.SECONDARY_RED}
           text-${COLORS.TEXT_WHITE}
           ${FONTS.WEIGHT_BOLD}
           py-2 px-6

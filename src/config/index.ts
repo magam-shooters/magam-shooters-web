@@ -1,8 +1,9 @@
 // Configuration Index - Export all theme and design tokens
 
+export { colors } from './colorHelpers';
 export { colorUtils, styleBuilders } from './colors';
 export { BREAKPOINTS, COLORS, FONTS, PATTERNS, SHADOWS, SPACING, TRANSITIONS } from './designTokens';
-export { ALT_TEXT, IMAGE_CATEGORIES, IMAGES } from './images';
+export { ALT_TEXT, IMAGES, IMAGE_CATEGORIES } from './images';
 export { getTheme, theme } from './theme';
 
 // Re-export as single config object for convenience

@@ -12,8 +12,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Magam Shooters - Professional Photography & Video Services",
-  description: "Professional photography and video production services",
+  title: "NSSF Sri Lanka - National Shooting Sports Federation",
+  description: "The National Shooting Sports Federation of Sri Lanka - Promoting excellence in shooting sports through world-class training, competitions, and athlete development.",
 };
 
 export default function RootLayout({

@@ -16,8 +16,8 @@ interface FeaturesProps {
 
 export default function Features({ features, className = '' }: Readonly<FeaturesProps>) {
   return (
-    <section className={`w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`py-8 px-4 sm:px-6 lg:px-8 bg-white ${className}`}>
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature) => (
             <div key={feature.id} className="flex flex-col items-center text-center">

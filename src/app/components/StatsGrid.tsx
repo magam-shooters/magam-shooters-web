@@ -1,4 +1,4 @@
-import { COLORS } from "@/config/designTokens";
+import { colors } from "@/config";
 
 interface StatCardProps {
   readonly value: string;
@@ -14,7 +14,12 @@ interface StatsGridProps {
 
 function StatCard({ value, label, className = "" }: StatCardProps) {
   return (
-    <div className={`bg-gradient-to-br from-${COLORS.PRIMARY_LIGHT} to-${COLORS.PRIMARY_MAIN} p-8 sm:p-10 text-white text-center hover:shadow-lg transition duration-300 ${className}`}>
+    <div 
+      className={`p-8 sm:p-10 text-white text-center rounded-xl hover:shadow-lg transition duration-300 ${className}`}
+      style={{ 
+        background: `linear-gradient(to bottom right, ${colors.primary.navy}, ${colors.primary.blue})` 
+      }}
+    >
       <div className="text-4xl md:text-5xl font-bold mb-2">{value}</div>
       <p className="text-white/90 text-sm sm:text-base font-semibold">{label}</p>
     </div>
@@ -46,3 +51,4 @@ export default function StatsGrid({
 }
 
 export { StatCard };
+

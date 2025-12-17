@@ -1,247 +1,309 @@
+import { colors } from "@/config";
 import { IMAGES } from "@/config/images";
-import Link from "next/link";
-import CTASection from "../components/CTASection";
-import FeatureGrid from "../components/FeatureGrid";
+import { FaAward, FaBullseye, FaGlobe, FaHandshake, FaHeart, FaShieldAlt, FaTrophy, FaUsers } from "react-icons/fa";
+import CouncilMembers from "../components/CouncilMembers";
+import ImageGalleryScroll from "../components/ImageGalleryScroll";
 import PageHero from "../components/PageHero";
-import SectionHeader from "../components/SectionHeader";
 import StatsGrid from "../components/StatsGrid";
-import TeamGrid from "../components/TeamGrid";
-import { FaBullseye, FaShieldAlt, FaTrophy, FaDumbbell, FaMedal, FaChartBar } from "react-icons/fa";
 
 export default function AboutUs() {
-  const values = [
+  const coreValues = [
     {
-      id: "precision",
-      icon: <FaBullseye className="text-3xl text-[#002B7F]" />,
-      title: "Precision",
-      description: "We demand accuracy and attention to detail in every aspect of shooting sports.",
+      icon: FaBullseye,
+      title: "Precision & Excellence",
+      description: "We demand the highest standards of accuracy and performance in every aspect of shooting sports."
     },
     {
-      id: "safety",
-      icon: <FaShieldAlt className="text-3xl text-[#002B7F]" />,
-      title: "Safety",
-      description: "Safety protocols and training are paramount in all our activities and competitions.",
+      icon: FaShieldAlt,
+      title: "Safety First",
+      description: "Rigorous safety protocols and certified training ensure a secure environment for all participants."
     },
     {
-      id: "excellence",
-      icon: <FaTrophy className="text-3xl text-[#002B7F]" />,
-      title: "Excellence",
-      description: "Continuous improvement and pursuit of excellence drives our competitive spirit.",
+      icon: FaUsers,
+      title: "Athlete Development",
+      description: "Committed to nurturing talent from grassroots to Olympic-level competitive shooting."
     },
     {
-      id: "discipline",
-      icon: <FaDumbbell className="text-3xl text-[#002B7F]" />,
-      title: "Discipline",
-      description: "Mental focus and physical discipline are essential for shooting sports success.",
-    },
-  ];
-
-  const team = [
-    {
-      id: "john",
-      name: "John Silva",
-      role: "Chief Range Officer",
-      image: IMAGES.PERSON_MALE_1,
-      bio: "30+ years of experience in competitive shooting and range safety management.",
+      icon: FaHandshake,
+      title: "Integrity & Fair Play",
+      description: "Upholding the principles of sportsmanship, ethics, and fair competition in all activities."
     },
     {
-      id: "sarah",
-      name: "Sarah Fernando",
-      role: "Head Coach",
-      image: IMAGES.PERSON_FEMALE_1,
-      bio: "Olympic shooting coach with expertise in pistol and rifle disciplines.",
+      icon: FaGlobe,
+      title: "International Standards",
+      description: "Adhering to ISSF regulations and promoting Sri Lankan shooting sports on the global stage."
     },
     {
-      id: "mike",
-      name: "Mike Perera",
-      role: "Technical Director",
-      image: IMAGES.PERSON_MALE_2,
-      bio: "Equipment specialist and technical advisor for competitive shooting.",
-    },
+      icon: FaHeart,
+      title: "Community & Inclusion",
+      description: "Building a diverse, inclusive community that welcomes shooters of all backgrounds and abilities."
+    }
   ];
 
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <PageHero
-        title="About Us"
-        description="Discover the legacy and excellence of Magam Shooters - Sri Lanka's premier shooting sports organization"
+        title="About NSSF Sri Lanka"
+        description="The National Shooting Sports Federation of Sri Lanka - Championing excellence in competitive shooting since its establishment"
       />
 
-      {/* Our Story Section */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      {/* Introduction Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+              Our Federation
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: colors.primary.navy }}>
+              Leading Sri Lanka's Shooting Sports
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              The National Shooting Sports Federation of Sri Lanka (NSSF) is the apex body governing shooting sports in the country. 
+              We are dedicated to developing world-class athletes, promoting safe shooting practices, and fostering a culture of 
+              excellence in marksmanship across the nation.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden shadow-lg">
+            <div className="relative h-96 overflow-hidden rounded-xl shadow-2xl">
               <img
                 src={IMAGES.FEATURE_LARGE_1}
-                alt="Shooting Range Facility"
-                className="w-full h-full object-cover shadow-xl"
+                alt="NSSF Shooting Range Facility"
+                className="w-full h-full object-cover"
               />
             </div>
 
             {/* Content */}
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">Our Story</h2>
-              <p className="text-[#00AEEF] text-xs uppercase tracking-widest font-semibold mb-3">
-                Founded in 1985
+              <h3 className="text-3xl font-bold mb-6" style={{ color: colors.primary.navy }}>Our Mission</h3>
+              
+              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                NSSF Sri Lanka is committed to nurturing shooting sports talent from grassroots to elite levels. We provide comprehensive 
+                training programs, organize national and international competitions, and ensure adherence to global safety and technical standards.
               </p>
               
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
-                Established in 1985 by a group of passionate marksmen, Magam Shooters has grown to become Sri Lanka's most respected shooting sports organization. What started as a small club has evolved into a national institution promoting excellence in competitive shooting.
-              </p>
-              
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
-                For nearly four decades, we've been dedicated to developing shooting talent, promoting safety standards, and fostering a community of disciplined athletes committed to precision and excellence.
+              <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                Through our network of 17 affiliated clubs and state-of-the-art facilities, we create pathways for athletes to represent 
+                Sri Lanka on international platforms including the Olympics, Asian Games, and Commonwealth Games.
               </p>
 
-              <Link
-                href="/events"
-                className="inline-block bg-[#00AEEF] hover:bg-[#0090C0] text-white font-bold py-2 px-6 transition duration-200 uppercase text-xs tracking-wider rounded"
-              >
-                View Events
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <button
+                  className="px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg"
+                  style={{ backgroundColor: colors.primary.navy }}
+                >
+                  Our Programs
+                </button>
+                <button
+                  className="px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2"
+                  style={{ borderColor: colors.primary.navy, color: colors.primary.navy }}
+                >
+                  View Events
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-10 sm:py-12 md:py-16 px-2 sm:px-4 lg:px-6">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            title="Our Purpose"
-            subtitle="Mission & Vision"
-          />
+      {/* Vision & Mission Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+              Our Purpose
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+              Vision & Mission
+            </h2>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Mission */}
-            <div className="bg-white p-6 sm:p-7 md:p-8 shadow-md hover:shadow-lg transition duration-200 border-l-4 border-[#00AEEF]">
-              <div className="mb-4">
-                <FaBullseye className="text-3xl md:text-4xl text-[#00AEEF]" />
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Vision Card */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
+                    <FaTrophy className="text-3xl text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary.navy }}>Our Vision</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    To position Sri Lanka as a powerhouse in Asian shooting sports, producing world-class athletes who compete 
+                    with excellence on international stages while upholding the highest standards of sportsmanship and integrity.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#00AEEF] mb-2">Our Mission</h3>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                To promote excellence in shooting sports through world-class training, safe competition environments, and fostering a community of disciplined athletes who represent the highest standards of marksmanship.
-              </p>
             </div>
 
-            {/* Vision */}
-            <div className="bg-white p-6 sm:p-7 md:p-8 shadow-md hover:shadow-lg transition duration-200 border-l-4 border-[#00AEEF]">
-              <div className="mb-4">
-                <FaTrophy className="text-3xl md:text-4xl text-[#00AEEF]" />
+            {/* Mission Card */}
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.red }}>
+                    <FaBullseye className="text-3xl text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary.navy }}>Our Mission</h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    To develop, promote, and govern shooting sports in Sri Lanka through comprehensive training programs, world-class 
+                    facilities, and fostering a culture of excellence that nurtures talent from grassroots to Olympic levels.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#00AEEF] mb-2">Our Vision</h3>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                To be recognized as the premier shooting sports organization in Asia, developing Olympic-caliber athletes while promoting the values of precision, discipline, and safety in competitive shooting.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Core Values Section */}
-      <section className="py-10 sm:py-12 md:py-16 px-2 sm:px-4 lg:px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            title="Core Values"
-            subtitle="What We Stand For"
-          />
-          <FeatureGrid features={values} columns={4} />
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+              Our Principles
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+              Core Values
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              The fundamental principles that guide our federation and shape the future of shooting sports in Sri Lanka
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreValues.map((value) => (
+              <div
+                key={value.title}
+                className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              >
+                <div className="mb-6">
+                  <div className="w-14 h-14 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
+                    <value.icon className="text-2xl" style={{ color: colors.primary.navy }} />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: colors.primary.navy }}>
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-10 sm:py-12 md:py-16 px-2 sm:px-4 lg:px-6">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            title="Leadership Team"
-            subtitle="Meet Our Experts"
-            description="Our leadership team combines decades of competitive shooting experience, coaching expertise, and commitment to athlete development."
-          />
+      {/* Council Members Section */}
+      <CouncilMembers />
 
-          <TeamGrid members={team} columns={3} showBio={true} />
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="py-10 sm:py-12 md:py-16 px-2 sm:px-4 lg:px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            title="Our Achievements"
-            subtitle="Recognition & Milestones"
-          />
+      {/* Achievements & Statistics Section */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+              Our Impact
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+              Achievements & Milestones
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Decades of excellence in developing shooting sports talent and representing Sri Lanka internationally
+            </p>
+          </div>
 
           <StatsGrid 
             stats={[
-              { value: "38+", label: "Years of Excellence" },
-              { value: "500+", label: "Active Members" },
-              { value: "50+", label: "National Championships" },
-              { value: "15+", label: "Olympic Qualifiers" }
+              { value: "17+", label: "Affiliated Clubs" },
+              { value: "1000+", label: "Active Athletes" },
+              { value: "75+", label: "National Championships" },
+              { value: "25+", label: "International Medals" }
             ]} 
             columns={4} 
           />
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-10 sm:py-12 md:py-16 px-2 sm:px-4 lg:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">Why Choose Magam Shooters</h2>
-            <p className="text-[#00AEEF] text-xs uppercase tracking-widest font-semibold">What Sets Us Apart</p>
+      {/* Why NSSF Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+              Excellence in Every Shot
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+              Why Choose NSSF Sri Lanka
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Leading the nation with world-class facilities, expert coaching, and a commitment to athlete success
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Feature 1 */}
-            <div className="flex gap-3 sm:gap-4">
-              <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#00AEEF] text-white flex items-center justify-center text-xl">
-                <FaMedal />
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                  <FaAward className="text-2xl text-white" />
+                </div>
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-[#00AEEF] mb-1">Olympic-Level Training</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Our coaches have trained multiple Olympic and Commonwealth Games athletes.
+                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary.navy }}>Olympic-Level Training</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our world-class coaches have trained multiple Olympic, Asian Games, and Commonwealth Games athletes, 
+                  providing expertise in all shooting disciplines.
                 </p>
               </div>
             </div>
 
             {/* Feature 2 */}
-            <div className="flex gap-3 sm:gap-4">
-              <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#00AEEF] text-white flex items-center justify-center text-xl">
-                <FaBullseye />
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                  <FaBullseye className="text-2xl text-white" />
+                </div>
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-[#00AEEF] mb-1">State-of-Art Facilities</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Modern shooting ranges with electronic targeting systems and climate control.
+                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary.navy }}>World-Class Facilities</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  State-of-the-art shooting ranges equipped with electronic scoring systems, climate control, and 
+                  facilities that meet international ISSF standards.
                 </p>
               </div>
             </div>
 
             {/* Feature 3 */}
-            <div className="flex gap-3 sm:gap-4">
-              <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#00AEEF] text-white flex items-center justify-center text-xl">
-                <FaShieldAlt />
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                  <FaShieldAlt className="text-2xl text-white" />
+                </div>
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-[#00AEEF] mb-1">Safety First</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Rigorous safety protocols and certified range officers ensure secure training environment.
+                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary.navy }}>Uncompromising Safety</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Rigorous safety protocols, certified range officers, and comprehensive safety training ensure 
+                  a secure environment for all participants.
                 </p>
               </div>
             </div>
 
             {/* Feature 4 */}
-            <div className="flex gap-3 sm:gap-4">
-              <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-[#00AEEF] text-white flex items-center justify-center text-xl">
-                <FaChartBar />
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div className="flex-shrink-0">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                  <FaUsers className="text-2xl text-white" />
+                </div>
               </div>
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-[#00AEEF] mb-1">Performance Analytics</h3>
-                <p className="text-gray-600 text-base leading-relaxed">
-                  Advanced scoring systems and performance tracking to optimize your shooting technique.
+                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary.navy }}>Nationwide Network</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  With 17 affiliated clubs across Sri Lanka, we provide accessible training and competition 
+                  opportunities throughout the country.
                 </p>
               </div>
             </div>
@@ -249,13 +311,33 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTASection
-        title="Join Magam Shooters"
-        description="Experience the precision and excellence of competitive shooting sports with Sri Lanka's premier organization."
-        primaryButton={{ text: "Get In Touch", href: "/contact" }}
-        secondaryButton={{ text: "Explore Membership", href: "/clubs", style: "outline" }}
-      />
+      {/* Gallery Section */}
+      <ImageGalleryScroll />
+
+      {/* Call to Action Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">Join the NSSF Family</h2>
+          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            Be part of Sri Lanka's premier shooting sports federation. Whether you're a beginner or an experienced shooter, 
+            NSSF provides the platform, training, and support to achieve your goals.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <button
+              className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105"
+              style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
+            >
+              Become a Member
+            </button>
+            <button
+              className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 border-2 border-white text-white hover:bg-white"
+              style={{ '&:hover': { color: colors.primary.navy } }}
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">Magam Shooters</h3>
+            <h3 className="text-xl font-bold text-white mb-4">NSSF Sri Lanka</h3>
             <p className="text-gray-200">
-              Sri Lanka's premier shooting sports club offering professional training, competitions, and world-class facilities.
+              National Shooting Sports Federation of Sri Lanka - Promoting excellence in shooting sports through world-class training, competitions, and athlete development.
             </p>
           </div>
 
@@ -107,10 +107,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@magamshooters.com"
+                  href="mailto:info@nssf.lk"
                   className="hover:text-[#FFD100] transition duration-200"
                 >
-                  info@magamshooters.com
+                  info@nssf.lk
                 </a>
               </li>
               <li className="mt-4">
@@ -179,7 +179,7 @@ export default function Footer() {
         <div className="border-t border-[#3A4E8C] pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-200 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} Magam Shooters. All rights reserved.
+              &copy; {currentYear} NSSF Sri Lanka. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a

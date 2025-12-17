@@ -330,8 +330,7 @@ export default function AboutUs() {
               Become a Member
             </button>
             <button
-              className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 border-2 border-white text-white hover:bg-white"
-              style={{ '&:hover': { color: colors.primary.navy } }}
+              className="px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 border-2 border-white text-white hover:bg-white hover:text-[#002B7F]"
             >
               Contact Us
             </button>

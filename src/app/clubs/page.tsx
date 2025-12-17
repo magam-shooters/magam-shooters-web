@@ -173,10 +173,9 @@ export default function Clubs() {
                 key={plan.id}
                 className={`relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 ${
                   plan.popular 
-                    ? 'ring-2 ring-offset-2' 
+                    ? 'ring-2 ring-[#FFD100] ring-offset-2' 
                     : 'border border-gray-200'
                 }`}
-                style={plan.popular ? { ringColor: colors.primary.yellow } : {}}
               >
                 {plan.popular && (
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">

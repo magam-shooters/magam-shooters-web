@@ -72,8 +72,7 @@ export default function Contact() {
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none placeholder-gray-400 text-sm transition-all duration-200"
-                  style={{ focusBorderColor: colors.primary.blue }}
+                  className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#00AEEF] placeholder-gray-400 text-sm transition-all duration-200"
                   placeholder="Your name"
                   required
                 />
@@ -86,7 +85,7 @@ export default function Contact() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none placeholder-gray-400 text-sm transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#00AEEF] placeholder-gray-400 text-sm transition-all duration-200"
                   placeholder="your@email.com"
                   required
                 />
@@ -99,7 +98,7 @@ export default function Contact() {
                 <input
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none placeholder-gray-400 text-sm transition-all duration-200"
+                  className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#00AEEF] placeholder-gray-400 text-sm transition-all duration-200"
                   placeholder="Subject"
                 />
               </div>
@@ -113,7 +112,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 rows={8}
-                className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none placeholder-gray-400 text-sm resize-none transition-all duration-200"
+                className="w-full px-4 py-3 bg-white text-gray-900 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#00AEEF] placeholder-gray-400 text-sm resize-none transition-all duration-200"
                 placeholder="Tell us how we can help you..."
                 required
               />

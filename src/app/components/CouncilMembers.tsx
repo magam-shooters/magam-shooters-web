@@ -5,47 +5,69 @@ import { colors } from '@/config';
 interface CouncilMember {
   name: string;
   role: string;
-  image: string;
-  bio: string;
 }
 
-// Placeholder data for council members
+// NSSF-SL Council Members
 const councilMembers: CouncilMember[] = [
   {
-    name: "Dr. Rajith Ferdinando",
-    role: "President",
-    image: "https://picsum.photos/seed/president/400/400",
-    bio: "Leading NSSF with over 20 years of experience in shooting sports administration and Olympic committee work."
+    name: "Mr. Pradeep Edirisinghe",
+    role: "President"
   },
   {
-    name: "Mr. Samantha Wickramasinghe",
-    role: "Vice President",
-    image: "https://picsum.photos/seed/vicepresident/400/400",
-    bio: "Former national champion and dedicated advocate for youth development in shooting sports across Sri Lanka."
+    name: "Lt. Cdr. Naveen Pathmarathne (Rtd.)",
+    role: "Vice President Rifle"
   },
   {
-    name: "Ms. Nadeeka Perera",
-    role: "Secretary General",
-    image: "https://picsum.photos/seed/secretary/400/400",
-    bio: "Experienced sports administrator coordinating national and international shooting events for the federation."
+    name: "Mr. Sagara Wimaladharma",
+    role: "Vice President Pistol"
   },
   {
-    name: "Mr. Chandana Silva",
-    role: "Treasurer",
-    image: "https://picsum.photos/seed/treasurer/400/400",
-    bio: "Chartered accountant ensuring financial excellence and transparency in all NSSF operations and programs."
+    name: "Mr. Dallas Martenstyn",
+    role: "Vice President Shotgun"
   },
   {
-    name: "Col. Roshan Dissanayake",
-    role: "Technical Director",
-    image: "https://picsum.photos/seed/technical/400/400",
-    bio: "Military shooting expert overseeing technical standards, training programs, and safety protocols nationwide."
+    name: "Mr. Shirantha Peries",
+    role: "Vice President Coaching"
   },
   {
-    name: "Mrs. Dilani Jayawardena",
-    role: "Women's Committee Chair",
-    image: "https://picsum.photos/seed/womens/400/400",
-    bio: "Passionate about promoting women's participation and excellence in shooting sports at all competitive levels."
+    name: "Mr. Dinesh Lionel",
+    role: "Secretary General"
+  },
+  {
+    name: "Mrs. Tharanga Perera",
+    role: "Treasurer"
+  },
+  {
+    name: "Ms. Kehara Siriwardhana",
+    role: "Assistant Secretary Rifle"
+  },
+  {
+    name: "Mr. Sandun Dissanayake",
+    role: "Assistant Secretary Pistol"
+  },
+  {
+    name: "Mr. Nivantha Waas",
+    role: "Assistant Secretary Shotgun"
+  },
+  {
+    name: "Ms. Githmi Gunawardena",
+    role: "Assistant Secretary Coaching"
+  },
+  {
+    name: "Mr. Mohan Gilbert",
+    role: "Chairman Tech Committee"
+  },
+  {
+    name: "Ms. Chathuni Kandawinna",
+    role: "Secretary Tech Committee"
+  },
+  {
+    name: "Mr. Lasitha Perera",
+    role: "Chairman Judges Committee"
+  },
+  {
+    name: "Mr. Dhanuka Kamal",
+    role: "Secretary Judges Committee"
   }
 ];
 
@@ -73,47 +95,28 @@ export default function CouncilMembers() {
               key={member.name}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
             >
-              {/* Member Image */}
-              <div className="relative h-80 overflow-hidden bg-gray-200">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              {/* Member Avatar Icon */}
+              <div className="relative h-80 overflow-hidden flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                <svg
+                  className="w-32 h-32 text-white opacity-80"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
               </div>
 
               {/* Member Info */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2" style={{ color: colors.primary.navy }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: colors.primary.navy }}>
                   {member.name}
                 </h3>
                 <p
-                  className="text-sm font-semibold uppercase tracking-wider mb-3"
+                  className="text-sm font-semibold uppercase tracking-wider"
                   style={{ color: colors.primary.red }}
                 >
                   {member.role}
                 </p>
-                <p className="text-gray-600 leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-
-              {/* Contact Button */}
-              <div className="px-6 pb-6">
-                <button
-                  className="w-full py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-md hover:scale-105 flex items-center justify-center gap-2"
-                  style={{
-                    backgroundColor: colors.primary.navy,
-                    color: 'white'
-                  }}
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Contact
-                </button>
               </div>
             </div>
           ))}

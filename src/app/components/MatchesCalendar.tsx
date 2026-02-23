@@ -12,60 +12,33 @@ interface Match {
   status: 'upcoming' | 'ongoing' | 'completed';
 }
 
-// Placeholder match data
+// Updated match data for March events
 const matches: Match[] = [
   {
     id: 1,
-    date: "2025-01-15",
-    time: "09:00 AM",
-    title: "National Rifle Championship",
-    venue: "Colombo Rifle Range",
-    category: "Rifle",
+    date: "2026-03-10", // 2nd week of March (approximate)
+    time: "All Day",
+    title: "NSSF-SL Open Rifle/Pistol Championship",
+    venue: "NSSF Range – Kohuwala & SLNS, Gemunu Range, Welisara",
+    category: "Rifle/Pistol",
     status: "upcoming"
   },
   {
     id: 2,
-    date: "2025-01-20",
-    time: "02:00 PM",
-    title: "Youth Pistol Competition",
-    venue: "Kandy Sports Complex",
-    category: "Pistol",
+    date: "2026-03-17", // 3rd week of March (approximate)
+    time: "All Day",
+    title: "NSSF Trap Open Championship",
+    venue: "CTSCC Range, Payagala",
+    category: "Trap",
     status: "upcoming"
   },
   {
     id: 3,
-    date: "2025-02-05",
-    time: "10:00 AM",
-    title: "International Open Championship",
-    venue: "NSSF National Range",
-    category: "Mixed",
-    status: "upcoming"
-  },
-  {
-    id: 4,
-    date: "2025-02-18",
-    time: "08:30 AM",
-    title: "Women's Shooting Championship",
-    venue: "Galle Shooting Range",
-    category: "Rifle & Pistol",
-    status: "upcoming"
-  },
-  {
-    id: 5,
-    date: "2025-03-10",
-    time: "09:00 AM",
-    title: "Junior National Championships",
-    venue: "Colombo Rifle Range",
-    category: "Rifle",
-    status: "upcoming"
-  },
-  {
-    id: 6,
-    date: "2025-03-25",
-    time: "01:00 PM",
-    title: "Inter-Club Tournament",
-    venue: "Various Locations",
-    category: "Team Event",
+    date: "2026-03-24", // 4th week of March (approximate)
+    time: "All Day",
+    title: "NSSF Skeet Open Championship",
+    venue: "CTSCC Range, Payagala",
+    category: "Skeet",
     status: "upcoming"
   }
 ];
@@ -92,65 +65,66 @@ export default function MatchesCalendar() {
           </p>
         </div>
 
-        {/* Matches Grid */}
+        {/* Matches Grid - Only one row (first 3 matches) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {matches.map((match) => (
+          {matches.slice(0, 3).map((match) => (
             <div
               key={match.id}
-              className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 overflow-hidden"
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 overflow-hidden flex flex-col"
+              style={{ minHeight: 340 }}
             >
               {/* Date Header */}
               <div
-                className="p-4 text-white"
+                className="px-6 py-4 flex items-center justify-between"
                 style={{ backgroundColor: colors.primary.navy }}
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span className="font-semibold">{formatDate(match.date)}</span>
-                  </div>
-                  <span
-                    className="px-3 py-1 rounded-full text-xs font-bold"
-                    style={{
-                      backgroundColor: colors.primary.yellow,
-                      color: colors.primary.navy
-                    }}
-                  >
-                    {match.category}
-                  </span>
+                <div className="flex items-center gap-2 text-white">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span className="font-semibold text-base">{formatDate(match.date)}</span>
                 </div>
+                <span
+                  className="px-4 py-1 rounded-full text-sm font-bold"
+                  style={{
+                    backgroundColor: colors.primary.yellow,
+                    color: colors.primary.navy
+                  }}
+                >
+                  {match.category}
+                </span>
               </div>
 
               {/* Match Details */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3" style={{ color: colors.primary.navy }}>
+              <div className="flex-1 flex flex-col p-8 pb-0">
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary.navy }}>
                   {match.title}
                 </h3>
 
-                <div className="space-y-2 mb-4">
+                <div className="space-y-3 mb-8">
                   {/* Time */}
-                  <div className="flex items-center text-gray-600">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-sm">{match.time}</span>
+                    <span className="text-base">{match.time}</span>
                   </div>
 
                   {/* Venue */}
-                  <div className="flex items-center text-gray-600">
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex items-center text-gray-700">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span className="text-sm">{match.venue}</span>
+                    <span className="text-base">{match.venue}</span>
                   </div>
                 </div>
+              </div>
 
-                {/* Register Button */}
+              {/* Register Button */}
+              <div className="p-6 pt-0">
                 <button
-                  className="w-full py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-md hover:scale-105"
+                  className="w-full py-3 rounded-md font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105"
                   style={{
                     backgroundColor: colors.primary.yellow,
                     color: colors.primary.navy
@@ -163,10 +137,11 @@ export default function MatchesCalendar() {
           ))}
         </div>
 
-        {/* View Full Calendar Button */}
+        {/* View Full Calendar Button - Download PDF */}
         <div className="text-center">
           <a
-            href="/calendar"
+            href="/CALENDAR_2026.pdf"
+            download
             className="px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105 inline-flex items-center gap-2"
             style={{ backgroundColor: colors.primary.navy }}
           >

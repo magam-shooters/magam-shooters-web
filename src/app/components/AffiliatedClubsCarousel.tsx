@@ -10,25 +10,25 @@ interface Club {
   location: string;
 }
 
-// Placeholder data for 17 affiliated clubs
+// Actual affiliated clubs as per provided screenshots
 const affiliatedClubs: Club[] = [
-  { id: 1, name: "Colombo Rifle Club", logo: "/clubs/club-01.png", location: "Colombo" },
-  { id: 2, name: "Kandy Shooting Club", logo: "/clubs/club-02.png", location: "Kandy" },
-  { id: 3, name: "Galle Sports Club", logo: "/clubs/club-03.png", location: "Galle" },
-  { id: 4, name: "Jaffna Shooting Academy", logo: "/clubs/club-04.png", location: "Jaffna" },
-  { id: 5, name: "Negombo Target Club", logo: "/clubs/club-05.png", location: "Negombo" },
-  { id: 6, name: "Matara Rifle Association", logo: "/clubs/club-06.png", location: "Matara" },
-  { id: 7, name: "Anuradhapura Shooting Club", logo: "/clubs/club-07.png", location: "Anuradhapura" },
-  { id: 8, name: "Trincomalee Sports Club", logo: "/clubs/club-08.png", location: "Trincomalee" },
-  { id: 9, name: "Kurunegala Rifle Club", logo: "/clubs/club-09.png", location: "Kurunegala" },
-  { id: 10, name: "Ratnapura Shooting Association", logo: "/clubs/club-10.png", location: "Ratnapura" },
-  { id: 11, name: "Batticaloa Target Club", logo: "/clubs/club-11.png", location: "Batticaloa" },
-  { id: 12, name: "Badulla Rifle Club", logo: "/clubs/club-12.png", location: "Badulla" },
-  { id: 13, name: "Ampara Shooting Club", logo: "/clubs/club-13.png", location: "Ampara" },
-  { id: 14, name: "Vavuniya Sports Club", logo: "/clubs/club-14.png", location: "Vavuniya" },
-  { id: 15, name: "Polonnaruwa Rifle Association", logo: "/clubs/club-15.png", location: "Polonnaruwa" },
-  { id: 16, name: "Hambantota Shooting Club", logo: "/clubs/club-16.png", location: "Hambantota" },
-  { id: 17, name: "Nuwara Eliya Target Club", logo: "/clubs/club-17.png", location: "Nuwara Eliya" },
+  { id: 1, name: "Negombo Rifle Club", logo: "/clubs/negombo-rifle.png", location: "Negombo" },
+  { id: 2, name: "Hill Country Sport Shooting Club", logo: "/clubs/hill-country.png", location: "Hill Country" },
+  { id: 3, name: "Wayamba Sport Shooting Club", logo: "/clubs/wayamba.png", location: "Wayamba" },
+  { id: 4, name: "Clay Target Shooting Club of Colombo", logo: "/clubs/clay-target-colombo.png", location: "Colombo" },
+  { id: 5, name: "Siyane Rifle Shooting Club", logo: "/clubs/siyane-rifle.png", location: "Siyane" },
+  { id: 6, name: "Scorpion Shooting Club", logo: "/clubs/scorpion.png", location: "-" },
+  { id: 7, name: "Army Small Arms Association", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 8, name: "Srilanka Navy Musketry", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 9, name: "Srilanka Airforce Shooting Club", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 10, name: "Srilanka Police Shooting Club", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 11, name: "Srilanka Schools Shooting Sports Association", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 12, name: "The Sport Shooting Club of Nuwara Eliya", logo: "/clubs/nssf-badge.png", location: "Nuwara Eliya" },
+  { id: 13, name: "Magnum Sport Shooting Club", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 14, name: "Athugala Shooting Sport Club", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 15, name: "Magam Sport Shooting Club", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 16, name: "Cambrian Shooting Sport Club", logo: "/clubs/nssf-badge.png", location: "-" },
+  { id: 17, name: "Puttalam District Sport Shooting Club", logo: "/clubs/nssf-badge.png", location: "Puttalam" },
 ];
 
 export default function AffiliatedClubsCarousel() {

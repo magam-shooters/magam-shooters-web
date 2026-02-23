@@ -6,6 +6,7 @@ import Features from "./components/Features";
 import HeroSection from "./components/HeroSection";
 import ImageGalleryScroll from "./components/ImageGalleryScroll";
 import MatchesCalendar from "./components/MatchesCalendar";
+import NewsSection from "./components/NewsSection";
 
 export default function Home() {
   const features = [
@@ -70,6 +71,9 @@ export default function Home() {
 
       {/* Matches Calendar */}
       <MatchesCalendar />
+
+      {/* News Section */}
+      <NewsSection />
 
       {/* Council Members */}
       <CouncilMembers />

@@ -14,7 +14,8 @@ interface CouncilMember {
 const councilMembers: CouncilMember[] = [
   {
     name: "Mr. Pradeep Edirisinghe",
-    role: "President"
+    role: "President",
+    image: "/council_members/PradeepEdirisinghe.jpg"
   },
   {
     name: "Mr. Dinesh Lionel",
@@ -36,7 +37,8 @@ const councilMembers: CouncilMember[] = [
   },
   {
     name: "Mr. Shirantha Peries",
-    role: "Vice President Coaching"
+    role: "Vice President Coaching",
+    image: "/council_members/ShiranthaPeries.jpg"
   },
   {
     name: "Ms. Kehara Siriwardhana",
@@ -45,7 +47,8 @@ const councilMembers: CouncilMember[] = [
   },
   {
     name: "Mr. Sandun Dissanayake",
-    role: "Assistant Secretary Pistol"
+    role: "Assistant Secretary Pistol",
+    image: "/council_members/SandunDissanayake.jpeg"
   },
   {
     name: "Mr. Nivantha Waas",
@@ -116,13 +119,16 @@ function MemberCard({ member }: { member: CouncilMember }) {
       {/* Member Avatar/Image */}
       <div className="relative h-48 overflow-hidden flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
         {member.image && !imageError ? (
-          <Image
-            src={member.image}
-            alt={member.name}
-            fill
-            className="object-cover"
-            onError={() => setImageError(true)}
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={member.image}
+              alt={member.name}
+              fill
+              className="object-cover object-[center_20%] scale-100"
+              onError={() => setImageError(true)}
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+            />
+          </div>
         ) : (
           <svg
             className="w-20 h-20 text-white opacity-70"

@@ -89,7 +89,7 @@ export default function TestimonialCarousel() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Testimonials</h2>
+          <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">Testimonials</h2>
         </div>
 
         {/* Carousel Container */}
@@ -100,15 +100,15 @@ export default function TestimonialCarousel() {
               ★★★★★
             </div>
             
-            <p className="text-gray-700 mb-8 leading-relaxed text-lg italic">
+            <p className="text-gray-700 mb-8 leading-relaxed text-lg italic font-sans">
               "{testimonial.text}"
             </p>
 
             <div className="flex items-center gap-4">
               <div className={`w-16 h-16 bg-gradient-to-br ${testimonial.gradient}`}></div>
               <div>
-                <p className="font-semibold text-gray-900 text-lg">{testimonial.author}</p>
-                <p className="text-blue-600 text-sm font-semibold">{testimonial.role}</p>
+                <p className="font-montserrat font-semibold text-gray-900 text-lg">{testimonial.author}</p>
+                <p className="text-blue-600 text-sm font-montserrat font-semibold">{testimonial.role}</p>
               </div>
             </div>
           </div>

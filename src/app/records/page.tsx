@@ -159,7 +159,7 @@ export default function RecordsPage() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[#002B7F]/80 hover:text-[#002B7F] mb-6 transition-colors"
+            className="font-sans inline-flex items-center gap-2 text-[#002B7F]/80 hover:text-[#002B7F] mb-6 transition-colors"
           >
             <FaArrowLeft />
             <span>Back to Home</span>
@@ -172,10 +172,10 @@ export default function RecordsPage() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2 text-[#D71920]">
               Achievements
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">
               National Records
             </h1>
-            <p className="text-lg max-w-2xl mx-auto">
+            <p className="font-sans text-lg max-w-2xl mx-auto">
               Outstanding achievements and record-breaking performances by Sri Lankan athletes
             </p>
           </div>
@@ -190,7 +190,7 @@ export default function RecordsPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className="px-6 py-2 rounded-full font-semibold transition-all duration-200 bg-white text-[#002B7F] border-2 border-[#002B7F] hover:bg-[#002B7F] hover:text-white"
+                className="font-montserrat px-6 py-2 rounded-full font-semibold transition-all duration-200 bg-white text-[#002B7F] border-2 border-[#002B7F] hover:bg-[#002B7F] hover:text-white"
               >
                 {cat}
               </button>
@@ -216,30 +216,30 @@ export default function RecordsPage() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                  <h3 className="font-montserrat text-xl font-semibold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                     {record.title}
                   </h3>
 
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Holder:</span>
-                      <span className="text-sm font-bold text-[#002B7F]">{record.holder}</span>
+                      <span className="font-sans text-sm text-gray-600">Holder:</span>
+                      <span className="font-montserrat text-sm font-bold text-[#002B7F]">{record.holder}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Score:</span>
-                      <span className="text-2xl font-bold text-[#D71920]">{record.score}</span>
+                      <span className="font-sans text-sm text-gray-600">Score:</span>
+                      <span className="font-montserrat text-2xl font-bold text-[#D71920]">{record.score}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Event:</span>
-                      <span className="text-xs font-medium text-gray-700">{record.event}</span>
+                      <span className="font-sans text-sm text-gray-600">Event:</span>
+                      <span className="font-sans text-xs font-medium text-gray-700">{record.event}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Date:</span>
-                      <span className="text-sm font-medium text-gray-700">{record.date}</span>
+                      <span className="font-sans text-sm text-gray-600">Date:</span>
+                      <span className="font-sans text-sm font-medium text-gray-700">{record.date}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Location:</span>
-                      <span className="text-xs font-medium text-gray-700">{record.location}</span>
+                      <span className="font-sans text-sm text-gray-600">Location:</span>
+                      <span className="font-sans text-xs font-medium text-gray-700">{record.location}</span>
                     </div>
                   </div>
                 </div>
@@ -252,22 +252,22 @@ export default function RecordsPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="font-montserrat text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
             Think You Can Break a Record?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="font-sans text-lg text-gray-600 mb-8">
             Join our training programs and compete in national championships to set your own records.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/programs"
-              className="inline-flex items-center justify-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+              className="font-montserrat inline-flex items-center justify-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
             >
               View Training Programs
             </Link>
             <Link
               href="/events"
-              className="inline-flex items-center justify-center gap-3 bg-[#FFD100] hover:bg-[#E5BC00] text-[#002B7F] font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+              className="font-montserrat inline-flex items-center justify-center gap-3 bg-[#FFD100] hover:bg-[#E5BC00] text-[#002B7F] font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
             >
               View Upcoming Events
             </Link>

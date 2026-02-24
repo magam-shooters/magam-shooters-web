@@ -165,16 +165,16 @@ export default function CalendarPage() {
         <div className="max-w-6xl mx-auto">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-white hover:text-gray-200 mb-6 transition-colors"
+            className="font-sans inline-flex items-center gap-2 text-white hover:text-gray-200 mb-6 transition-colors"
           >
             <FaArrowLeft />
             <span>Back to Home</span>
           </Link>
           <div className="flex items-center gap-3 mb-4">
             <FaCalendarAlt className="text-4xl" />
-            <h1 className="text-4xl md:text-5xl font-bold">NSSF Competition Calendar</h1>
+            <h1 className="font-montserrat text-4xl md:text-5xl font-bold">NSSF Competition Calendar</h1>
           </div>
-          <p className="text-xl text-white/90 max-w-2xl">
+          <p className="font-sans text-xl text-white/90 max-w-2xl">
             Complete schedule of shooting competitions and championships throughout the year
           </p>
         </div>
@@ -188,7 +188,7 @@ export default function CalendarPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
+                className={`font-montserrat px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
                   selectedCategory === category
                     ? 'bg-[#002B7F] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -198,7 +198,7 @@ export default function CalendarPage() {
               </button>
             ))}
           </div>
-          <p className="text-center mt-4 text-gray-600">
+            <p className="font-sans text-center mt-4 text-gray-600">
             Showing {filteredMatches.length} {filteredMatches.length === 1 ? 'event' : 'events'}
           </p>
         </div>
@@ -242,12 +242,12 @@ export default function CalendarPage() {
 
                 {/* Event Details */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#002B7F] mb-4">
+                  <h3 className="font-montserrat text-2xl font-semibold text-[#002B7F] mb-4">
                     {match.title}
                   </h3>
 
                   {match.description && (
-                    <p className="text-gray-600 mb-4 text-sm">
+                    <p className="font-sans text-gray-600 mb-4 text-sm">
                       {match.description}
                     </p>
                   )}
@@ -256,28 +256,28 @@ export default function CalendarPage() {
                     {/* Time */}
                     <div className="flex items-center text-gray-700">
                       <FaClock className="w-5 h-5 mr-3 text-[#002B7F]" />
-                      <span className="font-medium">{match.time}</span>
+                      <span className="font-montserrat font-medium">{match.time}</span>
                     </div>
 
                     {/* Venue */}
                     <div className="flex items-center text-gray-700">
                       <FaMapMarkerAlt className="w-5 h-5 mr-3 text-[#D71920]" />
-                      <span className="font-medium">{match.venue}</span>
+                      <span className="font-montserrat font-medium">{match.venue}</span>
                     </div>
 
                     {/* Status */}
                     <div className="flex items-center text-gray-700">
                       <FaTrophy className="w-5 h-5 mr-3 text-[#FFD100]" />
-                      <span className="font-medium capitalize">{match.status}</span>
+                      <span className="font-montserrat font-medium capitalize">{match.status}</span>
                     </div>
                   </div>
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <button className="flex-1 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                    <button className="font-montserrat flex-1 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
                       Register Now
                     </button>
-                    <button className="flex-1 bg-gray-100 hover:bg-gray-200 text-[#002B7F] font-semibold py-3 px-6 rounded-lg transition duration-300">
+                    <button className="font-montserrat flex-1 bg-gray-100 hover:bg-gray-200 text-[#002B7F] font-semibold py-3 px-6 rounded-lg transition duration-300">
                       More Info
                     </button>
                   </div>
@@ -290,17 +290,17 @@ export default function CalendarPage() {
           <div className="mt-12 text-center">
             <div className="bg-white rounded-xl shadow-lg p-8 max-w-2xl mx-auto">
               <FaCalendarAlt className="text-5xl text-[#002B7F] mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-[#002B7F] mb-3">
+              <h3 className="font-montserrat text-2xl font-semibold text-[#002B7F] mb-3">
                 Download Full Calendar
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="font-sans text-gray-600 mb-6">
                 Add all NSSF events to your calendar application
               </p>
               <div className="flex gap-4 justify-center">
-                <button className="bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                <button className="font-montserrat bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
                   Download iCal
                 </button>
-                <button className="bg-gray-100 hover:bg-gray-200 text-[#002B7F] font-semibold py-3 px-6 rounded-lg transition duration-300">
+                <button className="font-montserrat bg-gray-100 hover:bg-gray-200 text-[#002B7F] font-semibold py-3 px-6 rounded-lg transition duration-300">
                   Google Calendar
                 </button>
               </div>

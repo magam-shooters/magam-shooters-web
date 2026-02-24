@@ -31,22 +31,22 @@ export default function Home() {
 
       {/* Features Section (Replaced) */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <div className="text-center mb-16">
             <p
-              className="text-sm font-semibold uppercase tracking-wider mb-2"
-              style={{ color: colors.primary.red }}
+              className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2"
+              style={{ color: colors.primary.blue }}
             >
-              About
+              Welcome
             </p>
             <h2
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-4xl md:text-5xl font-montserrat font-bold mb-4"
               style={{ color: colors.primary.navy }}
             >
               NSSF Sri Lanka
             </h2>
           </div>
-          <p className="text-lg text-gray-700 text-justify">
+          <p className="text-lg text-gray-700 text-justify font-sans">
             The National Shooting Sport Federation of Sri Lanka (NSSF-SL) was
             founded on 12th July 2007 in order to govern all shooting
             disciplines coming under the purview of the International Shooting

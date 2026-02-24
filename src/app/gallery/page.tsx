@@ -56,13 +56,13 @@ export default function GalleryPage() {
         <div className="max-w-6xl mx-auto">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-white hover:text-gray-200 mb-6 transition-colors"
+            className="font-sans inline-flex items-center gap-2 text-white hover:text-gray-200 mb-6 transition-colors"
           >
             <FaArrowLeft />
             <span>Back to Home</span>
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">NSSF Gallery</h1>
-          <p className="text-xl text-white/90 max-w-2xl">
+          <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">NSSF Gallery</h1>
+          <p className="font-sans text-xl text-white/90 max-w-2xl">
             Explore moments from our competitions, training programs, and achievements
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function GalleryPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
+                className={`font-montserrat px-6 py-2 rounded-full font-semibold transition-all duration-200 ${
                   selectedCategory === category
                     ? 'bg-[#002B7F] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -86,7 +86,7 @@ export default function GalleryPage() {
               </button>
             ))}
           </div>
-          <p className="text-center mt-4 text-gray-600">
+            <p className="font-sans text-center mt-4 text-gray-600">
             Showing {filteredImages.length} {filteredImages.length === 1 ? 'image' : 'images'}
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function GalleryPage() {
                     <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-2 bg-[#FFD100] text-[#002B7F]">
                       {image.category}
                     </span>
-                    <h3 className="text-white text-lg font-bold">{image.title}</h3>
+                    <h3 className="font-montserrat text-white text-lg font-semibold">{image.title}</h3>
                   </div>
                 </div>
               </button>
@@ -144,7 +144,7 @@ export default function GalleryPage() {
                 className="w-full h-auto rounded-lg max-h-[80vh] object-contain"
               />
               <div className="mt-4 text-white text-center">
-                <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
+                <h3 className="font-montserrat text-2xl font-semibold mb-2">{selectedImage.title}</h3>
                 <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold bg-[#FFD100] text-[#002B7F]">
                   {selectedImage.category}
                 </span>

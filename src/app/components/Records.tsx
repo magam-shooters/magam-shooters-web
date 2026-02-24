@@ -48,13 +48,13 @@ const Records = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Achievements
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
             National Records
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
             Outstanding achievements and record-breaking performances by Sri Lankan athletes
           </p>
         </div>
@@ -78,18 +78,18 @@ const Records = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                <h3 className="text-xl font-montserrat font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                   {record.title}
                 </h3>
                 
-                <div className="space-y-2 mb-4">
+                <div className="space-y-2 mb-4 font-sans">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Holder:</span>
-                    <span className="text-sm font-bold text-[#002B7F]">{record.holder}</span>
+                    <span className="text-sm font-montserrat font-bold text-[#002B7F]">{record.holder}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Score:</span>
-                    <span className="text-2xl font-bold text-[#D71920]">{record.score}</span>
+                    <span className="text-2xl font-montserrat font-bold text-[#00AEEF]">{record.score}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Date:</span>
@@ -103,7 +103,7 @@ const Records = () => {
                 
                 <Link
                   href={`/records/${record.id}`}
-                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-montserrat font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                 >
                   View Details
                   <FaArrowRight className="text-xs" />
@@ -116,7 +116,7 @@ const Records = () => {
         <div className="text-center mt-12">
           <Link
             href="/records"
-            className="inline-flex items-center gap-3 bg-[#FFD100] hover:bg-[#E5BC00] text-[#002B7F] font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#FFD100] hover:bg-[#E5BC00] text-[#002B7F] font-montserrat font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
           >
             View All Records
             <FaArrowRight />

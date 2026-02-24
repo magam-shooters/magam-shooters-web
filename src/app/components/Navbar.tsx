@@ -26,7 +26,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
             <img src="/logo.png" alt="Logo" className="w-6 sm:w-8" />
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-gray-800 group-hover:text-[#FFD100] transition duration-200 luckiest-guy-regular whitespace-nowrap">
+            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-gray-800 group-hover:text-[#FFD100] transition duration-200 font-montserrat font-bold whitespace-nowrap">
               NSSF SriLanka
             </span>
           </Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`px-3 py-2 font-medium transition-all duration-200 rounded-md whitespace-nowrap
+                  className={`px-3 py-2 font-montserrat font-semibold uppercase text-sm transition-all duration-200 rounded-md whitespace-nowrap
                     ${isActive 
                       ? 'bg-[#002B7F] text-white shadow-md' 
                       : 'text-gray-800 hover:text-[#002B7F] hover:bg-gray-100'
@@ -60,7 +60,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className={`px-2 py-1 text-sm font-medium transition-all duration-200 rounded whitespace-nowrap
+                    className={`px-2 py-1 text-sm font-montserrat font-semibold uppercase transition-all duration-200 rounded whitespace-nowrap
                       ${isActive 
                         ? 'bg-[#002B7F] text-white shadow-md' 
                         : 'text-gray-800 hover:text-[#002B7F] hover:bg-gray-100'
@@ -132,7 +132,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`block px-4 py-3 text-base font-medium rounded-md transition-all duration-200 border-l-4
+                  className={`block px-4 py-3 text-base font-montserrat font-semibold uppercase rounded-md transition-all duration-200 border-l-4
                     ${isActive 
                       ? 'bg-[#002B7F] text-white border-[#FFD100] shadow-md' 
                       : 'text-gray-800 hover:text-[#002B7F] hover:bg-gray-100 border-transparent hover:border-[#002B7F]'

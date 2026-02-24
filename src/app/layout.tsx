@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 // @ts-ignore: no type declarations for CSS side-effect import
 import "./globals.css";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700", "900"],
+const montserrat = Montserrat({
+  weight: ["600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-montserrat",
+});
+
+const openSans = Open_Sans({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  variable: "--font-open-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-roboto flex flex-col min-h-screen bg-white`}>
+      <body className={`${montserrat.variable} ${openSans.variable} font-sans flex flex-col min-h-screen bg-white`}>
         <Navbar />
         <main className="flex-grow">
           {children}

@@ -144,13 +144,13 @@ export default function InternationalCalendar() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
             <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Global Events
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
             International Calendar 2026
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
             ISSF World Championships, World Cups, and Continental Championships
           </p>
         </div>
@@ -163,11 +163,11 @@ export default function InternationalCalendar() {
                 onClick={() => toggleMonth(monthData.month)}
                 className="w-full flex items-center justify-between py-3 px-2 hover:bg-gray-50 transition-colors duration-200"
               >
-                <h3 className="text-lg font-bold" style={{ color: colors.primary.navy }}>
+                <h3 className="text-lg font-montserrat font-bold" style={{ color: colors.primary.navy }}>
                   {monthData.month}
                 </h3>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold" style={{ color: colors.primary.navy }}>
+                  <span className="text-xs font-montserrat font-semibold" style={{ color: colors.primary.navy }}>
                     {monthData.eventCount} {monthData.eventCount === 1 ? 'EVENT' : 'EVENTS'}
                   </span>
                   <svg

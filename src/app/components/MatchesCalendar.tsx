@@ -1,47 +1,18 @@
 'use client';
 
 import { colors } from '@/config';
+import { useEffect, useState } from 'react';
 
 interface Match {
-  id: number;
+  _id: string;
   date: string;
   time: string;
   title: string;
   venue: string;
   category: string;
   status: 'upcoming' | 'ongoing' | 'completed';
+  pdfUrl?: string;
 }
-
-// Updated match data for March events
-const matches: Match[] = [
-  {
-    id: 1,
-    date: "2026-03-10", // 2nd week of March (approximate)
-    time: "All Day",
-    title: "NSSF-SL Open Rifle/Pistol Championship",
-    venue: "NSSF Range – Kohuwala & SLNS, Gemunu Range, Welisara",
-    category: "Rifle/Pistol",
-    status: "upcoming"
-  },
-  {
-    id: 2,
-    date: "2026-03-17", // 3rd week of March (approximate)
-    time: "All Day",
-    title: "NSSF Trap Open Championship",
-    venue: "CTSCC Range, Payagala",
-    category: "Trap",
-    status: "upcoming"
-  },
-  {
-    id: 3,
-    date: "2026-03-24", // 4th week of March (approximate)
-    time: "All Day",
-    title: "NSSF Skeet Open Championship",
-    venue: "CTSCC Range, Payagala",
-    category: "Skeet",
-    status: "upcoming"
-  }
-];
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -49,6 +20,18 @@ const formatDate = (dateString: string) => {
 };
 
 export default function MatchesCalendar() {
+  const [matches, setMatches] = useState<Match[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/matches')
+      .then((r) => r.json())
+      .then((data) => { setMatches(Array.isArray(data) ? data.slice(0, 3) : []); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, []);
+
+  if (loading || matches.length === 0) return null;
+
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -69,7 +52,7 @@ export default function MatchesCalendar() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {matches.slice(0, 3).map((match) => (
             <div
-              key={match.id}
+              key={match._id}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 overflow-hidden flex flex-col"
               style={{ minHeight: 340 }}
             >
@@ -121,17 +104,26 @@ export default function MatchesCalendar() {
                 </div>
               </div>
 
-              {/* Register Button */}
+              {/* PDF / Register Button */}
               <div className="p-6 pt-0">
-                <button
-                  className="w-full py-3 rounded-md font-montserrat font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105"
-                  style={{
-                    backgroundColor: colors.primary.yellow,
-                    color: colors.primary.navy
-                  }}
-                >
-                  Register Now
-                </button>
+                {match.pdfUrl ? (
+                  <a
+                    href={match.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 rounded-md font-montserrat font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105 flex items-center justify-center gap-2"
+                    style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
+                  >
+                    📄 Download Programme
+                  </a>
+                ) : (
+                  <button
+                    className="w-full py-3 rounded-md font-montserrat font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105"
+                    style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
+                  >
+                    Register Now
+                  </button>
+                )}
               </div>
             </div>
           ))}

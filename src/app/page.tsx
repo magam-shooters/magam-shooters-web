@@ -7,6 +7,7 @@ import { colors } from "@/config";
 import HeroSection from "./components/HeroSection";
 import InternationalCalendar from "./components/InternationalCalendar";
 import MatchesCalendar from "./components/MatchesCalendar";
+import NewsSection from "./components/NewsSection";
 import Records from "./components/Records";
 import TrainingPrograms from "./components/TrainingPrograms";
 
@@ -71,6 +72,7 @@ export default function Home() {
       <TrainingPrograms />
       <Records />
       <CompetitionResults />
+      <NewsSection />
 
     </div>
   );

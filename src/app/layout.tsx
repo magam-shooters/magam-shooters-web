@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import LayoutWrapper from "./components/LayoutWrapper";
 // @ts-ignore: no type declarations for CSS side-effect import
 import "./globals.css";
 
@@ -30,11 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${openSans.variable} font-sans flex flex-col min-h-screen bg-white`}>
-        <Navbar />
-        <main className="flex-grow">
+        <LayoutWrapper>
           {children}
-        </main>
-        <Footer />
+        </LayoutWrapper>
       </body>
     </html>
   );

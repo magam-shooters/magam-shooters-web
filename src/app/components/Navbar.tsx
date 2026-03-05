@@ -1,5 +1,6 @@
 'use client';
 
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -7,6 +8,7 @@ import { useState } from 'react';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
@@ -49,6 +51,30 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            {/* Login / Admin button */}
+            {session ? (
+              <div className="flex items-center gap-2 ml-2">
+                <Link
+                  href="/admin"
+                  className="px-3 py-2 font-montserrat font-semibold uppercase text-sm rounded-md bg-[#FFD100] text-[#002B7F] hover:bg-yellow-400 transition-all duration-200"
+                >
+                  Admin
+                </Link>
+                <button
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  className="px-3 py-2 font-montserrat font-semibold uppercase text-sm rounded-md border border-gray-300 text-gray-600 hover:bg-gray-100 transition-all duration-200"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link
+                href="/login"
+                className="ml-2 px-4 py-2 font-montserrat font-semibold uppercase text-sm rounded-md bg-[#002B7F] text-white hover:bg-[#001B5F] transition-all duration-200 whitespace-nowrap"
+              >
+                Login
+              </Link>
+            )}
           </div>
 
           {/* Tablet Navigation (hidden on mobile, shown on md-lg) */}
@@ -70,6 +96,15 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+              {session ? (
+                <Link href="/admin" className="px-2 py-1 text-sm font-montserrat font-semibold uppercase rounded bg-[#FFD100] text-[#002B7F] hover:bg-yellow-400 transition-all duration-200">
+                  Admin
+                </Link>
+              ) : (
+                <Link href="/login" className="px-2 py-1 text-sm font-montserrat font-semibold uppercase rounded bg-[#002B7F] text-white hover:bg-[#001B5F] transition-all duration-200">
+                  Login
+                </Link>
+              )}
             </div>
           </div>
 
@@ -143,6 +178,20 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            {session ? (
+              <>
+                <Link href="/admin" onClick={closeMenu} className="block px-4 py-3 text-base font-montserrat font-semibold uppercase rounded-md bg-[#FFD100] text-[#002B7F] border-l-4 border-[#FFD100]">
+                  Admin Panel
+                </Link>
+                <button onClick={() => signOut({ callbackUrl: '/' })} className="block w-full text-left px-4 py-3 text-base font-montserrat font-semibold uppercase rounded-md text-gray-600 hover:bg-gray-100 border-l-4 border-transparent">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link href="/login" onClick={closeMenu} className="block px-4 py-3 text-base font-montserrat font-semibold uppercase rounded-md bg-[#002B7F] text-white border-l-4 border-[#FFD100]">
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>

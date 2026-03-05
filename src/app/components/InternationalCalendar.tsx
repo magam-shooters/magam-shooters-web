@@ -1,13 +1,14 @@
 'use client';
 
 import { colors } from '@/config';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface CalendarEvent {
-  id: number;
+  _id: string;
   dateRange: string;
   title: string;
   location: string;
+  month: string;
 }
 
 interface MonthData {
@@ -130,6 +131,26 @@ const calendarData: MonthData[] = [
 
 export default function InternationalCalendar() {
   const [expandedMonths, setExpandedMonths] = useState<string[]>([]);
+  const [calendarData, setCalendarData] = useState<MonthData[]>([]);
+
+  useEffect(() => {
+    fetch('/api/calendar')
+      .then((r) => r.json())
+      .then((events: CalendarEvent[]) => {
+        if (!Array.isArray(events)) return;
+        const grouped: Record<string, CalendarEvent[]> = {};
+        events.forEach((e) => {
+          if (!grouped[e.month]) grouped[e.month] = [];
+          grouped[e.month].push(e);
+        });
+        const monthOrder = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+        const sorted = monthOrder
+          .filter((m) => grouped[m])
+          .map((m) => ({ month: m, eventCount: grouped[m].length, events: grouped[m] }));
+        setCalendarData(sorted);
+      })
+      .catch(() => {});
+  }, []);
 
   const toggleMonth = (month: string) => {
     setExpandedMonths(prev =>
@@ -138,6 +159,8 @@ export default function InternationalCalendar() {
         : [...prev, month]
     );
   };
+
+  if (calendarData.length === 0) return null;
 
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
@@ -189,11 +212,11 @@ export default function InternationalCalendar() {
                 <div className="px-2 pb-3 space-y-1">
                   {monthData.events.map((event) => (
                     <div
-                      key={event.id}
-                      className="flex items-center justify-between py-2 px-4 bg-gray-50 hover:bg-gray-100 transition-colors duration-200 rounded"
+                      key={event._id}
+                      className="p-2 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors"
                     >
-                      <div className="flex items-center gap-4 flex-1">
-                        <span className="text-xs font-medium text-gray-700 min-w-[130px]">
+                      <div className="flex items-start gap-2">
+                        <span className="text-xs font-semibold text-[#00AEEF] w-20 flex-shrink-0">
                           {event.dateRange}
                         </span>
                         <span className="text-sm font-medium flex-1" style={{ color: colors.primary.navy }}>

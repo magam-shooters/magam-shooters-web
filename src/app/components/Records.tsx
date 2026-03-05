@@ -1,9 +1,12 @@
+'use client';
+
 import { colors } from "@/config";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaTrophy } from "react-icons/fa";
 
 interface Record {
-  id: string;
+  _id: string;
   title: string;
   holder: string;
   score: string;
@@ -13,36 +16,18 @@ interface Record {
 }
 
 const Records = () => {
-  // Sample records data
-  const records: Record[] = [
-    {
-      id: "1",
-      title: "National Record - 10m Air Rifle Men",
-      holder: "Sanjeewa Kumara",
-      score: "633.2",
-      date: "January 15, 2026",
-      location: "NSSF Range, Kohuwala",
-      category: "Rifle"
-    },
-    {
-      id: "2",
-      title: "National Record - 10m Air Pistol Women",
-      holder: "Nadeeka Perera",
-      score: "591.8",
-      date: "December 10, 2025",
-      location: "Colombo Rifle Club",
-      category: "Pistol"
-    },
-    {
-      id: "3",
-      title: "National Record - Trap Men",
-      holder: "Ravi Silva",
-      score: "124/125",
-      date: "November 25, 2025",
-      location: "CTSCC Range, Payagala",
-      category: "Shotgun"
-    }
-  ];
+  const [records, setRecords] = useState<Record[]>([]);
+
+  useEffect(() => {
+    fetch('/api/records')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) setRecords(data);
+      })
+      .catch(() => {});
+  }, []);
+
+  if (records.length === 0) return null;
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -62,7 +47,7 @@ const Records = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {records.map((record) => (
             <article
-              key={record.id}
+              key={record._id}
               className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border-2 border-[#FFD100]"
             >
               <div className="relative h-48 bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex flex-col items-center justify-center">
@@ -102,7 +87,7 @@ const Records = () => {
                 </div>
                 
                 <Link
-                  href={`/records/${record.id}`}
+                  href={`/records/${record._id}`}
                   className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-montserrat font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                 >
                   View Details

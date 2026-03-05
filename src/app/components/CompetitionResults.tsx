@@ -1,9 +1,12 @@
+'use client';
+
 import { colors } from "@/config";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 
 interface CompetitionResult {
-  id: string;
+  _id: string;
   competition: string;
   date: string;
   location: string;
@@ -16,45 +19,18 @@ interface CompetitionResult {
 }
 
 const CompetitionResults = () => {
-  // Sample competition results data
-  const results: CompetitionResult[] = [
-    {
-      id: "1",
-      competition: "NSSF-SL Open Rifle Championship 2026",
-      date: "February 18, 2026",
-      location: "NSSF Range, Kohuwala",
-      category: "10m Air Rifle",
-      winners: {
-        gold: "Sanjeewa Kumara",
-        silver: "Prasad Fernando",
-        bronze: "Kasun Jayasinghe"
-      }
-    },
-    {
-      id: "2",
-      competition: "National Pistol Championship 2026",
-      date: "February 10, 2026",
-      location: "Colombo Rifle Club",
-      category: "10m Air Pistol",
-      winners: {
-        gold: "Nadeeka Perera",
-        silver: "Dilani Silva",
-        bronze: "Chamari Wickramasinghe"
-      }
-    },
-    {
-      id: "3",
-      competition: "Sri Lanka Open Trap Shooting",
-      date: "January 28, 2026",
-      location: "CTSCC Range, Payagala",
-      category: "Trap",
-      winners: {
-        gold: "Ravi Silva",
-        silver: "Mahesh Gunasekara",
-        bronze: "Nuwan Perera"
-      }
-    }
-  ];
+  const [results, setResults] = useState<CompetitionResult[]>([]);
+
+  useEffect(() => {
+    fetch('/api/results')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) setResults(data);
+      })
+      .catch(() => {});
+  }, []);
+
+  if (results.length === 0) return null;
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -74,7 +50,7 @@ const CompetitionResults = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {results.map((result) => (
             <article
-              key={result.id}
+              key={result._id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
               <div className="relative h-48 bg-gradient-to-br from-[#00AEEF] to-[#0088CC] flex items-center justify-center">
@@ -128,7 +104,7 @@ const CompetitionResults = () => {
                 </div>
                 
                 <Link
-                  href={`/results/${result.id}`}
+                  href={`/results/${result._id}`}
                   className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-montserrat font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                 >
                   Full Results

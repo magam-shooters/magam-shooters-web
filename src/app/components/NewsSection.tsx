@@ -1,75 +1,33 @@
+'use client';
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaCalendar, FaUser } from "react-icons/fa";
 import ModernSectionHeader from "./ModernSectionHeader";
 
 interface NewsItem {
-  id: string;
+  _id: string;
   title: string;
   excerpt: string;
   date: string;
   author: string;
-  image: string;
+  imageUrl?: string;
   category: string;
 }
 
 const NewsSection = () => {
-  // Sample news data - this would typically come from a CMS or API
-  const newsItems: NewsItem[] = [
-    {
-      id: "1",
-      title: "NSSF Announces National Championship Results",
-      excerpt: "Outstanding performance by Sri Lankan athletes at the 2026 National Shooting Championship with record-breaking scores.",
-      date: "February 20, 2026",
-      author: "NSSF Media Team",
-      image: "/gallery/news-1.jpg",
-      category: "Championships"
-    },
-    {
-      id: "2", 
-      title: "New Training Facility Opens in Kandy",
-      excerpt: "State-of-the-art shooting range with Olympic-standard facilities now open for athletes across the Central Province.",
-      date: "February 18, 2026",
-      author: "NSSF Development",
-      image: "/gallery/news-2.jpg",
-      category: "Facilities"
-    },
-    {
-      id: "3",
-      title: "Youth Development Program Expansion",
-      excerpt: "NSSF launches comprehensive youth program across 15 schools to identify and nurture young shooting talent.",
-      date: "February 15, 2026",
-      author: "Youth Development Team",
-      image: "/gallery/news-3.jpg",
-      category: "Youth Programs"
-    },
-    {
-      id: "4",
-      title: "International Coach Workshop Series",
-      excerpt: "World-renowned coaches to conduct technical workshops for Sri Lankan trainers and athletes this March.",
-      date: "February 12, 2026",
-      author: "Technical Committee",
-      image: "/gallery/news-4.jpg",
-      category: "Training"
-    },
-    {
-      id: "5",
-      title: "Asian Games Qualification Update",
-      excerpt: "Five Sri Lankan shooters secure qualification spots for the upcoming Asian Games following excellent performances.",
-      date: "February 10, 2026",
-      author: "Selection Committee",
-      image: "/gallery/news-5.jpg",
-      category: "International"
-    },
-    {
-      id: "6",
-      title: "Equipment Modernization Initiative",
-      excerpt: "NSSF invests in cutting-edge electronic scoring systems and training equipment across all affiliated clubs.",
-      date: "February 8, 2026",
-      author: "Technical Department",
-      image: "/gallery/news-6.jpg",
-      category: "Technology"
-    }
-  ];
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    fetch('/api/news')
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data)) setNewsItems(data.slice(0, 6));
+      })
+      .catch(() => {});
+  }, []);
+
+  if (newsItems.length === 0) return null;
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -83,15 +41,24 @@ const NewsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {newsItems.map((news) => (
             <article
-              key={news.id}
+              key={news._id}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
               <div className="relative h-48 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
-                  <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
-                    {news.category}
-                  </span>
-                </div>
+                {news.imageUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={news.imageUrl}
+                    alt={news.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
+                    <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
+                      {news.category}
+                    </span>
+                  </div>
+                )}
                 <div className="absolute top-3 right-3">
                   <span className="bg-white/90 text-[#002B7F] text-xs font-bold px-2 py-1 rounded-full">
                     {news.category}
@@ -120,7 +87,7 @@ const NewsSection = () => {
                 </p>
                 
                 <Link
-                  href={`/news/${news.id}`}
+                  href={`/news/${news._id}`}
                   className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-montserrat font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                 >
                   Read More

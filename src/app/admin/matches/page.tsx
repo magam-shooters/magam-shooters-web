@@ -1,5 +1,7 @@
 'use client';
 
+import { faFilePdf, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import ConfirmDialog from '../components/ConfirmDialog';
 import FileUpload from '../components/FileUpload';
@@ -114,12 +116,12 @@ export default function AdminMatchesPage() {
                     <td className="px-4 py-3 text-gray-600 max-w-xs truncate">{m.venue}</td>
                     <td className="px-4 py-3"><span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${statusColors[m.status]}`}>{m.status}</span></td>
                     <td className="px-4 py-3">
-                      {m.pdfUrl ? <a href={m.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-[#002B7F] underline text-xs">📄 View</a> : <span className="text-gray-400 text-xs">—</span>}
+                      {m.pdfUrl ? <a href={m.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-[#002B7F] underline text-xs"><FontAwesomeIcon icon={faFilePdf} className="w-3 h-3 mr-1" />View</a> : <span className="text-gray-400 text-xs">—</span>}
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex gap-2">
-                        <button onClick={() => openEdit(m)} className="p-1.5 hover:bg-blue-50 rounded text-blue-600" title="Edit">✏️</button>
-                        <button onClick={() => setDeleteId(m._id)} className="p-1.5 hover:bg-red-50 rounded text-red-500" title="Delete">🗑️</button>
+                        <button onClick={() => openEdit(m)} className="p-1.5 hover:bg-gray-100 rounded" title="Edit"><FontAwesomeIcon icon={faPen} className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => setDeleteId(m._id)} className="p-1.5 hover:bg-gray-100 rounded" title="Delete"><FontAwesomeIcon icon={faTrash} className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
                   </tr>

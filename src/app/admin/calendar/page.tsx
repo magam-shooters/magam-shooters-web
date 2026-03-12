@@ -1,5 +1,7 @@
 'use client';
 
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import ConfirmDialog from '../components/ConfirmDialog';
 import Modal from '../components/Modal';
@@ -104,8 +106,8 @@ export default function AdminCalendarPage() {
                     <td className="px-4 py-3 text-gray-600">{e.year}</td>
                     <td className="px-4 py-3">
                       <div className="flex gap-2">
-                        <button onClick={() => openEdit(e)} className="p-1.5 hover:bg-blue-50 rounded text-blue-600">✏️</button>
-                        <button onClick={() => setDeleteId(e._id)} className="p-1.5 hover:bg-red-50 rounded text-red-500">🗑️</button>
+                        <button onClick={() => openEdit(e)} className="p-1.5 hover:bg-gray-100 rounded" title="Edit"><FontAwesomeIcon icon={faPen} className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => setDeleteId(e._id)} className="p-1.5 hover:bg-gray-100 rounded" title="Delete"><FontAwesomeIcon icon={faTrash} className="w-3.5 h-3.5" /></button>
                       </div>
                     </td>
                   </tr>

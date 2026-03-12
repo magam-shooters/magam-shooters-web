@@ -1,19 +1,22 @@
 'use client';
 
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faBullseye, faCalendar, faDumbbell, faHouse, faImage, faMedal, faNewspaper, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const navItems = [
-  { label: 'Dashboard', href: '/admin', icon: '🏠' },
-  { label: 'Upcoming Matches', href: '/admin/matches', icon: '🎯' },
-  { label: 'Intl. Calendar', href: '/admin/calendar', icon: '📅' },
-  { label: 'Training Programs', href: '/admin/training', icon: '🏋️' },
-  { label: 'National Records', href: '/admin/records', icon: '🏆' },
-  { label: 'Competition Results', href: '/admin/results', icon: '🥇' },
-  { label: 'News', href: '/admin/news', icon: '📰' },
-  { label: 'Gallery', href: '/admin/gallery', icon: '🖼️' },
+const navItems: { label: string; href: string; icon: IconDefinition }[] = [
+  { label: 'Dashboard', href: '/admin', icon: faHouse },
+  { label: 'Upcoming Matches', href: '/admin/matches', icon: faBullseye },
+  { label: 'Intl. Calendar', href: '/admin/calendar', icon: faCalendar },
+  { label: 'Training Programs', href: '/admin/training', icon: faDumbbell },
+  { label: 'National Records', href: '/admin/records', icon: faTrophy },
+  { label: 'Competition Results', href: '/admin/results', icon: faMedal },
+  { label: 'News', href: '/admin/news', icon: faNewspaper },
+  { label: 'Gallery', href: '/admin/gallery', icon: faImage },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -42,7 +45,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (status === 'unauthenticated') return null;
 
   return (
-    <div className="flex h-screen bg-gray-100 overflow-hidden">
+    <div className="flex h-screen bg-gray-100 overflow-hidden font-roboto">
       {/* Sidebar */}
       <aside
         className={`fixed inset-y-0 left-0 z-50 w-64 bg-[#002B7F] text-white flex flex-col transform transition-transform duration-300 ease-in-out
@@ -72,7 +75,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     : 'text-white/80 hover:bg-white/10 hover:text-white'
                   }`}
               >
-                <span className="text-lg">{item.icon}</span>
+                <FontAwesomeIcon icon={item.icon} className="w-4 h-4" />
                 {item.label}
               </Link>
             );

@@ -24,5 +24,14 @@ export async function register() {
     } catch (err) {
       console.error('[NSSF] Failed to seed admin user:', err);
     }
+
+    // Configure S3 bucket CORS to allow direct browser uploads (presigned URLs)
+    try {
+      const { configureBucketCors } = await import('@/lib/s3');
+      await configureBucketCors();
+      console.log('[NSSF] S3 CORS configured for direct uploads');
+    } catch (err) {
+      console.warn('[NSSF] S3 CORS setup skipped (may already be configured):', (err as Error).message);
+    }
   }
 }

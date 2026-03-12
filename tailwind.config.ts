@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         montserrat: ["var(--font-montserrat)", "system-ui", "-apple-system", "sans-serif"],
         sans: ["var(--font-open-sans)", "system-ui", "-apple-system", "sans-serif"],
+        roboto: ["var(--font-roboto)", "system-ui", "-apple-system", "sans-serif"],
       },
       colors: {
         // Primary Brand Colors (Core Identity)

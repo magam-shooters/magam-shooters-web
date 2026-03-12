@@ -84,62 +84,59 @@ export default function AdminGalleryPage() {
         </button>
       </div>
 
-      {/* Table */}
-      <div className="bg-white rounded-xl shadow overflow-hidden">
-        {loading ? (
-          <div className="py-20 text-center text-gray-400 font-sans">Loading...</div>
-        ) : items.length === 0 ? (
-          <div className="py-20 text-center text-gray-400 font-sans">No gallery images yet. Add your first one!</div>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead className="bg-gray-50 border-b border-gray-200">
-                <tr>
-                  <th className="text-left px-5 py-3 font-montserrat font-semibold text-gray-600 w-20">Image</th>
-                  <th className="text-left px-5 py-3 font-montserrat font-semibold text-gray-600">Title</th>
-                  <th className="text-left px-5 py-3 font-montserrat font-semibold text-gray-600 hidden md:table-cell">Subtitle</th>
-                  <th className="text-left px-5 py-3 font-montserrat font-semibold text-gray-600 hidden sm:table-cell">Date</th>
-                  <th className="text-right px-5 py-3 font-montserrat font-semibold text-gray-600">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {items.map((item) => (
-                  <tr key={item._id} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-5 py-3">
-                      <img
-                        src={item.imageUrl}
-                        alt={item.title}
-                        className="w-14 h-10 object-cover rounded-lg border border-gray-200"
-                      />
-                    </td>
-                    <td className="px-5 py-3">
-                      <p className="font-montserrat font-semibold text-gray-800">{item.title}</p>
-                    </td>
-                    <td className="px-5 py-3 hidden md:table-cell text-gray-500 font-sans">{item.subtitle || '—'}</td>
-                    <td className="px-5 py-3 hidden sm:table-cell text-gray-500 font-sans">{item.date}</td>
-                    <td className="px-5 py-3 text-right">
-                      <div className="flex items-center justify-end gap-2">
-                        <button
-                          onClick={() => openEdit(item)}
-                          className="px-3 py-1.5 text-xs font-semibold bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          onClick={() => setDeleteId(item._id)}
-                          className="px-3 py-1.5 text-xs font-semibold bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition"
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      {/* Cards Grid - No gaps, image only, hover reveals title/subtitle and edit/delete */}
+      {loading ? (
+        <div className="py-20 text-center text-gray-400 font-sans">Loading...</div>
+      ) : items.length === 0 ? (
+        <div className="py-20 text-center text-gray-400 font-sans">No gallery images yet. Add your first one!</div>
+      ) : (
+        <div className="overflow-hidden">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0">
+            {items.map((item) => (
+              <div 
+                key={item._id} 
+                className="group relative aspect-square overflow-hidden bg-gray-100"
+              >
+                {/* Image */}
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-start justify-start p-4">
+                  {/* Title */}
+                  <p className="font-montserrat font-semibold text-white text-sm text-center leading-tight mb-1 line-clamp-2">
+                    {item.title}
+                  </p>
+                  {/* Subtitle */}
+                  {item.subtitle && (
+                    <p className="text-gray-300 font-sans text-xs text-center mb-4 line-clamp-2">
+                      {item.subtitle}
+                    </p>
+                  )}
+                  {/* Action Buttons */}
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => openEdit(item)}
+                      className="px-3 py-1.5 text-xs font-semibold bg-white text-gray-800 rounded hover:bg-gray-200 transition"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => setDeleteId(item._id)}
+                      className="px-3 py-1.5 text-xs font-semibold bg-red-500 text-white rounded hover:bg-red-600 transition"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Create / Edit Modal */}
       <Modal isOpen={modalOpen} title={editing ? 'Edit Gallery Image' : 'Add Gallery Image'} onClose={() => setModalOpen(false)}>
@@ -200,3 +197,4 @@ export default function AdminGalleryPage() {
     </div>
   );
 }
+

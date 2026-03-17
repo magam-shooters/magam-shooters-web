@@ -53,7 +53,7 @@ export const theme = {
 
   // Font Family Configuration
   fonts: {
-    primary: 'font-roboto', // Roboto font
+    primary: 'font-inter',
     body: 'font-sans',
   },
 

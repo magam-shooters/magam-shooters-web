@@ -69,7 +69,7 @@ export default function ModernSectionHeader({
 
       {/* Title */}
       <h2
-        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-montserrat font-bold leading-tight mb-6"
+        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-montserrat font-extrabold leading-tight mb-6"
         style={{ 
           color: titleColor,
           textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'

@@ -41,7 +41,7 @@ export default function Home() {
               Welcome
             </p>
             <h2
-              className="text-4xl md:text-5xl font-montserrat font-bold mb-4"
+              className="text-5xl md:text-6xl font-montserrat font-extrabold mb-4"
               style={{ color: colors.primary.navy }}
             >
               NSSF Sri Lanka

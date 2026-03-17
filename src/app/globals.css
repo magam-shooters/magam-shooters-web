@@ -2,15 +2,26 @@
 
 @layer base {
   html {
-    font-family: var(--font-open-sans), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
   
   body {
-    font-family: var(--font-open-sans), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
   
-  h1, h2 {
-    font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  h1 {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    @apply text-5xl md:text-6xl font-extrabold;
+  }
+  
+  h2 {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    @apply text-4xl md:text-5xl font-extrabold;
+  }
+  
+  h3 {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    @apply text-3xl md:text-4xl font-bold;
   }
   
   * {

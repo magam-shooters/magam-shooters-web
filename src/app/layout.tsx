@@ -1,25 +1,13 @@
 import type { Metadata } from "next";
-import { Montserrat, Open_Sans, Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import LayoutWrapper from "./components/LayoutWrapper";
 // @ts-ignore: no type declarations for CSS side-effect import
 import "./globals.css";
 
-const montserrat = Montserrat({
-  weight: ["600", "700", "800"],
+const inter = Inter({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-montserrat",
-});
-
-const openSans = Open_Sans({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-});
-
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${openSans.variable} ${roboto.variable} font-sans flex flex-col min-h-screen bg-white`}>
+      <body className={`${inter.variable} font-sans flex flex-col min-h-screen bg-white`} suppressHydrationWarning>
         <LayoutWrapper>
           {children}
         </LayoutWrapper>

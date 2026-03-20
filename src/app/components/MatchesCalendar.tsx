@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import { useEffect, useState } from 'react';
@@ -37,10 +37,10 @@ export default function MatchesCalendar() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Competitions
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Upcoming Matches
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -65,10 +65,10 @@ export default function MatchesCalendar() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span className="font-montserrat font-semibold text-base">{formatDate(match.date)}</span>
+                  <span className="font-sans font-semibold text-base">{formatDate(match.date)}</span>
                 </div>
                 <span
-                  className="px-4 py-1 rounded-full text-sm font-montserrat font-bold"
+                  className="px-4 py-1 rounded-full text-sm font-sans font-bold"
                   style={{
                     backgroundColor: colors.primary.yellow,
                     color: colors.primary.navy
@@ -80,7 +80,7 @@ export default function MatchesCalendar() {
 
               {/* Match Details */}
               <div className="flex-1 flex flex-col p-8 pb-0">
-                <h3 className="text-2xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+                <h3 className="text-2xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
                   {match.title}
                 </h3>
 
@@ -111,14 +111,14 @@ export default function MatchesCalendar() {
                     href={match.pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 rounded-md font-montserrat font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105 flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-md font-sans font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105 flex items-center justify-center gap-2"
                     style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                   >
-                    📄 Download Programme
+                    ðŸ“„ Download Programme
                   </a>
                 ) : (
                   <button
-                    className="w-full py-3 rounded-md font-montserrat font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105"
+                    className="w-full py-3 rounded-md font-sans font-bold text-lg transition-all duration-200 hover:shadow-md hover:scale-105"
                     style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                   >
                     Register Now
@@ -134,7 +134,7 @@ export default function MatchesCalendar() {
           <a
             href="/CALENDAR_2026.pdf"
             download
-            className="px-8 py-4 rounded-lg font-montserrat font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105 inline-flex items-center gap-2"
+            className="px-8 py-4 rounded-lg font-sans font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105 inline-flex items-center gap-2"
             style={{ backgroundColor: colors.primary.navy }}
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,3 +154,4 @@ export default function MatchesCalendar() {
     </section>
   );
 }
+

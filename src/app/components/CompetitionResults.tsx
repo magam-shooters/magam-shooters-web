@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from "@/config";
 import Link from "next/link";
@@ -36,10 +36,10 @@ const CompetitionResults = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Results
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Latest Competition Results
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -57,7 +57,7 @@ const CompetitionResults = () => {
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <div className="w-10 h-10 rounded-full bg-[#FFD100] flex items-center justify-center">
-                      <span className="text-[#002B7F] font-bold text-lg">🥇</span>
+                      <span className="text-[#002B7F] font-bold text-lg">ðŸ¥‡</span>
                     </div>
                   </div>
                   <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
@@ -79,7 +79,7 @@ const CompetitionResults = () => {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-montserrat font-bold text-[#002B7F] mb-2 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                <h3 className="text-xl font-sans font-bold text-[#002B7F] mb-2 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                   {result.competition}
                 </h3>
 
@@ -90,22 +90,22 @@ const CompetitionResults = () => {
                 
                 <div className="space-y-2 mb-4 bg-[#F7FAFF] p-3 rounded-lg border border-[#D6E2FF] font-sans">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">🥇 Gold:</span>
-                    <span className="text-sm font-montserrat font-bold text-[#FFD100]">{result.winners.gold}</span>
+                    <span className="text-sm font-medium text-gray-600">ðŸ¥‡ Gold:</span>
+                    <span className="text-sm font-sans font-bold text-[#FFD100]">{result.winners.gold}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">🥈 Silver:</span>
-                    <span className="text-sm font-montserrat font-bold text-[#002B7F]">{result.winners.silver}</span>
+                    <span className="text-sm font-medium text-gray-600">ðŸ¥ˆ Silver:</span>
+                    <span className="text-sm font-sans font-bold text-[#002B7F]">{result.winners.silver}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">🥉 Bronze:</span>
-                    <span className="text-sm font-montserrat font-bold text-[#002B7F]">{result.winners.bronze}</span>
+                    <span className="text-sm font-medium text-gray-600">ðŸ¥‰ Bronze:</span>
+                    <span className="text-sm font-sans font-bold text-[#002B7F]">{result.winners.bronze}</span>
                   </div>
                 </div>
                 
                 <Link
                   href={`/results/${result._id}`}
-                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-montserrat font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-sans font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                 >
                   Full Results
                   <FaArrowRight className="text-xs" />
@@ -118,7 +118,7 @@ const CompetitionResults = () => {
         <div className="text-center mt-12">
           <Link
             href="/results"
-            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-montserrat font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
           >
             View All Results
             <FaArrowRight />
@@ -130,3 +130,4 @@ const CompetitionResults = () => {
 };
 
 export default CompetitionResults;
+

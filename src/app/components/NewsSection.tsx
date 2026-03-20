@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -78,7 +78,7 @@ const NewsSection = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-montserrat font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                <h3 className="text-xl font-sans font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                   {news.title}
                 </h3>
                 
@@ -88,7 +88,7 @@ const NewsSection = () => {
                 
                 <Link
                   href={`/news/${news._id}`}
-                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-montserrat font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-sans font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                 >
                   Read More
                   <FaArrowRight className="text-xs" />
@@ -101,7 +101,7 @@ const NewsSection = () => {
         <div className="text-center mt-12">
           <Link
             href="/news"
-            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-montserrat font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
           >
             View All News
             <FaArrowRight />

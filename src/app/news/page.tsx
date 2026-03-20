@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -171,7 +171,7 @@ export default function NewsPage() {
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`font-montserrat px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    className={`font-sans px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category
                         ? "bg-[#002B7F] text-white"
                         : "bg-white text-gray-600 hover:bg-gray-100"
@@ -216,7 +216,7 @@ export default function NewsPage() {
                     </div>
                   </div>
                   
-                    <h3 className="font-montserrat text-xl font-semibold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                    <h3 className="font-sans text-xl font-semibold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                     {news.title}
                   </h3>
                   
@@ -226,7 +226,7 @@ export default function NewsPage() {
                   
                   <Link
                     href={`/news/${news.id}`}
-                    className="font-montserrat inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                    className="font-sans inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                   >
                     Read More
                     <FaArrowRight className="text-xs" />

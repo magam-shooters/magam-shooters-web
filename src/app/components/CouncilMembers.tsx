@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import Image from 'next/image';
@@ -87,10 +87,10 @@ export default function CouncilMembers() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Leadership
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Council Members
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -149,11 +149,11 @@ function MemberCard({ member }: { member: CouncilMember }) {
 
       {/* Member Info */}
       <div className="pt-2">
-        <h3 className="text-base font-montserrat font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
+        <h3 className="text-base font-sans font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
           {member.name}
         </h3>
         <p
-          className="text-xs font-montserrat font-semibold uppercase tracking-wide"
+          className="text-xs font-sans font-semibold uppercase tracking-wide"
           style={{ color: '#6B7280' }}
         >
           {member.role}
@@ -162,3 +162,4 @@ function MemberCard({ member }: { member: CouncilMember }) {
     </div>
   );
 }
+

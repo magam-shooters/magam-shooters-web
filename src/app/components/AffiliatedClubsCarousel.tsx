@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import { useRef } from 'react';
@@ -50,10 +50,10 @@ export default function AffiliatedClubsCarousel() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Our Network
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Affiliated Clubs
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -101,13 +101,13 @@ export default function AffiliatedClubsCarousel() {
                 {/* Card Content */}
                 <div className="pt-2 flex flex-col grow">
                   {/* Club Name - Fixed Height */}
-                  <h3 className="text-base font-montserrat font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
+                  <h3 className="text-base font-sans font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
                     {club.name}
                   </h3>
 
                   {/* View Details Link */}
                   <button
-                    className="w-full py-2 rounded-lg font-montserrat font-semibold transition-all duration-200 hover:shadow-md mt-auto"
+                    className="w-full py-2 rounded-lg font-sans font-semibold transition-all duration-200 hover:shadow-md mt-auto"
                     style={{
                       backgroundColor: colors.primary.yellow,
                       color: '#FFFFFF'
@@ -135,7 +135,7 @@ export default function AffiliatedClubsCarousel() {
 
         {/* Scroll Indicator */}
         <div className="text-center mt-6 text-sm text-gray-500">
-          <p className="font-sans">← Scroll to explore all affiliated clubs →</p>
+          <p className="font-sans">â† Scroll to explore all affiliated clubs â†’</p>
         </div>
       </div>
 
@@ -147,3 +147,4 @@ export default function AffiliatedClubsCarousel() {
     </section>
   );
 }
+

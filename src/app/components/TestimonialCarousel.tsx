@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 
@@ -89,7 +89,7 @@ export default function TestimonialCarousel() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">Testimonials</h2>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold text-gray-900">Testimonials</h2>
         </div>
 
         {/* Carousel Container */}
@@ -97,7 +97,7 @@ export default function TestimonialCarousel() {
           {/* Main Testimonial Card */}
           <div className="bg-linear-to-br from-slate-50 to-slate-100 p-8 md:p-12 shadow-lg min-h-80">
             <div className="flex items-center gap-1 mb-6 text-yellow-400 text-2xl">
-              ★★★★★
+              â˜…â˜…â˜…â˜…â˜…
             </div>
             
             <p className="text-gray-700 mb-8 leading-relaxed text-lg italic font-sans">
@@ -107,8 +107,8 @@ export default function TestimonialCarousel() {
             <div className="flex items-center gap-4">
               <div className={`w-16 h-16 bg-linear-to-br ${testimonial.gradient}`}></div>
               <div>
-                <p className="font-montserrat font-semibold text-gray-900 text-lg">{testimonial.author}</p>
-                <p className="text-blue-600 text-sm font-montserrat font-semibold">{testimonial.role}</p>
+                <p className="font-sans font-semibold text-gray-900 text-lg">{testimonial.author}</p>
+                <p className="text-blue-600 text-sm font-sans font-semibold">{testimonial.role}</p>
               </div>
             </div>
           </div>
@@ -154,3 +154,4 @@ export default function TestimonialCarousel() {
     </section>
   );
 }
+

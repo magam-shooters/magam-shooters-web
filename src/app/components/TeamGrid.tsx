@@ -1,4 +1,4 @@
-import { COLORS } from "@/config/designTokens";
+﻿import { COLORS } from "@/config/designTokens";
 
 interface TeamMemberProps {
   readonly name: string;
@@ -33,8 +33,8 @@ function TeamMemberCard({
         />
       </div>
       <div className={`bg-${COLORS.BG_DARK} text-white py-4 sm:py-6 px-6 text-center`}>
-        <h3 className="font-montserrat font-bold text-lg sm:text-xl mb-1">{name}</h3>
-        <p className={`text-${COLORS.PRIMARY_MAIN} text-sm font-montserrat font-semibold ${showBio && bio ? 'mb-3' : ''}`}>
+        <h3 className="font-sans font-bold text-lg sm:text-xl mb-1">{name}</h3>
+        <p className={`text-${COLORS.PRIMARY_MAIN} text-sm font-sans font-semibold ${showBio && bio ? 'mb-3' : ''}`}>
           {role}
         </p>
         {showBio && bio && (
@@ -76,4 +76,5 @@ export default function TeamGrid({
 }
 
 export { TeamMemberCard };
+
 

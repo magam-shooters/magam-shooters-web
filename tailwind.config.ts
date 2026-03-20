@@ -9,9 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
-        montserrat: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
-        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
+        inter: ["var(--font-inter)"],
+        sans: ["var(--font-inter)"],
       },
       colors: {
         // Primary Brand Colors (Core Identity)

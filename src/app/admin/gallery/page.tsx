@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import ConfirmDialog from '../components/ConfirmDialog';
@@ -73,12 +73,12 @@ export default function AdminGalleryPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-2xl font-montserrat font-bold text-gray-800">Gallery</h2>
+          <h2 className="text-2xl font-sans font-bold text-gray-800">Gallery</h2>
           <p className="text-gray-500 text-sm font-sans mt-1">{items.length} image{items.length !== 1 ? 's' : ''}</p>
         </div>
         <button
           onClick={openCreate}
-          className="bg-[#002B7F] text-white px-5 py-2.5 rounded-lg font-montserrat font-semibold text-sm hover:bg-[#001B5F] transition flex items-center gap-2"
+          className="bg-[#002B7F] text-white px-5 py-2.5 rounded-lg font-sans font-semibold text-sm hover:bg-[#001B5F] transition flex items-center gap-2"
         >
           <span className="text-lg leading-none">+</span> Add Image
         </button>
@@ -107,7 +107,7 @@ export default function AdminGalleryPage() {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-start justify-start p-4">
                   {/* Title */}
-                  <p className="font-montserrat font-semibold text-white text-sm text-center leading-tight mb-1 line-clamp-2">
+                  <p className="font-sans font-semibold text-white text-sm text-center leading-tight mb-1 line-clamp-2">
                     {item.title}
                   </p>
                   {/* Subtitle */}
@@ -142,7 +142,7 @@ export default function AdminGalleryPage() {
       <Modal isOpen={modalOpen} title={editing ? 'Edit Gallery Image' : 'Add Gallery Image'} onClose={() => setModalOpen(false)}>
         <div className="space-y-4">
           <div>
-            <label htmlFor="gallery-title" className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Title *</label>
+            <label htmlFor="gallery-title" className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Title *</label>
             <input
               id="gallery-title"
               className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]"
@@ -152,7 +152,7 @@ export default function AdminGalleryPage() {
             />
           </div>
           <div>
-            <label htmlFor="gallery-subtitle" className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Subtitle</label>
+            <label htmlFor="gallery-subtitle" className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Subtitle</label>
             <input
               id="gallery-subtitle"
               className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]"
@@ -162,7 +162,7 @@ export default function AdminGalleryPage() {
             />
           </div>
           <div>
-            <label htmlFor="gallery-date" className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Date *</label>
+            <label htmlFor="gallery-date" className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Date *</label>
             <input
               id="gallery-date"
               type="date"
@@ -197,4 +197,5 @@ export default function AdminGalleryPage() {
     </div>
   );
 }
+
 

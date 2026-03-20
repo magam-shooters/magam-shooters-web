@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -69,7 +69,7 @@ export default function AdminTrainingPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-montserrat font-bold text-gray-800">Training Programs</h2>
+          <h2 className="text-xl font-sans font-bold text-gray-800">Training Programs</h2>
           <p className="text-sm text-gray-500">{programs.length} programs</p>
         </div>
         <button onClick={openCreate} className="px-4 py-2 bg-[#002B7F] text-white rounded-lg font-semibold text-sm hover:bg-[#001B5F] transition">
@@ -84,7 +84,7 @@ export default function AdminTrainingPage() {
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
                   {['Image', 'Title', 'Category', 'Duration', 'Participants', 'Actions'].map(h => (
-                    <th key={h} className="px-4 py-3 text-left font-montserrat font-semibold text-gray-600 text-xs uppercase">{h}</th>
+                    <th key={h} className="px-4 py-3 text-left font-sans font-semibold text-gray-600 text-xs uppercase">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -116,24 +116,24 @@ export default function AdminTrainingPage() {
       <Modal isOpen={modalOpen} title={editing ? 'Edit Training Program' : 'Add Training Program'} onClose={() => setModalOpen(false)} size="lg">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Title *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Title *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Program title" />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Category *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Category *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))} placeholder="e.g. Rifle, Pistol, Youth" />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Excerpt / Description *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Excerpt / Description *</label>
             <textarea rows={3} className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.excerpt} onChange={e => setForm(f => ({ ...f, excerpt: e.target.value }))} placeholder="Short description" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Duration *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Duration *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.duration} onChange={e => setForm(f => ({ ...f, duration: e.target.value }))} placeholder="e.g. 8 Weeks" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Participants *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Participants *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.participants} onChange={e => setForm(f => ({ ...f, participants: e.target.value }))} placeholder="e.g. 15-20 Students" />
             </div>
           </div>
@@ -151,3 +151,4 @@ export default function AdminTrainingPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import { colors } from "@/config";
+﻿import { colors } from "@/config";
 import { IMAGES } from "@/config/images";
 import { FaAward, FaBullseye, FaGlobe, FaHandshake, FaHeart, FaShieldAlt, FaTrophy, FaUsers } from "react-icons/fa";
 import CouncilMembers from "../components/CouncilMembers";
@@ -55,7 +55,7 @@ export default function AboutUs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Our Federation
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-6" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-6" style={{ color: colors.primary.navy }}>
               Leading Sri Lanka's Shooting Sports
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -77,7 +77,7 @@ export default function AboutUs() {
 
             {/* Content */}
             <div>
-              <h3 className="font-montserrat text-3xl font-semibold mb-6" style={{ color: colors.primary.navy }}>Our Mission</h3>
+              <h3 className="font-sans text-3xl font-semibold mb-6" style={{ color: colors.primary.navy }}>Our Mission</h3>
               
               <p className="font-sans text-gray-700 text-lg leading-relaxed mb-6">
                 NSSF Sri Lanka is committed to nurturing shooting sports talent from grassroots to elite levels. We provide comprehensive 
@@ -91,13 +91,13 @@ export default function AboutUs() {
 
               <div className="flex flex-wrap gap-4">
                 <button
-                  className="font-montserrat px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg"
+                  className="font-sans px-6 py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg"
                   style={{ backgroundColor: colors.primary.navy }}
                 >
                   Our Programs
                 </button>
                 <button
-                  className="font-montserrat px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2"
+                  className="font-sans px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2"
                   style={{ borderColor: colors.primary.navy, color: colors.primary.navy }}
                 >
                   View Events
@@ -115,7 +115,7 @@ export default function AboutUs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Our Purpose
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Vision & Mission
             </h2>
           </div>
@@ -130,7 +130,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-montserrat text-2xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Our Vision</h3>
+                  <h3 className="font-sans text-2xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Our Vision</h3>
                   <p className="font-sans text-gray-700 text-base leading-relaxed">
                     To position Sri Lanka as a powerhouse in Asian shooting sports, producing world-class athletes who compete 
                     with excellence on international stages while upholding the highest standards of sportsmanship and integrity.
@@ -148,7 +148,7 @@ export default function AboutUs() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-montserrat text-2xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Our Mission</h3>
+                  <h3 className="font-sans text-2xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Our Mission</h3>
                   <p className="font-sans text-gray-700 text-base leading-relaxed">
                     To develop, promote, and govern shooting sports in Sri Lanka through comprehensive training programs, world-class 
                     facilities, and fostering a culture of excellence that nurtures talent from grassroots to Olympic levels.
@@ -167,7 +167,7 @@ export default function AboutUs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Our Principles
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Core Values
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
@@ -190,7 +190,7 @@ export default function AboutUs() {
                       <value.icon className="text-2xl" style={{ color: iconColor }} />
                     </div>
                   </div>
-                  <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>
+                  <h3 className="font-sans text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>
                     {value.title}
                   </h3>
                   <p className="font-sans text-gray-600 leading-relaxed">
@@ -213,7 +213,7 @@ export default function AboutUs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Our Impact
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Achievements & Milestones
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
@@ -240,7 +240,7 @@ export default function AboutUs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Excellence in Every Shot
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Why Choose NSSF Sri Lanka
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
@@ -257,7 +257,7 @@ export default function AboutUs() {
                 </div>
               </div>
               <div>
-                <h3 className="font-montserrat text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>Olympic-Level Training</h3>
+                <h3 className="font-sans text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>Olympic-Level Training</h3>
                 <p className="font-sans text-gray-600 leading-relaxed">
                   Our world-class coaches have trained multiple Olympic, Asian Games, and Commonwealth Games athletes, 
                   providing expertise in all shooting disciplines.
@@ -273,7 +273,7 @@ export default function AboutUs() {
                 </div>
               </div>
               <div>
-                <h3 className="font-montserrat text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>World-Class Facilities</h3>
+                <h3 className="font-sans text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>World-Class Facilities</h3>
                 <p className="font-sans text-gray-600 leading-relaxed">
                   State-of-the-art shooting ranges equipped with electronic scoring systems, climate control, and 
                   facilities that meet international ISSF standards.
@@ -289,7 +289,7 @@ export default function AboutUs() {
                 </div>
               </div>
               <div>
-                <h3 className="font-montserrat text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>Uncompromising Safety</h3>
+                <h3 className="font-sans text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>Uncompromising Safety</h3>
                 <p className="font-sans text-gray-600 leading-relaxed">
                   Rigorous safety protocols, certified range officers, and comprehensive safety training ensure 
                   a secure environment for all participants.
@@ -305,7 +305,7 @@ export default function AboutUs() {
                 </div>
               </div>
               <div>
-                <h3 className="font-montserrat text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>Nationwide Network</h3>
+                <h3 className="font-sans text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>Nationwide Network</h3>
                 <p className="font-sans text-gray-600 leading-relaxed">
                   With 17 affiliated clubs across Sri Lanka, we provide accessible training and competition 
                   opportunities throughout the country.
@@ -322,20 +322,20 @@ export default function AboutUs() {
       {/* Call to Action Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold mb-6">Join the NSSF Family</h2>
+          <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6">Join the NSSF Family</h2>
           <p className="font-sans text-xl text-gray-300 mb-8 leading-relaxed">
             Be part of Sri Lanka's premier shooting sports federation. Whether you're a beginner or an experienced shooter, 
             NSSF provides the platform, training, and support to achieve your goals.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <button
-              className="font-montserrat px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105"
+              className="font-sans px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105"
               style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
             >
               Become a Member
             </button>
             <button
-              className="font-montserrat px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 border-2 border-white text-white hover:bg-white hover:text-[#002B7F]"
+              className="font-sans px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-xl hover:scale-105 border-2 border-white text-white hover:bg-white hover:text-[#002B7F]"
             >
               Contact Us
             </button>

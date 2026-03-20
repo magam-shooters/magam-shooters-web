@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -49,7 +49,7 @@ export default function GalleryPage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <div className="p-4 w-full">
-                  <h3 className="font-montserrat text-white text-lg font-semibold">{item.title}</h3>
+                  <h3 className="font-sans text-white text-lg font-semibold">{item.title}</h3>
                   {item.subtitle && <p className="text-white/80 text-sm mt-1">{item.subtitle}</p>}
                   <p className="text-white/60 text-xs mt-1">{item.date}</p>
                 </div>
@@ -70,7 +70,7 @@ export default function GalleryPage() {
             <FaArrowLeft />
             <span>Back to Home</span>
           </Link>
-          <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">NSSF Gallery</h1>
+          <h1 className="font-sans text-4xl md:text-5xl font-bold mb-4">NSSF Gallery</h1>
           <p className="font-sans text-xl text-white/90 max-w-2xl">
             Explore moments from our competitions, training programs, and achievements
           </p>
@@ -106,7 +106,7 @@ export default function GalleryPage() {
               className="w-full h-auto rounded-lg max-h-[75vh] object-contain"
             />
             <div className="mt-4 text-white text-center">
-              <h3 className="font-montserrat text-2xl font-semibold mb-1">{selected.title}</h3>
+              <h3 className="font-sans text-2xl font-semibold mb-1">{selected.title}</h3>
               {selected.subtitle && <p className="text-white/70 text-sm mb-2">{selected.subtitle}</p>}
               <span className="inline-block px-4 py-1 rounded-full text-xs font-semibold bg-[#FFD100] text-[#002B7F]">
                 {selected.date}
@@ -118,3 +118,4 @@ export default function GalleryPage() {
     </div>
   );
 }
+

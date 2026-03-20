@@ -1,4 +1,4 @@
-import { colors } from "@/config";
+﻿import { colors } from "@/config";
 import { FaClock, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaPhone, FaQuestionCircle } from "react-icons/fa";
 import PageHero from "../components/PageHero";
 
@@ -20,7 +20,7 @@ export default function Contact() {
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
                 <FaEnvelope className="text-3xl text-white" />
               </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Email</h3>
+              <h3 className="font-sans text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Email</h3>
               <p className="font-sans font-semibold text-sm sm:text-base mb-2" style={{ color: colors.primary.blue }}>info@nssf.lk</p>
               <p className="font-sans text-gray-600 text-sm">www.nssf.lk</p>
             </div>
@@ -30,7 +30,7 @@ export default function Contact() {
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
                 <FaPhone className="text-3xl text-white" />
               </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Phone</h3>
+              <h3 className="font-sans text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Phone</h3>
               <p className="font-sans font-semibold text-sm sm:text-base mb-2" style={{ color: colors.primary.blue }}>+94 11 234 5678</p>
               <p className="font-sans text-gray-600 text-sm">+94 77 123 4567</p>
             </div>
@@ -40,7 +40,7 @@ export default function Contact() {
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                 <FaMapMarkerAlt className="text-3xl text-white" />
               </div>
-              <h3 className="font-montserrat text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Address</h3>
+              <h3 className="font-sans text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Address</h3>
               <p className="font-sans text-gray-600 text-sm leading-relaxed">National Shooting Federation<br />Colombo, Sri Lanka</p>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function Contact() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Get in Touch
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Send Us a Message
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
@@ -66,7 +66,7 @@ export default function Contact() {
             {/* Name, Email, Subject Row */}
             <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
               <div>
-                <label htmlFor="name" className="font-montserrat block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
+                <label htmlFor="name" className="font-sans block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
                   Name <span style={{ color: colors.primary.blue }}>*</span>
                 </label>
                 <input
@@ -79,7 +79,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="font-montserrat block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
+                <label htmlFor="email" className="font-sans block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
                   Email <span style={{ color: colors.primary.blue }}>*</span>
                 </label>
                 <input
@@ -92,7 +92,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="font-montserrat block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
+                <label htmlFor="subject" className="font-sans block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
                   Subject
                 </label>
                 <input
@@ -106,7 +106,7 @@ export default function Contact() {
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="font-montserrat block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
+              <label htmlFor="message" className="font-sans block font-semibold mb-2 text-sm" style={{ color: colors.primary.navy }}>
                 Message <span style={{ color: colors.primary.blue }}>*</span>
               </label>
               <textarea
@@ -122,7 +122,7 @@ export default function Contact() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="font-montserrat flex items-center gap-2 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 hover:shadow-lg uppercase text-sm tracking-wider"
+                className="font-sans flex items-center gap-2 text-white font-bold py-4 px-10 rounded-lg transition-all duration-300 hover:shadow-lg uppercase text-sm tracking-wider"
                 style={{ backgroundColor: colors.primary.navy }}
               >
                 <FaPaperPlane className="text-lg" />
@@ -143,23 +143,23 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                   <FaClock className="text-2xl text-white" />
                 </div>
-                <h3 className="font-montserrat text-2xl font-semibold" style={{ color: colors.primary.navy }}>Hours of Operation</h3>
+                <h3 className="font-sans text-2xl font-semibold" style={{ color: colors.primary.navy }}>Hours of Operation</h3>
               </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center pb-3 border-b border-gray-200">
-                  <span className="font-montserrat font-semibold" style={{ color: colors.primary.navy }}>Monday - Friday:</span>
+                  <span className="font-sans font-semibold" style={{ color: colors.primary.navy }}>Monday - Friday:</span>
                   <span className="font-sans text-gray-700">8:00 AM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-gray-200">
-                  <span className="font-montserrat font-semibold" style={{ color: colors.primary.navy }}>Saturday:</span>
+                  <span className="font-sans font-semibold" style={{ color: colors.primary.navy }}>Saturday:</span>
                   <span className="font-sans text-gray-700">9:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-gray-200">
-                  <span className="font-montserrat font-semibold" style={{ color: colors.primary.navy }}>Sunday:</span>
+                  <span className="font-sans font-semibold" style={{ color: colors.primary.navy }}>Sunday:</span>
                   <span className="font-sans text-gray-700">10:00 AM - 4:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-montserrat font-semibold" style={{ color: colors.primary.navy }}>Public Holidays:</span>
+                  <span className="font-sans font-semibold" style={{ color: colors.primary.navy }}>Public Holidays:</span>
                   <span className="font-sans text-gray-700">Closed</span>
                 </div>
               </div>
@@ -171,19 +171,19 @@ export default function Contact() {
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
                   <FaQuestionCircle className="text-2xl text-white" />
                 </div>
-                <h3 className="font-montserrat text-2xl font-semibold" style={{ color: colors.primary.navy }}>Quick Answers</h3>
+                <h3 className="font-sans text-2xl font-semibold" style={{ color: colors.primary.navy }}>Quick Answers</h3>
               </div>
               <div className="space-y-4">
                 <div>
-                  <p className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>How do I become a member?</p>
+                  <p className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>How do I become a member?</p>
                   <p className="font-sans text-gray-600 text-sm">Contact us via phone or email to discuss membership options. Visit our Clubs page for detailed information on membership plans.</p>
                 </div>
                 <div>
-                  <p className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Do you offer trial sessions?</p>
+                  <p className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>Do you offer trial sessions?</p>
                   <p className="font-sans text-gray-600 text-sm">Yes! We offer introductory sessions for new members. Contact us to schedule your first visit to our facilities.</p>
                 </div>
                 <div>
-                  <p className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>What coaching levels do you provide?</p>
+                  <p className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>What coaching levels do you provide?</p>
                   <p className="font-sans text-gray-600 text-sm">We provide certified coaching for all skill levels, from beginners to Olympic-level athletes, across all shooting disciplines.</p>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function Contact() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Our Location
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Visit Us
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
@@ -225,21 +225,21 @@ export default function Contact() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold mb-6">Have Questions?</h2>
+          <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6">Have Questions?</h2>
           <p className="font-sans text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Our team at NSSF Sri Lanka is ready to help you. Reach out to us anytime and we'll respond as quickly as possible.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+94112345678"
-              className="font-montserrat px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg text-lg"
+              className="font-sans px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg text-lg"
               style={{ backgroundColor: colors.primary.blue }}
             >
               Call Us Now
             </a>
             <a
               href="mailto:info@nssf.lk"
-              className="font-montserrat px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg"
+              className="font-sans px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg"
             >
               Send Email
             </a>
@@ -249,3 +249,4 @@ export default function Contact() {
     </div>
   );
 }
+

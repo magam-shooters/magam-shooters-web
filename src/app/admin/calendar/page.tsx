@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -67,7 +67,7 @@ export default function AdminCalendarPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-montserrat font-bold text-gray-800">International Calendar 2026</h2>
+          <h2 className="text-xl font-sans font-bold text-gray-800">International Calendar 2026</h2>
           <p className="text-sm text-gray-500 font-sans">{events.length} events total</p>
         </div>
         <button onClick={openCreate} className="px-4 py-2 bg-[#002B7F] text-white rounded-lg font-semibold text-sm hover:bg-[#001B5F] transition">
@@ -89,7 +89,7 @@ export default function AdminCalendarPage() {
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
                   {['Month', 'Date Range', 'Title', 'Location', 'Year', 'Actions'].map(h => (
-                    <th key={h} className="px-4 py-3 text-left font-montserrat font-semibold text-gray-600 text-xs uppercase">{h}</th>
+                    <th key={h} className="px-4 py-3 text-left font-sans font-semibold text-gray-600 text-xs uppercase">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -122,26 +122,26 @@ export default function AdminCalendarPage() {
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Month *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Month *</label>
               <select className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.month} onChange={e => setForm(f => ({ ...f, month: e.target.value }))}>
                 {MONTHS.map(m => <option key={m} value={m}>{m}</option>)}
               </select>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Year *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Year *</label>
               <input type="number" className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.year} onChange={e => setForm(f => ({ ...f, year: +e.target.value }))} />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Date Range *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Date Range *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.dateRange} onChange={e => setForm(f => ({ ...f, dateRange: e.target.value }))} placeholder="e.g. 11 - 22 JAN 2026" />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Event Title *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Event Title *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Event title" />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Location *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Location *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.location} onChange={e => setForm(f => ({ ...f, location: e.target.value }))} placeholder="City, Country" />
           </div>
           <div className="flex gap-3 pt-2">
@@ -157,3 +157,4 @@ export default function AdminCalendarPage() {
     </div>
   );
 }
+

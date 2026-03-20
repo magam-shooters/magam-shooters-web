@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 interface ModalProps {
   isOpen: boolean;
@@ -23,7 +23,7 @@ export default function Modal({ isOpen, title, onClose, children, size = 'md' }:
       <div className={`bg-white rounded-2xl shadow-2xl w-full ${sizeClasses[size]} max-h-[90vh] flex flex-col`}>
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 flex-shrink-0">
-          <h2 className="font-montserrat font-bold text-lg text-gray-800">{title}</h2>
+          <h2 className="font-sans font-bold text-lg text-gray-800">{title}</h2>
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -40,3 +40,4 @@ export default function Modal({ isOpen, title, onClose, children, size = 'md' }:
     </div>
   );
 }
+

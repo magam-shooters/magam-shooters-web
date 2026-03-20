@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-montserrat font-bold text-white mb-4">NSSF Sri Lanka</h3>
+            <h3 className="text-xl font-sans font-bold text-white mb-4">NSSF Sri Lanka</h3>
             <p className="text-gray-200 font-sans">
               National Shooting Sports Federation of Sri Lanka - Promoting excellence in shooting sports through world-class training, competitions, and athlete development.
             </p>
@@ -17,7 +17,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-montserrat font-semibold text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-sans font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 font-sans">
               <li>
                 <Link
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-montserrat font-semibold text-white mb-4">Services</h4>
+            <h4 className="text-lg font-sans font-semibold text-white mb-4">Services</h4>
             <ul className="space-y-2 font-sans">
               <li>
                 <Link
@@ -95,7 +95,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-montserrat font-semibold text-white mb-4">Contact</h4>
+            <h4 className="text-lg font-sans font-semibold text-white mb-4">Contact</h4>
                         <ul className="space-y-2 text-gray-200 font-sans">
               <li>
                 <a
@@ -201,3 +201,4 @@ export default function Footer() {
     </footer>
   );
 }
+

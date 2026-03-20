@@ -108,7 +108,7 @@ export default function Clubs() {
   const benefits = [
     {
       icon: FaBullseye,
-      color: colors.primary.blue,
+      color: colors.primary.navy,
       title: "Professional Training",
       description: "Access to certified coaches and structured training programs for all skill levels"
     },
@@ -126,19 +126,19 @@ export default function Clubs() {
     },
     {
       icon: FaTools,
-      color: colors.primary.green,
+      color: colors.primary.yellow,
       title: "Equipment Support",
       description: "Professional equipment maintenance, rental, and purchasing assistance"
     },
     {
       icon: FaChartLine,
-      color: colors.primary.navy,
+      color: colors.primary.blue,
       title: "Progress Tracking",
       description: "Advanced scoring systems to monitor and improve your shooting performance"
     },
     {
       icon: FaShieldAlt,
-      color: colors.primary.blue,
+      color: colors.primary.navy,
       title: "Safety First",
       description: "Comprehensive safety training and strict protocols ensure secure environment"
     }
@@ -168,10 +168,13 @@ export default function Clubs() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {membershipPlans.map((plan) => (
+            {membershipPlans.map((plan, index) => {
+              const planIconColor = [colors.primary.yellow, colors.primary.navy, colors.primary.blue][index % 3];
+
+              return (
               <div
                 key={plan.id}
-                className={`relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 ${
+                className={`relative bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 ${
                   plan.popular 
                     ? 'ring-2 ring-[#FFD100] ring-offset-2' 
                     : 'border border-gray-200'
@@ -197,7 +200,7 @@ export default function Clubs() {
                 <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
-                        <FaCheckCircle className="mt-0.5 flex-shrink-0" style={{ color: colors.primary.green }} />
+                        <FaCheckCircle className="mt-0.5 shrink-0" style={{ color: planIconColor }} />
                         <span className="font-sans text-gray-700 text-sm">{feature}</span>
                       </li>
                     ))}
@@ -218,7 +221,8 @@ export default function Clubs() {
                   {plan.buttonText}
                 </Link>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -251,7 +255,7 @@ export default function Clubs() {
                   <div className="grid grid-cols-2 gap-4">
                     {facility.features.map((feature) => (
                         <div key={feature} className="flex items-center gap-2">
-                          <FaCheckCircle style={{ color: colors.primary.green }} />
+                          <FaCheckCircle style={{ color: colors.primary.blue }} />
                           <span className="font-sans text-gray-700 text-sm">{feature}</span>
                         </div>
                     ))}
@@ -288,7 +292,7 @@ export default function Clubs() {
             {benefits.map((benefit) => {
               const IconComponent = benefit.icon;
               return (
-                <div key={benefit.title} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <div key={benefit.title} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: benefit.color }}>
                     <IconComponent className="text-3xl text-white" />
                   </div>
@@ -314,15 +318,15 @@ export default function Clubs() {
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.blue }}>
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.navy }}>
                   1
                 </div>
                 <h3 className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Apply</h3>
                 <p className="font-sans text-gray-600 text-sm">Submit your membership application with required documents</p>
             </div>
 
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.yellow }}>
                   2
                 </div>
@@ -330,7 +334,7 @@ export default function Clubs() {
                 <p className="font-sans text-gray-600 text-sm">Attend a brief interview and facility orientation session</p>
             </div>
 
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.blue }}>
                   3
                 </div>
@@ -338,8 +342,8 @@ export default function Clubs() {
                 <p className="font-sans text-gray-600 text-sm">Complete mandatory safety training and assessment</p>
             </div>
 
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.green }}>
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.yellow }}>
                   4
                 </div>
                 <h3 className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Welcome</h3>
@@ -362,24 +366,24 @@ export default function Clubs() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                     <FaIdCard className="text-2xl text-white" />
                   </div>
                   <h3 className="font-montserrat text-xl font-semibold" style={{ color: colors.primary.navy }}>Required Documents</h3>
                 </div>
                 <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Valid National ID or Passport</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Police clearance certificate</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Medical fitness certificate</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> 2 passport-size photographs</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Completed application form</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> References from 2 current members (if applicable)</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Valid National ID or Passport</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Police clearance certificate</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Medical fitness certificate</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> 2 passport-size photographs</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Completed application form</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> References from 2 current members (if applicable)</li>
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
                     <FaMedal className="text-2xl text-white" />
@@ -387,12 +391,12 @@ export default function Clubs() {
                   <h3 className="font-montserrat text-xl font-semibold" style={{ color: colors.primary.navy }}>Eligibility Criteria</h3>
                 </div>
                 <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Minimum age: 16 years (with parent consent)</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Clean criminal record</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Physical and mental fitness</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Commitment to safety protocols</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Willingness to complete training programs</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Respect for NSSF rules and regulations</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Minimum age: 16 years (with parent consent)</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Clean criminal record</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Physical and mental fitness</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Commitment to safety protocols</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Willingness to complete training programs</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Respect for NSSF rules and regulations</li>
               </ul>
             </div>
           </div>

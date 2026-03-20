@@ -16,8 +16,8 @@ export default function Contact() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
             {/* Email Card */}
-            <div className="bg-white p-8 rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
+            <div className="bg-white p-8 rounded-xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
                 <FaEnvelope className="text-3xl text-white" />
               </div>
               <h3 className="font-montserrat text-xl font-semibold mb-4" style={{ color: colors.primary.navy }}>Email</h3>
@@ -26,7 +26,7 @@ export default function Contact() {
             </div>
 
             {/* Phone Card */}
-            <div className="bg-white p-8 rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-8 rounded-xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
                 <FaPhone className="text-3xl text-white" />
               </div>
@@ -36,7 +36,7 @@ export default function Contact() {
             </div>
 
             {/* Address Card */}
-            <div className="bg-white p-8 rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-8 rounded-xl text-center shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                 <FaMapMarkerAlt className="text-3xl text-white" />
               </div>
@@ -62,7 +62,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <form className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg space-y-6">
+          <form className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl space-y-6">
             {/* Name, Email, Subject Row */}
             <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
               <div>
@@ -138,9 +138,9 @@ export default function Contact() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Hours of Operation */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                   <FaClock className="text-2xl text-white" />
                 </div>
                 <h3 className="font-montserrat text-2xl font-semibold" style={{ color: colors.primary.navy }}>Hours of Operation</h3>
@@ -166,7 +166,7 @@ export default function Contact() {
             </div>
 
             {/* FAQs */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
                   <FaQuestionCircle className="text-2xl text-white" />

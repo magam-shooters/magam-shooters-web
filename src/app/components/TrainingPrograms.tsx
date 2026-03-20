@@ -47,20 +47,20 @@ const TrainingPrograms = () => {
           {programs.map((program) => (
             <article
               key={program._id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className="card-unified group"
             >
               <div className="relative h-48 overflow-hidden">
                 {program.imageUrl ? (
                   <img src={program.imageUrl} alt={program.title} className="w-full h-full object-cover" />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
+                  <div className="w-full h-full bg-linear-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
                     <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
                       {program.category}
                     </span>
                   </div>
                 )}
                 <div className="absolute top-3 right-3">
-                  <span className="bg-white/90 text-[#002B7F] text-xs font-bold px-2 py-1 rounded-full">
+                  <span className="tag-unified text-xs font-bold px-2 py-1 rounded-full">
                     {program.category}
                   </span>
                 </div>

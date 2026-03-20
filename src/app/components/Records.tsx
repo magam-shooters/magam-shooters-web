@@ -48,9 +48,9 @@ const Records = () => {
           {records.map((record) => (
             <article
               key={record._id}
-              className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group border-2 border-[#FFD100]"
+              className="card-unified group"
             >
-              <div className="relative h-48 bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex flex-col items-center justify-center">
+              <div className="relative h-48 bg-linear-to-br from-[#002B7F] to-[#004A9F] flex flex-col items-center justify-center">
                 <FaTrophy className="text-6xl text-[#FFD100] mb-3" />
                 <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
                   {record.category}
@@ -74,7 +74,7 @@ const Records = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Score:</span>
-                    <span className="text-2xl font-montserrat font-bold text-[#00AEEF]">{record.score}</span>
+                    <span className="text-2xl font-montserrat font-bold text-[#002B7F]">{record.score}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Date:</span>

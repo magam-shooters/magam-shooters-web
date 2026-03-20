@@ -96,7 +96,7 @@ export default function AdminTrainingPage() {
                       {p.imageUrl ? <img src={p.imageUrl} alt={p.title} className="w-14 h-10 object-cover rounded" /> : <div className="w-14 h-10 bg-gray-200 rounded flex items-center justify-center text-gray-400 text-xs">No img</div>}
                     </td>
                     <td className="px-4 py-3 font-medium text-gray-800 max-w-xs truncate">{p.title}</td>
-                    <td className="px-4 py-3"><span className="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs font-semibold">{p.category}</span></td>
+                    <td className="px-4 py-3"><span className="bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100] px-2 py-0.5 rounded-full text-xs font-semibold">{p.category}</span></td>
                     <td className="px-4 py-3 text-gray-600">{p.duration}</td>
                     <td className="px-4 py-3 text-gray-600">{p.participants}</td>
                     <td className="px-4 py-3">

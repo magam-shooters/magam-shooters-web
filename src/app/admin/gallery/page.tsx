@@ -126,7 +126,7 @@ export default function AdminGalleryPage() {
                     </button>
                     <button
                       onClick={() => setDeleteId(item._id)}
-                      className="px-3 py-1.5 text-xs font-semibold bg-red-500 text-white rounded hover:bg-red-600 transition"
+                      className="px-3 py-1.5 text-xs font-semibold bg-[#FFD100] text-[#002B7F] rounded hover:bg-[#F0C500] transition"
                     >
                       Delete
                     </button>

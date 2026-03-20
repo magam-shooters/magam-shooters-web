@@ -24,7 +24,7 @@ function TeamMemberCard({
   className = "" 
 }: TeamMemberProps & { readonly showBio?: boolean }) {
   return (
-    <div className={`bg-white overflow-hidden shadow-md hover:shadow-xl transition duration-300 ${className}`}>
+    <div className={`card-unified ${className}`}>
       <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
         <img
           src={image}

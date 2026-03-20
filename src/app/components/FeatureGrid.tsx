@@ -17,7 +17,7 @@ interface FeatureGridProps {
 
 function FeatureCard({ icon, title, description, className = "" }: FeatureCardProps) {
   return (
-    <div className={`bg-white p-6 sm:p-8 text-center hover:shadow-lg transition duration-300 border border-${COLORS.BORDER_LIGHT} ${className}`}>
+    <div className={`card-unified p-6 sm:p-8 text-center ${className}`}>
       <div className="text-4xl md:text-5xl mb-4">{icon}</div>
       <h3 className={`text-xl sm:text-2xl font-montserrat font-bold text-${COLORS.PRIMARY_MAIN} mb-3`}>
         {title}

@@ -110,11 +110,11 @@ export default function AdminNewsPage() {
                       {n.imageUrl ? <img src={n.imageUrl} alt={n.title} className="w-14 h-10 object-cover rounded" /> : <div className="w-14 h-10 bg-gray-200 rounded flex items-center justify-center text-gray-400 text-xs">No img</div>}
                     </td>
                     <td className="px-4 py-3 font-medium text-gray-800 max-w-xs truncate">{n.title}</td>
-                    <td className="px-4 py-3"><span className="bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-xs font-semibold">{n.category}</span></td>
+                    <td className="px-4 py-3"><span className="bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100] px-2 py-0.5 rounded-full text-xs font-semibold">{n.category}</span></td>
                     <td className="px-4 py-3 text-gray-600">{n.author}</td>
                     <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{n.date}</td>
                     <td className="px-4 py-3">
-                      <button onClick={() => togglePublished(n)} className={`px-2 py-0.5 rounded-full text-xs font-semibold cursor-pointer ${n.published ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+                      <button onClick={() => togglePublished(n)} className={`px-2 py-0.5 rounded-full text-xs font-semibold cursor-pointer ${n.published ? 'bg-[#E6F0FF] text-[#002B7F] border border-[#BBD2FF]' : 'bg-[#FFF7CC] text-[#6B7280] border border-[#FFE070]'}`}>
                         {n.published ? 'Published' : 'Draft'}
                       </button>
                     </td>

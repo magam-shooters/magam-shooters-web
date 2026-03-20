@@ -6,13 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
 const sections: { label: string; href: string; icon: IconDefinition; desc: string; color: string }[] = [
-  { label: 'Upcoming Matches', href: '/admin/matches', icon: faBullseye, desc: 'Manage match schedules & PDFs', color: 'from-blue-500 to-blue-700' },
-  { label: 'International Calendar', href: '/admin/calendar', icon: faCalendar, desc: 'Manage 2026 calendar events', color: 'from-indigo-500 to-indigo-700' },
-  { label: 'Training Programs', href: '/admin/training', icon: faDumbbell, desc: 'Add & update training programs', color: 'from-green-500 to-green-700' },
-  { label: 'National Records', href: '/admin/records', icon: faTrophy, desc: 'Manage national records', color: 'from-yellow-500 to-yellow-700' },
-  { label: 'Competition Results', href: '/admin/results', icon: faMedal, desc: 'Post competition results', color: 'from-orange-500 to-orange-700' },
-  { label: 'News', href: '/admin/news', icon: faNewspaper, desc: 'Create & manage news articles', color: 'from-red-500 to-red-700' },
-  { label: 'Gallery', href: '/admin/gallery', icon: faImage, desc: 'Upload & manage photo gallery', color: 'from-purple-500 to-purple-700' },
+  { label: 'Upcoming Matches', href: '/admin/matches', icon: faBullseye, desc: 'Manage match schedules & PDFs', color: 'from-[#002B7F] to-[#004A9F]' },
+  { label: 'International Calendar', href: '/admin/calendar', icon: faCalendar, desc: 'Manage 2026 calendar events', color: 'from-[#002B7F] to-[#004A9F]' },
+  { label: 'Training Programs', href: '/admin/training', icon: faDumbbell, desc: 'Add & update training programs', color: 'from-[#002B7F] to-[#004A9F]' },
+  { label: 'National Records', href: '/admin/records', icon: faTrophy, desc: 'Manage national records', color: 'from-[#002B7F] to-[#004A9F]' },
+  { label: 'Competition Results', href: '/admin/results', icon: faMedal, desc: 'Post competition results', color: 'from-[#002B7F] to-[#004A9F]' },
+  { label: 'News', href: '/admin/news', icon: faNewspaper, desc: 'Create & manage news articles', color: 'from-[#002B7F] to-[#004A9F]' },
+  { label: 'Gallery', href: '/admin/gallery', icon: faImage, desc: 'Upload & manage photo gallery', color: 'from-[#002B7F] to-[#004A9F]' },
 ];
 
 export default function AdminDashboard() {
@@ -28,7 +28,7 @@ export default function AdminDashboard() {
           <Link
             key={s.href}
             href={s.href}
-            className={`bg-gradient-to-br ${s.color} rounded-2xl p-6 text-white hover:scale-105 transition-transform duration-200 shadow-lg`}
+            className={`bg-linear-to-br ${s.color} rounded-2xl p-6 text-white hover:scale-105 transition-transform duration-200 shadow-lg border-2 border-[#FFD100]`}
           >
             <div className="text-4xl mb-3"><FontAwesomeIcon icon={s.icon} /></div>
             <h3 className="font-montserrat font-bold text-lg mb-1">{s.label}</h3>

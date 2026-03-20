@@ -29,7 +29,7 @@ export default function ConfirmDialog({ isOpen, message, onConfirm, onCancel, lo
           <button
             onClick={onConfirm}
             disabled={loading}
-            className="flex-1 py-2 rounded-lg bg-red-500 text-white font-semibold text-sm hover:bg-red-600 transition disabled:opacity-60"
+            className="flex-1 py-2 rounded-lg bg-[#FFD100] text-[#002B7F] font-semibold text-sm hover:bg-[#F0C500] transition disabled:opacity-60"
           >
             {loading ? 'Deleting...' : 'Delete'}
           </button>

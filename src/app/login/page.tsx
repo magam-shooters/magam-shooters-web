@@ -29,7 +29,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002B7F] to-[#004A9F] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-[#002B7F] to-[#004A9F] px-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
         {/* Logo & Title */}
         <div className="text-center mb-8">
@@ -68,7 +68,7 @@ export default function LoginPage() {
           </div>
 
           {error && (
-            <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg text-sm font-sans">
+            <div className="bg-[#FFF7CC] border border-[#FFD100] text-[#002B7F] px-4 py-3 rounded-lg text-sm font-sans">
               {error}
             </div>
           )}

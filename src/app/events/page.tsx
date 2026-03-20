@@ -119,7 +119,10 @@ export default function Events() {
 
           <div className="grid gap-8">
             {upcomingEvents.map((event) => (
-              <div key={event.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
+              <div
+                key={event.id}
+                className="bg-white border border-gray-200 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
                 <div className="md:flex">
                   {/* Event Image */}
                   <div className="md:w-1/3 relative">
@@ -130,7 +133,7 @@ export default function Events() {
                     />
                     <span 
                       className={`absolute top-4 left-4 px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-full shadow-lg ${
-                        event.status === 'Registration Open' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white'
+                        event.status === 'Registration Open' ? 'bg-[#002B7F] text-white' : 'bg-[#FFD100] text-[#002B7F]'
                       }`}
                     >
                       {event.status}
@@ -227,47 +230,47 @@ export default function Events() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* National Championships */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: colors.primary.yellow }}>
                 <FaTrophy className="text-3xl text-white" />
               </div>
               <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>National Championships</h3>
               <p className="font-sans text-gray-600 mb-4">Premier competitions featuring all Olympic disciplines with national ranking points.</p>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> 10m Air Rifle/Pistol</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> 50m Rifle/Pistol</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> 25m Pistol</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Shotgun Events</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.yellow }} /> 10m Air Rifle/Pistol</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.yellow }} /> 50m Rifle/Pistol</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.yellow }} /> 25m Pistol</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.yellow }} /> Shotgun Events</li>
               </ul>
             </div>
 
             {/* Youth Development */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: colors.primary.blue }}>
+            <div className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: colors.primary.navy }}>
                 <FaUsers className="text-3xl text-white" />
               </div>
               <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>Youth Development</h3>
               <p className="font-sans text-gray-600 mb-4">Specialized competitions for young shooters under 21 years old.</p>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Junior Categories</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Coaching Clinics</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Skills Development</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Mentorship Programs</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.navy }} /> Junior Categories</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.navy }} /> Coaching Clinics</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.navy }} /> Skills Development</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.navy }} /> Mentorship Programs</li>
               </ul>
             </div>
 
             {/* Club Competitions */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: colors.primary.blue }}>
                 <FaMedal className="text-3xl text-white" />
               </div>
               <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>Club Competitions</h3>
               <p className="font-sans text-gray-600 mb-4">Inter-club matches and team events fostering community spirit.</p>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Team Championships</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Monthly Club Matches</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Fun Shooting Events</li>
-                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.green }} /> Member Tournaments</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.blue }} /> Team Championships</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.blue }} /> Monthly Club Matches</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.blue }} /> Fun Shooting Events</li>
+                <li className="flex items-center gap-2"><FaCheckCircle style={{ color: colors.primary.blue }} /> Member Tournaments</li>
               </ul>
             </div>
           </div>
@@ -287,10 +290,13 @@ export default function Events() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {pastEvents.map((event) => (
-              <div key={event.id} className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+            {pastEvents.map((event, index) => {
+              const iconColor = [colors.primary.yellow, colors.primary.navy, colors.primary.blue][index % 3];
+
+              return (
+              <div key={event.id} className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 <div className="flex items-center gap-2 mb-4">
-                  <FaAward className="text-2xl" style={{ color: colors.primary.yellow }} />
+                  <FaAward className="text-2xl" style={{ color: iconColor }} />
                   <h3 className="font-montserrat text-lg font-semibold" style={{ color: colors.primary.navy }}>{event.title}</h3>
                 </div>
                 <p className="font-montserrat text-sm font-semibold mb-4" style={{ color: colors.primary.blue }}>{event.date}</p>
@@ -314,7 +320,8 @@ export default function Events() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -332,9 +339,9 @@ export default function Events() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                   <FaCheckCircle className="text-2xl text-white" />
                 </div>
                 <h3 className="font-montserrat text-xl font-semibold" style={{ color: colors.primary.navy }}>Eligibility Requirements</h3>
@@ -348,9 +355,9 @@ export default function Events() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
                   <FaCalendarAlt className="text-2xl text-white" />
                 </div>
                 <h3 className="font-montserrat text-xl font-semibold" style={{ color: colors.primary.navy }}>Registration Process</h3>
@@ -364,7 +371,7 @@ export default function Events() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
                   <FaShieldAlt className="text-2xl text-white" />
@@ -380,7 +387,7 @@ export default function Events() {
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                   <FaTrophy className="text-2xl text-white" />

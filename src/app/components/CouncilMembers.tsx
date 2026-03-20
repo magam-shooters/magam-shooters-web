@@ -114,24 +114,31 @@ function MemberCard({ member }: { member: CouncilMember }) {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
+      className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 min-h-[310px] border border-gray-200 p-2 flex flex-col"
     >
       {/* Member Avatar/Image */}
-      <div className="relative h-48 overflow-hidden flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+      <div
+        className="relative h-60 overflow-hidden rounded-2xl flex items-center justify-center border"
+        style={{
+          backgroundColor: '#F8FAFC',
+          borderColor: '#E5E7EB'
+        }}
+      >
         {member.image && !imageError ? (
           <div className="relative w-full h-full">
             <Image
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover object-[center_20%] scale-100"
+              className="object-cover object-[center_20%]"
               onError={() => setImageError(true)}
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
             />
           </div>
         ) : (
           <svg
-            className="w-20 h-20 text-white opacity-70"
+            className="w-20 h-20 opacity-70"
+            style={{ color: colors.primary.navy }}
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -141,13 +148,13 @@ function MemberCard({ member }: { member: CouncilMember }) {
       </div>
 
       {/* Member Info */}
-      <div className="p-4">
+      <div className="pt-2">
         <h3 className="text-base font-montserrat font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
           {member.name}
         </h3>
         <p
           className="text-xs font-montserrat font-semibold uppercase tracking-wide"
-          style={{ color: colors.primary.blue }}
+          style={{ color: '#6B7280' }}
         >
           {member.role}
         </p>

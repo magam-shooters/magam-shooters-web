@@ -53,7 +53,7 @@ export default function MatchesCalendar() {
           {matches.slice(0, 3).map((match) => (
             <div
               key={match._id}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 overflow-hidden flex flex-col"
+              className="card-unified flex flex-col"
               style={{ minHeight: 340 }}
             >
               {/* Date Header */}

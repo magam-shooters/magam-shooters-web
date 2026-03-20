@@ -200,7 +200,7 @@ export default function FileUpload({ label, accept, folder, currentUrl, onUpload
         )}
       </div>
       {errorMsg && (
-        <p className="mt-1.5 text-xs text-red-600 font-sans">{errorMsg}</p>
+        <p className="mt-1.5 text-xs text-[#002B7F] font-sans">{errorMsg}</p>
       )}
       <input
         ref={inputRef}

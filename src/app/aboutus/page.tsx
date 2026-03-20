@@ -122,7 +122,7 @@ export default function AboutUs() {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Vision Card */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
@@ -140,7 +140,7 @@ export default function AboutUs() {
             </div>
 
             {/* Mission Card */}
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
@@ -176,24 +176,29 @@ export default function AboutUs() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreValues.map((value) => (
-              <div
-                key={value.title}
-                className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="mb-6">
-                  <div className="w-14 h-14 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
-                    <value.icon className="text-2xl" style={{ color: colors.primary.navy }} />
+            {coreValues.map((value, index) => {
+              const iconBg = [colors.primary.yellow, colors.primary.navy, colors.primary.blue][index % 3];
+              const iconColor = '#FFFFFF';
+
+              return (
+                <div
+                  key={value.title}
+                  className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                >
+                  <div className="mb-6">
+                    <div className="w-14 h-14 rounded-lg flex items-center justify-center" style={{ backgroundColor: iconBg }}>
+                      <value.icon className="text-2xl" style={{ color: iconColor }} />
+                    </div>
                   </div>
+                  <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>
+                    {value.title}
+                  </h3>
+                  <p className="font-sans text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>
-                  {value.title}
-                </h3>
-                <p className="font-sans text-gray-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -245,9 +250,9 @@ export default function AboutUs() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Feature 1 */}
-            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                   <FaAward className="text-2xl text-white" />
                 </div>
               </div>
@@ -261,9 +266,9 @@ export default function AboutUs() {
             </div>
 
             {/* Feature 2 */}
-            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
                   <FaBullseye className="text-2xl text-white" />
                 </div>
               </div>
@@ -277,7 +282,7 @@ export default function AboutUs() {
             </div>
 
             {/* Feature 3 */}
-            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
                   <FaShieldAlt className="text-2xl text-white" />
@@ -293,9 +298,9 @@ export default function AboutUs() {
             </div>
 
             {/* Feature 4 */}
-            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+            <div className="flex gap-6 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                   <FaUsers className="text-2xl text-white" />
                 </div>
               </div>

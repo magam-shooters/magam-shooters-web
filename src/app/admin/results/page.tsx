@@ -93,7 +93,7 @@ export default function AdminResultsPage() {
                 {results.map((r) => (
                   <tr key={r._id} className="hover:bg-gray-50">
                     <td className="px-4 py-3 font-medium text-gray-800 max-w-xs truncate">{r.competition}</td>
-                    <td className="px-4 py-3"><span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full text-xs font-semibold">{r.category}</span></td>
+                    <td className="px-4 py-3"><span className="bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100] px-2 py-0.5 rounded-full text-xs font-semibold">{r.category}</span></td>
                     <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{r.date}</td>
                     <td className="px-4 py-3 text-gray-600 max-w-xs truncate">{r.location}</td>
                     <td className="px-4 py-3 text-gray-700">{r.winners.gold}</td>

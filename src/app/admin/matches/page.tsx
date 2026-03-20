@@ -74,8 +74,8 @@ export default function AdminMatchesPage() {
   };
 
   const statusColors: Record<string, string> = {
-    upcoming: 'bg-blue-100 text-blue-700',
-    ongoing: 'bg-green-100 text-green-700',
+    upcoming: 'bg-[#E6F0FF] text-[#002B7F] border border-[#BBD2FF]',
+    ongoing: 'bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100]',
     completed: 'bg-gray-100 text-gray-600',
   };
 

@@ -99,7 +99,7 @@ export default function AdminCalendarPage() {
                 )}
                 {filtered.map((e) => (
                   <tr key={e._id} className="hover:bg-gray-50">
-                    <td className="px-4 py-3"><span className="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-xs font-semibold">{e.month}</span></td>
+                    <td className="px-4 py-3"><span className="bg-[#E6F0FF] text-[#002B7F] border border-[#BBD2FF] px-2 py-0.5 rounded-full text-xs font-semibold">{e.month}</span></td>
                     <td className="px-4 py-3 text-gray-700 whitespace-nowrap">{e.dateRange}</td>
                     <td className="px-4 py-3 text-gray-800 font-medium max-w-xs truncate">{e.title}</td>
                     <td className="px-4 py-3 text-gray-600">{e.location}</td>

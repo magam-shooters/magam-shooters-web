@@ -1,4 +1,4 @@
-import { colors } from "@/config";
+﻿import { colors } from "@/config";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight, FaClock, FaUsers } from "react-icons/fa";
 
@@ -154,7 +154,7 @@ export default function ProgramsPage() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2 text-[#FFD100]">
               Training
             </p>
-            <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-sans text-4xl md:text-5xl font-bold mb-4">
               Our Training Programs
             </h1>
             <p className="font-sans text-lg text-white/90 max-w-2xl mx-auto">
@@ -198,7 +198,7 @@ export default function ProgramsPage() {
                     </div>
                   </div>
 
-                  <h3 className="font-montserrat text-xl font-semibold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                  <h3 className="font-sans text-xl font-semibold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                     {program.title}
                   </h3>
 
@@ -207,11 +207,11 @@ export default function ProgramsPage() {
                   </p>
 
                   <div className="mb-4">
-                    <h4 className="font-montserrat text-sm font-semibold text-[#002B7F] mb-2">Key Benefits:</h4>
+                    <h4 className="font-sans text-sm font-semibold text-[#002B7F] mb-2">Key Benefits:</h4>
                     <ul className="space-y-1">
                       {program.benefits.slice(0, 3).map((benefit, index) => (
                         <li key={index} className="text-xs text-gray-600 flex items-start gap-2">
-                          <span className="text-[#FFD100] mt-0.5">✓</span>
+                          <span className="text-[#FFD100] mt-0.5">âœ“</span>
                           <span>{benefit}</span>
                         </li>
                       ))}
@@ -220,7 +220,7 @@ export default function ProgramsPage() {
 
                   <Link
                     href={`/programs/${program.id}`}
-                    className="font-montserrat inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                    className="font-sans inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                   >
                     Learn More
                     <FaArrowRight className="text-xs" />
@@ -235,7 +235,7 @@ export default function ProgramsPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-montserrat text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="font-sans text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
             Ready to Start Your Journey?
           </h2>
           <p className="font-sans text-lg text-gray-600 mb-8">
@@ -243,7 +243,7 @@ export default function ProgramsPage() {
           </p>
           <Link
             href="/contact"
-            className="font-montserrat inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+            className="font-sans inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
           >
             Contact Us
             <FaArrowRight />
@@ -253,3 +253,4 @@ export default function ProgramsPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import { MdArrowForward } from "react-icons/md";
+﻿import { MdArrowForward } from "react-icons/md";
 
 interface ModernSectionHeaderProps {
   readonly title: string;
@@ -60,7 +60,7 @@ export default function ModernSectionHeader({
       {/* Subtitle */}
       {subtitle && (
         <p
-          className="text-sm font-montserrat font-bold uppercase tracking-[0.2em] mb-4"
+          className="text-sm font-sans font-bold uppercase tracking-[0.2em] mb-4"
           style={{ color: subtitleColor }}
         >
           {subtitle}
@@ -69,10 +69,9 @@ export default function ModernSectionHeader({
 
       {/* Title */}
       <h2
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-montserrat font-extrabold leading-tight mb-6"
+        className="text-4xl md:text-5xl font-sans font-bold leading-tight mb-6"
         style={{ 
-          color: titleColor,
-          textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+          color: titleColor
         }}
       >
         {title}

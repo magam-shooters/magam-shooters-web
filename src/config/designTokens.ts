@@ -8,11 +8,11 @@ export const COLORS = {
   PRIMARY_MAIN: '#002B7F',  // Navy Blue - Main brand color
   PRIMARY_DARK: '#001A4D',  // Darker navy for accents
 
-  // Secondary Palette (Olympic Ring Colors)
-  SECONDARY_RED: '#D71920',     // Red - Passion, energy (buttons, hover effects)
-  SECONDARY_GREEN: '#007A3D',   // Green - Growth, harmony (success indicators, sections)
-  SECONDARY_YELLOW: '#FFD100',  // Yellow - Optimism, visibility (banners, CTAs)
-  SECONDARY_BLUE: '#00AEEF',    // Light Blue - Sport freshness, balance (links, subheadings)
+  // Secondary Palette (Blue/Yellow System)
+  SECONDARY_RED: '#FFD100',     // Kept key for backward compatibility; mapped to yellow
+  SECONDARY_GREEN: '#004A9F',   // Kept key for backward compatibility; mapped to blue
+  SECONDARY_YELLOW: '#FFD100',  // Yellow - visibility (banners, CTAs)
+  SECONDARY_BLUE: '#004A9F',    // Brand blue alternative for accents
 
   // Core Colors
   BLACK: '#000000',   // Black - Texts & outlines
@@ -110,7 +110,7 @@ export const SHADOWS = {
 export const PATTERNS = {
   // Buttons
   BTN_PRIMARY: `bg-${COLORS.PRIMARY_MAIN} hover:bg-${COLORS.PRIMARY_DARK} text-${COLORS.WHITE} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
-  BTN_SECONDARY: `bg-${COLORS.SECONDARY_RED} hover:bg-red-800 text-${COLORS.WHITE} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
+  BTN_SECONDARY: `bg-${COLORS.SECONDARY_YELLOW} hover:bg-yellow-500 text-${COLORS.PRIMARY_MAIN} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
   BTN_ACCENT: `bg-${COLORS.SECONDARY_YELLOW} hover:bg-yellow-500 text-${COLORS.BLACK} ${FONTS.WEIGHT_SEMIBOLD} py-2 px-4 ${TRANSITIONS.NORMAL}`,
 
   // Cards

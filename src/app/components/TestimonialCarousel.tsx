@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 
@@ -25,32 +25,32 @@ const testimonials: readonly Testimonial[] = [
     text: "The videography work was exceptional! They captured every moment beautifully and the editing was flawless. We couldn't be happier with the final product.",
     author: 'Sarah Johnson',
     role: 'Wedding Coordinator',
-    color: 'pink',
-    gradient: 'from-pink-400 to-pink-600',
+    color: 'blue',
+    gradient: 'from-blue-400 to-blue-600',
   },
   {
     id: 'testimonial-3',
     text: "Professional service from start to finish. The team understood our vision and delivered beyond expectations. We'll definitely work with them again!",
     author: 'Michael Chen',
     role: 'Corporate Manager',
-    color: 'green',
-    gradient: 'from-green-400 to-green-600',
+    color: 'blue',
+    gradient: 'from-blue-400 to-blue-600',
   },
   {
     id: 'testimonial-4',
     text: "Outstanding attention to detail and professional approach. The photography portfolio they created has become our best marketing asset. Truly impressive work!",
     author: 'Emma Davis',
     role: 'Marketing Director',
-    color: 'purple',
-    gradient: 'from-purple-400 to-purple-600',
+    color: 'blue',
+    gradient: 'from-blue-400 to-blue-600',
   },
   {
     id: 'testimonial-5',
     text: "Best investment we made for our events. The team is responsive, creative, and delivers content that exceeds our expectations every single time.",
     author: 'James Wilson',
     role: 'Event Manager',
-    color: 'indigo',
-    gradient: 'from-indigo-400 to-indigo-600',
+    color: 'blue',
+    gradient: 'from-blue-400 to-blue-600',
   },
 ];
 
@@ -89,15 +89,15 @@ export default function TestimonialCarousel() {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900">Testimonials</h2>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold text-gray-900">Testimonials</h2>
         </div>
 
         {/* Carousel Container */}
         <div className="relative">
           {/* Main Testimonial Card */}
-          <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-8 md:p-12 shadow-lg min-h-80">
+          <div className="bg-linear-to-br from-slate-50 to-slate-100 p-8 md:p-12 shadow-lg min-h-80">
             <div className="flex items-center gap-1 mb-6 text-yellow-400 text-2xl">
-              ★★★★★
+              â˜…â˜…â˜…â˜…â˜…
             </div>
             
             <p className="text-gray-700 mb-8 leading-relaxed text-lg italic font-sans">
@@ -105,10 +105,10 @@ export default function TestimonialCarousel() {
             </p>
 
             <div className="flex items-center gap-4">
-              <div className={`w-16 h-16 bg-gradient-to-br ${testimonial.gradient}`}></div>
+              <div className={`w-16 h-16 bg-linear-to-br ${testimonial.gradient}`}></div>
               <div>
-                <p className="font-montserrat font-semibold text-gray-900 text-lg">{testimonial.author}</p>
-                <p className="text-blue-600 text-sm font-montserrat font-semibold">{testimonial.role}</p>
+                <p className="font-sans font-semibold text-gray-900 text-lg">{testimonial.author}</p>
+                <p className="text-blue-600 text-sm font-sans font-semibold">{testimonial.role}</p>
               </div>
             </div>
           </div>
@@ -154,3 +154,4 @@ export default function TestimonialCarousel() {
     </section>
   );
 }
+

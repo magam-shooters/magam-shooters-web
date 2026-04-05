@@ -546,11 +546,11 @@ export default function NewsArticle() {
         
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-montserrat text-2xl font-semibold text-gray-800 mb-4">Article Not Found</h1>
+            <h1 className="font-sans text-2xl font-semibold text-gray-800 mb-4">Article Not Found</h1>
             <p className="font-sans text-gray-600 mb-8">The news article you're looking for doesn't exist or may have been removed.</p>
             <Link
               href="/news"
-              className="font-montserrat inline-flex items-center gap-2 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
+              className="font-sans inline-flex items-center gap-2 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
             >
               <FaArrowLeft />
               Back to News
@@ -606,7 +606,7 @@ export default function NewsArticle() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="flex items-center gap-4">
                 <FaShare className="text-gray-600" />
-                <span className="font-montserrat text-gray-700 font-medium">Share this article:</span>
+                <span className="font-sans text-gray-700 font-medium">Share this article:</span>
                 <div className="flex items-center gap-3">
                   <button className="p-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors">
                     <FaFacebook />
@@ -622,7 +622,7 @@ export default function NewsArticle() {
               
               <Link
                 href="/news"
-                className="font-montserrat inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold transition-colors"
+                className="font-sans inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold transition-colors"
               >
                 <FaArrowLeft />
                 Back to All News
@@ -632,7 +632,7 @@ export default function NewsArticle() {
 
           {/* Related Articles */}
           <div className="mt-16 pt-8 border-t border-gray-200">
-            <h3 className="font-montserrat text-2xl font-semibold text-[#002B7F] mb-6">Related News</h3>
+            <h3 className="font-sans text-2xl font-semibold text-[#002B7F] mb-6">Related News</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {Object.values(newsData)
                 .filter(item => item.id !== news.id && item.category === news.category)
@@ -644,7 +644,7 @@ export default function NewsArticle() {
                     className="block bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow p-6"
                   >
                     <div className="font-sans text-sm text-gray-500 mb-2">{relatedNews.date}</div>
-                    <h4 className="font-montserrat font-semibold text-[#002B7F] mb-2 line-clamp-2">{relatedNews.title}</h4>
+                    <h4 className="font-sans font-semibold text-[#002B7F] mb-2 line-clamp-2">{relatedNews.title}</h4>
                     <p className="font-sans text-gray-600 text-sm line-clamp-2">{relatedNews.excerpt}</p>
                   </Link>
                 ))}

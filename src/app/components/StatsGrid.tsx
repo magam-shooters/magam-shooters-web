@@ -20,8 +20,8 @@ function StatCard({ value, label, className = "" }: StatCardProps) {
         background: `linear-gradient(to bottom right, ${colors.primary.navy}, ${colors.primary.blue})` 
       }}
     >
-      <div className="text-4xl md:text-5xl font-bold mb-2">{value}</div>
-      <p className="text-white/90 text-sm sm:text-base font-semibold">{label}</p>
+      <div className="text-4xl md:text-5xl font-montserrat font-bold mb-2">{value}</div>
+      <p className="text-white/90 text-sm sm:text-base font-montserrat font-semibold">{label}</p>
     </div>
   );
 }

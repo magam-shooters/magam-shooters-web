@@ -21,16 +21,16 @@ export default function SectionHeader({
 
   return (
     <div className={`mb-12 md:mb-16 ${alignmentClass} ${className}`}>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-black mb-3">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg font-extrabold text-black mb-2">
+        <p className="text-lg font-montserrat font-extrabold text-black mb-2">
           {subtitle}
         </p>
       )}
       {description && (
-        <p className="text-lg font-medium text-black max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg font-sans font-normal text-black max-w-3xl mx-auto leading-relaxed">
           {description}
         </p>
       )}

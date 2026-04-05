@@ -31,13 +31,13 @@ export default function Features({ features, className = '' }: Readonly<Features
               </div>
 
               {/* Title */}
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-1 sm:mb-2">
+              <h3 className="text-sm sm:text-base md:text-lg font-montserrat font-semibold text-gray-800 mb-1 sm:mb-2">
                 {feature.title}
               </h3>
 
               {/* Description */}
               {feature.description && (
-                <p className="text-xs sm:text-sm text-gray-600">{feature.description}</p>
+                <p className="text-xs sm:text-sm text-gray-600 font-sans">{feature.description}</p>
               )}
             </div>
           ))}

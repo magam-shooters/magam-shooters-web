@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import { Inter } from "next/font/google";
+import LayoutWrapper from "./components/LayoutWrapper";
 // @ts-ignore: no type declarations for CSS side-effect import
 import "./globals.css";
 
-const roboto = Roboto({
-  weight: ["300", "400", "500", "700", "900"],
+const inter = Inter({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -23,12 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} font-roboto flex flex-col min-h-screen bg-white`}>
-        <Navbar />
-        <main className="flex-grow">
+      <body className={`${inter.variable} font-sans flex flex-col min-h-screen bg-white`} suppressHydrationWarning>
+        <LayoutWrapper>
           {children}
-        </main>
-        <Footer />
+        </LayoutWrapper>
       </body>
     </html>
   );

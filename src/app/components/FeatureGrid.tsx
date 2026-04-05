@@ -1,6 +1,6 @@
 
-import { ReactNode } from "react";
 import { COLORS } from "@/config/designTokens";
+import { ReactNode } from "react";
 
 interface FeatureCardProps {
   readonly icon: ReactNode;
@@ -19,10 +19,10 @@ function FeatureCard({ icon, title, description, className = "" }: FeatureCardPr
   return (
     <div className={`bg-white p-6 sm:p-8 text-center hover:shadow-lg transition duration-300 border border-${COLORS.BORDER_LIGHT} ${className}`}>
       <div className="text-4xl md:text-5xl mb-4">{icon}</div>
-      <h3 className={`text-xl sm:text-2xl font-bold text-${COLORS.PRIMARY_MAIN} mb-3`}>
+      <h3 className={`text-xl sm:text-2xl font-montserrat font-bold text-${COLORS.PRIMARY_MAIN} mb-3`}>
         {title}
       </h3>
-      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+      <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-sans">
         {description}
       </p>
     </div>
@@ -55,3 +55,4 @@ export default function FeatureGrid({
 }
 
 export { FeatureCard };
+

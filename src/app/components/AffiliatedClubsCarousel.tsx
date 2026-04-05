@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import { useRef } from 'react';
@@ -50,10 +50,10 @@ export default function AffiliatedClubsCarousel() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Our Network
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Affiliated Clubs
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -84,41 +84,33 @@ export default function AffiliatedClubsCarousel() {
             {affiliatedClubs.map((club) => (
               <div
                 key={club.id}
-                className="flex-shrink-0 w-64 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col"
+                className="shrink-0 w-64 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 p-2 flex flex-col"
               >
-                {/* Club Logo Placeholder */}
+                {/* Club Logo Panel */}
                 <div
-                  className="w-full h-40 rounded-t-xl flex items-center justify-center text-4xl font-bold"
+                  className="w-full h-48 rounded-2xl flex items-center justify-center text-4xl font-bold border overflow-hidden"
                   style={{
                     backgroundColor: colors.primary.navy,
-                    color: colors.primary.yellow
+                    borderColor: colors.primary.navy,
+                    color: '#FFFFFF'
                   }}
                 >
-                  {club.name.split(' ').map(word => word[0]).join('').slice(0, 3)}
+                  {club.name.split(' ').map((word) => word[0]).join('').slice(0, 3)}
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="pt-2 flex flex-col grow">
                   {/* Club Name - Fixed Height */}
-                  <h3 className="text-lg font-montserrat font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
+                  <h3 className="text-base font-sans font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
                     {club.name}
                   </h3>
 
-                  {/* Location */}
-                  <div className="flex items-center text-gray-600 mb-4 font-sans">
-                    <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span className="text-sm truncate">{club.location}</span>
-                  </div>
-
                   {/* View Details Link */}
                   <button
-                    className="w-full py-2 rounded-lg font-montserrat font-semibold transition-all duration-200 hover:shadow-md mt-auto"
+                    className="w-full py-2 rounded-lg font-sans font-semibold transition-all duration-200 hover:shadow-md mt-auto"
                     style={{
                       backgroundColor: colors.primary.yellow,
-                      color: colors.primary.navy
+                      color: '#FFFFFF'
                     }}
                   >
                     View Details
@@ -143,7 +135,7 @@ export default function AffiliatedClubsCarousel() {
 
         {/* Scroll Indicator */}
         <div className="text-center mt-6 text-sm text-gray-500">
-          <p className="font-sans">← Scroll to explore all affiliated clubs →</p>
+          <p className="font-sans">â† Scroll to explore all affiliated clubs â†’</p>
         </div>
       </div>
 
@@ -155,3 +147,4 @@ export default function AffiliatedClubsCarousel() {
     </section>
   );
 }
+

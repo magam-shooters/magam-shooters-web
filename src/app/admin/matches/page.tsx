@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faFilePdf, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -74,8 +74,8 @@ export default function AdminMatchesPage() {
   };
 
   const statusColors: Record<string, string> = {
-    upcoming: 'bg-blue-100 text-blue-700',
-    ongoing: 'bg-green-100 text-green-700',
+    upcoming: 'bg-[#E6F0FF] text-[#002B7F] border border-[#BBD2FF]',
+    ongoing: 'bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100]',
     completed: 'bg-gray-100 text-gray-600',
   };
 
@@ -83,7 +83,7 @@ export default function AdminMatchesPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-montserrat font-bold text-gray-800">Upcoming Matches</h2>
+          <h2 className="text-xl font-sans font-bold text-gray-800">Upcoming Matches</h2>
           <p className="text-sm text-gray-500 font-sans">{matches.length} records</p>
         </div>
         <button onClick={openCreate} className="px-4 py-2 bg-[#002B7F] text-white rounded-lg font-semibold text-sm hover:bg-[#001B5F] transition">
@@ -100,7 +100,7 @@ export default function AdminMatchesPage() {
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
                   {['Title', 'Date', 'Category', 'Venue', 'Status', 'PDF', 'Actions'].map(h => (
-                    <th key={h} className="px-4 py-3 text-left font-montserrat font-semibold text-gray-600 text-xs uppercase">{h}</th>
+                    <th key={h} className="px-4 py-3 text-left font-sans font-semibold text-gray-600 text-xs uppercase">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -116,7 +116,7 @@ export default function AdminMatchesPage() {
                     <td className="px-4 py-3 text-gray-600 max-w-xs truncate">{m.venue}</td>
                     <td className="px-4 py-3"><span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${statusColors[m.status]}`}>{m.status}</span></td>
                     <td className="px-4 py-3">
-                      {m.pdfUrl ? <a href={m.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-[#002B7F] underline text-xs"><FontAwesomeIcon icon={faFilePdf} className="w-3 h-3 mr-1" />View</a> : <span className="text-gray-400 text-xs">—</span>}
+                      {m.pdfUrl ? <a href={m.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-[#002B7F] underline text-xs"><FontAwesomeIcon icon={faFilePdf} className="w-3 h-3 mr-1" />View</a> : <span className="text-gray-400 text-xs">â€”</span>}
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex gap-2">
@@ -136,26 +136,26 @@ export default function AdminMatchesPage() {
       <Modal isOpen={modalOpen} title={editing ? 'Edit Match' : 'Create Match'} onClose={() => setModalOpen(false)} size="lg">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Title *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Title *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Match title" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Date *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Date *</label>
               <input type="date" className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Time</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Time</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.time} onChange={e => setForm(f => ({ ...f, time: e.target.value }))} placeholder="All Day" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Category *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Category *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))} placeholder="e.g. Rifle/Pistol" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Status</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Status</label>
               <select className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.status} onChange={e => setForm(f => ({ ...f, status: e.target.value as any }))}>
                 <option value="upcoming">Upcoming</option>
                 <option value="ongoing">Ongoing</option>
@@ -164,11 +164,11 @@ export default function AdminMatchesPage() {
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Venue *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Venue *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.venue} onChange={e => setForm(f => ({ ...f, venue: e.target.value }))} placeholder="Venue / location" />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Description</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Description</label>
             <textarea rows={3} className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.description} onChange={e => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Optional description" />
           </div>
           <FileUpload
@@ -197,3 +197,4 @@ export default function AdminMatchesPage() {
     </div>
   );
 }
+

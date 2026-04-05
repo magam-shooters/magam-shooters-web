@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -67,7 +67,7 @@ export default function AdminRecordsPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-montserrat font-bold text-gray-800">National Records</h2>
+          <h2 className="text-xl font-sans font-bold text-gray-800">National Records</h2>
           <p className="text-sm text-gray-500">{records.length} records</p>
         </div>
         <button onClick={openCreate} className="px-4 py-2 bg-[#002B7F] text-white rounded-lg font-semibold text-sm hover:bg-[#001B5F] transition">
@@ -82,7 +82,7 @@ export default function AdminRecordsPage() {
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
                   {['Title', 'Holder', 'Score', 'Category', 'Date', 'Location', 'Actions'].map(h => (
-                    <th key={h} className="px-4 py-3 text-left font-montserrat font-semibold text-gray-600 text-xs uppercase">{h}</th>
+                    <th key={h} className="px-4 py-3 text-left font-sans font-semibold text-gray-600 text-xs uppercase">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -113,31 +113,31 @@ export default function AdminRecordsPage() {
       <Modal isOpen={modalOpen} title={editing ? 'Edit Record' : 'Add National Record'} onClose={() => setModalOpen(false)}>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Title *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Title *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="e.g. National Record - 10m Air Rifle Men" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Record Holder *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Record Holder *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.holder} onChange={e => setForm(f => ({ ...f, holder: e.target.value }))} placeholder="Athlete name" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Score *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Score *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.score} onChange={e => setForm(f => ({ ...f, score: e.target.value }))} placeholder="e.g. 633.2 or 124/125" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Category *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Category *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))} placeholder="e.g. Rifle, Pistol, Shotgun" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Date *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Date *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} placeholder="e.g. January 15, 2026" />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Location *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Location *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.location} onChange={e => setForm(f => ({ ...f, location: e.target.value }))} placeholder="Venue name, City" />
           </div>
           <div className="flex gap-3 pt-2">
@@ -153,3 +153,4 @@ export default function AdminRecordsPage() {
     </div>
   );
 }
+

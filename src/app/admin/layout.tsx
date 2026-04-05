@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faBullseye, faCalendar, faDumbbell, faHouse, faImage, faMedal, faNewspaper, faTrophy } from '@fortawesome/free-solid-svg-icons';
@@ -36,7 +36,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-[#002B7F] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600 font-montserrat">Loading...</p>
+          <p className="text-gray-600 font-sans">Loading...</p>
         </div>
       </div>
     );
@@ -55,7 +55,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <div className="flex items-center gap-3 px-6 py-5 border-b border-white/20">
           <img src="/logo.png" alt="NSSF" className="w-9" />
           <div>
-            <p className="font-montserrat font-bold text-sm leading-tight">NSSF Admin</p>
+            <p className="font-sans font-bold text-sm leading-tight">NSSF Admin</p>
             <p className="text-white/60 text-xs">Sri Lanka</p>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 key={item.href}
                 href={item.href}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 px-6 py-3 text-sm font-montserrat font-semibold transition-all duration-200
+                className={`flex items-center gap-3 px-6 py-3 text-sm font-sans font-semibold transition-all duration-200
                   ${isActive
                     ? 'bg-[#FFD100] text-[#002B7F]'
                     : 'text-white/80 hover:bg-white/10 hover:text-white'
@@ -93,7 +93,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </Link>
             <button
               onClick={() => signOut({ callbackUrl: '/login' })}
-              className="flex-1 text-xs py-1.5 rounded bg-red-500/80 hover:bg-red-500 transition"
+              className="flex-1 text-xs py-1.5 rounded bg-[#FFD100] text-[#002B7F] hover:bg-[#F0C500] transition"
             >
               Logout
             </button>
@@ -121,7 +121,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <h1 className="font-montserrat font-bold text-gray-800 text-lg flex-1">
+          <h1 className="font-sans font-bold text-gray-800 text-lg flex-1">
             {navItems.find((n) => n.href === pathname)?.label ?? 'Admin Panel'}
           </h1>
           <span className="text-xs bg-[#FFD100] text-[#002B7F] font-bold px-2 py-1 rounded-full">
@@ -135,3 +135,4 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     </div>
   );
 }
+

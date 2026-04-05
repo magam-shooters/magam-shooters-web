@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
+:root {
+  --nssf-blue: #002b7f;
+  --nssf-blue-deep: #001b5f;
+  --nssf-yellow: #ffd100;
+  --nssf-yellow-soft: #fff7cc;
+}
+
+.card-unified {
+  background: #ffffff;
+  border: 2px solid var(--nssf-yellow);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 43, 127, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-unified:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 43, 127, 0.2);
+}
+
+.tag-unified {
+  background-color: var(--nssf-yellow-soft);
+  color: var(--nssf-blue);
+  border: 1px solid var(--nssf-yellow);
+}
+
 @layer base {
   html {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter);
   }
   
   body {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter);
   }
   
   h1 {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter);
     @apply text-5xl md:text-6xl font-extrabold;
   }
   
   h2 {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter);
     @apply text-4xl md:text-5xl font-extrabold;
   }
   
   h3 {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter);
     @apply text-3xl md:text-4xl font-bold;
   }
   

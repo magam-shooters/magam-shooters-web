@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import Link from "next/link";
@@ -32,10 +32,10 @@ const TrainingPrograms = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
            <div className="text-center mb-16">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Our Training Programs
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Training Programs for All Levels
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -47,20 +47,20 @@ const TrainingPrograms = () => {
           {programs.map((program) => (
             <article
               key={program._id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className="card-unified group"
             >
               <div className="relative h-48 overflow-hidden">
                 {program.imageUrl ? (
                   <img src={program.imageUrl} alt={program.title} className="w-full h-full object-cover" />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
+                  <div className="w-full h-full bg-linear-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
                     <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
                       {program.category}
                     </span>
                   </div>
                 )}
                 <div className="absolute top-3 right-3">
-                  <span className="bg-white/90 text-[#002B7F] text-xs font-bold px-2 py-1 rounded-full">
+                  <span className="tag-unified text-xs font-bold px-2 py-1 rounded-full">
                     {program.category}
                   </span>
                 </div>
@@ -78,7 +78,7 @@ const TrainingPrograms = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-montserrat font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                <h3 className="text-xl font-sans font-bold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                   {program.title}
                 </h3>
                 
@@ -100,7 +100,7 @@ const TrainingPrograms = () => {
         <div className="text-center mt-12">
           <Link
             href="/programs"
-            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-montserrat font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
           >
             View All Programs
             <FaArrowRight />
@@ -112,3 +112,4 @@ const TrainingPrograms = () => {
 };
 
 export default TrainingPrograms;
+

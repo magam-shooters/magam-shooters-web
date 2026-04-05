@@ -1,4 +1,4 @@
-interface SectionHeaderProps {
+﻿interface SectionHeaderProps {
   readonly title: string;
   readonly subtitle?: string;
   readonly description?: string;
@@ -21,11 +21,11 @@ export default function SectionHeader({
 
   return (
     <div className={`mb-12 md:mb-16 ${alignmentClass} ${className}`}>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-black mb-3">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-black mb-3">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg font-montserrat font-extrabold text-black mb-2">
+        <p className="text-lg font-sans font-extrabold text-black mb-2">
           {subtitle}
         </p>
       )}

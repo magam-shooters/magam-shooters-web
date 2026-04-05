@@ -1,4 +1,4 @@
-import { colors } from "@/config";
+﻿import { colors } from "@/config";
 import Link from "next/link";
 import { FaArrowLeft, FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 
@@ -245,14 +245,14 @@ export default function ResultsPage() {
 
           <div className="text-center mb-8">
             <div className="flex justify-center gap-2 mb-4">
-              <div className="text-5xl">🥇</div>
-              <div className="text-5xl">🥈</div>
-              <div className="text-5xl">🥉</div>
+              <div className="text-5xl">ðŸ¥‡</div>
+              <div className="text-5xl">ðŸ¥ˆ</div>
+              <div className="text-5xl">ðŸ¥‰</div>
             </div>
             <p className="text-sm font-semibold uppercase tracking-wider mb-2 text-[#FFD100]">
               Results
             </p>
-            <h1 className="font-montserrat text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-sans text-4xl md:text-5xl font-bold mb-4">
               Competition Results
             </h1>
             <p className="font-sans text-lg text-white/90 max-w-2xl mx-auto">
@@ -270,7 +270,7 @@ export default function ResultsPage() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                className="font-montserrat px-6 py-2 rounded-full font-semibold transition-all duration-200 bg-white text-[#D71920] border-2 border-[#D71920] hover:bg-[#D71920] hover:text-white"
+                className="font-sans px-6 py-2 rounded-full font-semibold transition-all duration-200 bg-white text-[#D71920] border-2 border-[#D71920] hover:bg-[#D71920] hover:text-white"
               >
                 {cat}
               </button>
@@ -287,7 +287,7 @@ export default function ResultsPage() {
                   <div className="text-center">
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="w-10 h-10 rounded-full bg-[#FFD100] flex items-center justify-center">
-                        <span className="text-[#002B7F] font-bold text-lg">🥇</span>
+                        <span className="text-[#002B7F] font-bold text-lg">ðŸ¥‡</span>
                       </div>
                     </div>
                     <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
@@ -314,7 +314,7 @@ export default function ResultsPage() {
                     </div>
                   </div>
 
-                  <h3 className="font-montserrat text-xl font-semibold text-[#002B7F] mb-2 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                  <h3 className="font-sans text-xl font-semibold text-[#002B7F] mb-2 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
                     {result.competition}
                   </h3>
 
@@ -325,23 +325,23 @@ export default function ResultsPage() {
 
                   <div className="space-y-2 mb-4 bg-gray-50 p-3 rounded-lg">
                     <div className="flex items-center justify-between">
-                      <span className="font-sans text-sm font-medium text-gray-600">🥇 Gold:</span>
+                      <span className="font-sans text-sm font-medium text-gray-600">ðŸ¥‡ Gold:</span>
                       <div className="text-right">
-                        <span className="font-montserrat text-sm font-bold text-[#FFD700] block">{result.winners.gold}</span>
+                        <span className="font-sans text-sm font-bold text-[#FFD700] block">{result.winners.gold}</span>
                         <span className="font-sans text-xs text-gray-500">{result.winners.goldScore}</span>
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="font-sans text-sm font-medium text-gray-600">🥈 Silver:</span>
+                      <span className="font-sans text-sm font-medium text-gray-600">ðŸ¥ˆ Silver:</span>
                       <div className="text-right">
-                        <span className="font-montserrat text-sm font-bold text-gray-500 block">{result.winners.silver}</span>
+                        <span className="font-sans text-sm font-bold text-gray-500 block">{result.winners.silver}</span>
                         <span className="font-sans text-xs text-gray-500">{result.winners.silverScore}</span>
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="font-sans text-sm font-medium text-gray-600">🥉 Bronze:</span>
+                      <span className="font-sans text-sm font-medium text-gray-600">ðŸ¥‰ Bronze:</span>
                       <div className="text-right">
-                        <span className="font-montserrat text-sm font-bold text-[#CD7F32] block">{result.winners.bronze}</span>
+                        <span className="font-sans text-sm font-bold text-[#CD7F32] block">{result.winners.bronze}</span>
                         <span className="font-sans text-xs text-gray-500">{result.winners.bronzeScore}</span>
                       </div>
                     </div>
@@ -356,7 +356,7 @@ export default function ResultsPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-montserrat text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="font-sans text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
             Want to Compete?
           </h2>
           <p className="font-sans text-lg text-gray-600 mb-8">
@@ -365,13 +365,13 @@ export default function ResultsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/events"
-              className="font-montserrat inline-flex items-center justify-center gap-3 bg-[#D71920] hover:bg-[#A01520] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+              className="font-sans inline-flex items-center justify-center gap-3 bg-[#D71920] hover:bg-[#A01520] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
             >
               View Upcoming Events
             </Link>
             <Link
               href="/calendar"
-              className="font-montserrat inline-flex items-center justify-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+              className="font-sans inline-flex items-center justify-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
             >
               Competition Calendar
             </Link>
@@ -381,3 +381,4 @@ export default function ResultsPage() {
     </div>
   );
 }
+

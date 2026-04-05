@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -83,7 +83,7 @@ export default function AdminNewsPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-montserrat font-bold text-gray-800">News Articles</h2>
+          <h2 className="text-xl font-sans font-bold text-gray-800">News Articles</h2>
           <p className="text-sm text-gray-500">{news.length} articles ({news.filter(n => n.published).length} published)</p>
         </div>
         <button onClick={openCreate} className="px-4 py-2 bg-[#002B7F] text-white rounded-lg font-semibold text-sm hover:bg-[#001B5F] transition">
@@ -98,7 +98,7 @@ export default function AdminNewsPage() {
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
                   {['Image', 'Title', 'Category', 'Author', 'Date', 'Status', 'Actions'].map(h => (
-                    <th key={h} className="px-4 py-3 text-left font-montserrat font-semibold text-gray-600 text-xs uppercase">{h}</th>
+                    <th key={h} className="px-4 py-3 text-left font-sans font-semibold text-gray-600 text-xs uppercase">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -110,11 +110,11 @@ export default function AdminNewsPage() {
                       {n.imageUrl ? <img src={n.imageUrl} alt={n.title} className="w-14 h-10 object-cover rounded" /> : <div className="w-14 h-10 bg-gray-200 rounded flex items-center justify-center text-gray-400 text-xs">No img</div>}
                     </td>
                     <td className="px-4 py-3 font-medium text-gray-800 max-w-xs truncate">{n.title}</td>
-                    <td className="px-4 py-3"><span className="bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-xs font-semibold">{n.category}</span></td>
+                    <td className="px-4 py-3"><span className="bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100] px-2 py-0.5 rounded-full text-xs font-semibold">{n.category}</span></td>
                     <td className="px-4 py-3 text-gray-600">{n.author}</td>
                     <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{n.date}</td>
                     <td className="px-4 py-3">
-                      <button onClick={() => togglePublished(n)} className={`px-2 py-0.5 rounded-full text-xs font-semibold cursor-pointer ${n.published ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+                      <button onClick={() => togglePublished(n)} className={`px-2 py-0.5 rounded-full text-xs font-semibold cursor-pointer ${n.published ? 'bg-[#E6F0FF] text-[#002B7F] border border-[#BBD2FF]' : 'bg-[#FFF7CC] text-[#6B7280] border border-[#FFE070]'}`}>
                         {n.published ? 'Published' : 'Draft'}
                       </button>
                     </td>
@@ -135,37 +135,37 @@ export default function AdminNewsPage() {
       <Modal isOpen={modalOpen} title={editing ? 'Edit Article' : 'Create News Article'} onClose={() => setModalOpen(false)} size="xl">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Title *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Title *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))} placeholder="Article headline" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Category *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Category *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))} placeholder="e.g. Championships" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Author *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Author *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.author} onChange={e => setForm(f => ({ ...f, author: e.target.value }))} placeholder="Author name / department" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Date *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Date *</label>
               <input type="date" className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} />
             </div>
             <div className="flex items-end pb-1">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" checked={form.published} onChange={e => setForm(f => ({ ...f, published: e.target.checked }))} className="w-4 h-4 rounded" />
-                <span className="text-sm font-semibold text-gray-700 font-montserrat">Published</span>
+                <span className="text-sm font-semibold text-gray-700 font-sans">Published</span>
               </label>
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Excerpt *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Excerpt *</label>
             <textarea rows={2} className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.excerpt} onChange={e => setForm(f => ({ ...f, excerpt: e.target.value }))} placeholder="Short summary (shown on home page & list)" />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Content *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Content *</label>
             <textarea rows={6} className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.content} onChange={e => setForm(f => ({ ...f, content: e.target.value }))} placeholder="Full article content" />
           </div>
           <FileUpload label="Featured Image" accept="image/*" folder="news" currentUrl={form.imageUrl} onUpload={(url, key) => setForm(f => ({ ...f, imageUrl: url, imageKey: key }))} />
@@ -182,3 +182,4 @@ export default function AdminNewsPage() {
     </div>
   );
 }
+

@@ -1,4 +1,4 @@
-import { colors } from "@/config";
+﻿import { colors } from "@/config";
 import { IMAGES } from "@/config/images";
 import Link from "next/link";
 import { FaBullseye, FaChartLine, FaCheckCircle, FaIdCard, FaMedal, FaShieldAlt, FaTools, FaTrophy, FaUsers } from "react-icons/fa";
@@ -108,7 +108,7 @@ export default function Clubs() {
   const benefits = [
     {
       icon: FaBullseye,
-      color: colors.primary.blue,
+      color: colors.primary.navy,
       title: "Professional Training",
       description: "Access to certified coaches and structured training programs for all skill levels"
     },
@@ -126,19 +126,19 @@ export default function Clubs() {
     },
     {
       icon: FaTools,
-      color: colors.primary.green,
+      color: colors.primary.yellow,
       title: "Equipment Support",
       description: "Professional equipment maintenance, rental, and purchasing assistance"
     },
     {
       icon: FaChartLine,
-      color: colors.primary.navy,
+      color: colors.primary.blue,
       title: "Progress Tracking",
       description: "Advanced scoring systems to monitor and improve your shooting performance"
     },
     {
       icon: FaShieldAlt,
-      color: colors.primary.blue,
+      color: colors.primary.navy,
       title: "Safety First",
       description: "Comprehensive safety training and strict protocols ensure secure environment"
     }
@@ -159,7 +159,7 @@ export default function Clubs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Choose Your Path
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Membership Plans
             </h2>
             <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
@@ -168,10 +168,13 @@ export default function Clubs() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {membershipPlans.map((plan) => (
+            {membershipPlans.map((plan, index) => {
+              const planIconColor = [colors.primary.yellow, colors.primary.navy, colors.primary.blue][index % 3];
+
+              return (
               <div
                 key={plan.id}
-                className={`relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 ${
+                className={`relative bg-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 ${
                   plan.popular 
                     ? 'ring-2 ring-[#FFD100] ring-offset-2' 
                     : 'border border-gray-200'
@@ -186,9 +189,9 @@ export default function Clubs() {
                 )}
 
                 <div className="text-center mb-6">
-                    <h3 className="font-montserrat text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>{plan.name}</h3>
+                    <h3 className="font-sans text-xl font-semibold mb-2" style={{ color: colors.primary.navy }}>{plan.name}</h3>
                     <div className="mb-4">
-                      <span className="font-montserrat text-3xl font-bold" style={{ color: colors.primary.blue }}>{plan.price}</span>
+                      <span className="font-sans text-3xl font-bold" style={{ color: colors.primary.blue }}>{plan.price}</span>
                       <span className="font-sans text-gray-600">{plan.period}</span>
                     </div>
                     <p className="font-sans text-gray-600 text-sm">{plan.description}</p>
@@ -197,7 +200,7 @@ export default function Clubs() {
                 <ul className="space-y-3 mb-8">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
-                        <FaCheckCircle className="mt-0.5 flex-shrink-0" style={{ color: colors.primary.green }} />
+                        <FaCheckCircle className="mt-0.5 shrink-0" style={{ color: planIconColor }} />
                         <span className="font-sans text-gray-700 text-sm">{feature}</span>
                       </li>
                     ))}
@@ -205,7 +208,7 @@ export default function Clubs() {
 
                 <Link
                   href="/contact"
-                  className={`font-montserrat block w-full text-center py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
+                  className={`font-sans block w-full text-center py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
                     plan.popular
                       ? 'text-white hover:shadow-lg'
                       : 'border-2 hover:shadow-lg'
@@ -218,7 +221,8 @@ export default function Clubs() {
                   {plan.buttonText}
                 </Link>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -230,7 +234,7 @@ export default function Clubs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               State-of-the-Art Infrastructure
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               World-Class Facilities
             </h2>
           </div>
@@ -245,13 +249,13 @@ export default function Clubs() {
               >
                 {/* Content */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <h3 className="font-montserrat text-2xl md:text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>{facility.title}</h3>
+                  <h3 className="font-sans text-2xl md:text-3xl font-semibold mb-4" style={{ color: colors.primary.navy }}>{facility.title}</h3>
                   <p className="font-sans text-gray-700 text-lg leading-relaxed mb-6">{facility.description}</p>
                   
                   <div className="grid grid-cols-2 gap-4">
                     {facility.features.map((feature) => (
                         <div key={feature} className="flex items-center gap-2">
-                          <FaCheckCircle style={{ color: colors.primary.green }} />
+                          <FaCheckCircle style={{ color: colors.primary.blue }} />
                           <span className="font-sans text-gray-700 text-sm">{feature}</span>
                         </div>
                     ))}
@@ -279,7 +283,7 @@ export default function Clubs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               What You'll Gain
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Membership Benefits
             </h2>
           </div>
@@ -288,11 +292,11 @@ export default function Clubs() {
             {benefits.map((benefit) => {
               const IconComponent = benefit.icon;
               return (
-                <div key={benefit.title} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <div key={benefit.title} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: benefit.color }}>
                     <IconComponent className="text-3xl text-white" />
                   </div>
-                  <h3 className="font-montserrat text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>{benefit.title}</h3>
+                  <h3 className="font-sans text-xl font-semibold mb-3" style={{ color: colors.primary.navy }}>{benefit.title}</h3>
                   <p className="font-sans text-gray-700 leading-relaxed">{benefit.description}</p>
                 </div>
               );
@@ -308,41 +312,41 @@ export default function Clubs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               Simple Process
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               How to Join
             </h2>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.blue }}>
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.navy }}>
                   1
                 </div>
-                <h3 className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Apply</h3>
+                <h3 className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>Apply</h3>
                 <p className="font-sans text-gray-600 text-sm">Submit your membership application with required documents</p>
             </div>
 
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.yellow }}>
                   2
                 </div>
-                <h3 className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Interview</h3>
+                <h3 className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>Interview</h3>
                 <p className="font-sans text-gray-600 text-sm">Attend a brief interview and facility orientation session</p>
             </div>
 
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.blue }}>
                   3
                 </div>
-                <h3 className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Training</h3>
+                <h3 className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>Training</h3>
                 <p className="font-sans text-gray-600 text-sm">Complete mandatory safety training and assessment</p>
             </div>
 
-            <div className="text-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.green }}>
+            <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-full text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: colors.primary.yellow }}>
                   4
                 </div>
-                <h3 className="font-montserrat font-semibold mb-2" style={{ color: colors.primary.navy }}>Welcome</h3>
+                <h3 className="font-sans font-semibold mb-2" style={{ color: colors.primary.navy }}>Welcome</h3>
                 <p className="font-sans text-gray-600 text-sm">Receive your membership card and start shooting!</p>
             </div>
           </div>
@@ -356,43 +360,43 @@ export default function Clubs() {
             <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
               What You Need to Know
             </p>
-            <h2 className="font-montserrat text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
+            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
               Membership Requirements
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.blue }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.yellow }}>
                     <FaIdCard className="text-2xl text-white" />
                   </div>
-                  <h3 className="font-montserrat text-xl font-semibold" style={{ color: colors.primary.navy }}>Required Documents</h3>
+                  <h3 className="font-sans text-xl font-semibold" style={{ color: colors.primary.navy }}>Required Documents</h3>
                 </div>
                 <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Valid National ID or Passport</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Police clearance certificate</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Medical fitness certificate</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> 2 passport-size photographs</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Completed application form</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> References from 2 current members (if applicable)</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Valid National ID or Passport</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Police clearance certificate</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Medical fitness certificate</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> 2 passport-size photographs</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> Completed application form</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.yellow }} /> References from 2 current members (if applicable)</li>
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
                     <FaMedal className="text-2xl text-white" />
                   </div>
-                  <h3 className="font-montserrat text-xl font-semibold" style={{ color: colors.primary.navy }}>Eligibility Criteria</h3>
+                  <h3 className="font-sans text-xl font-semibold" style={{ color: colors.primary.navy }}>Eligibility Criteria</h3>
                 </div>
                 <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Minimum age: 16 years (with parent consent)</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Clean criminal record</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Physical and mental fitness</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Commitment to safety protocols</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Willingness to complete training programs</li>
-                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.green }} /> Respect for NSSF rules and regulations</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Minimum age: 16 years (with parent consent)</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Clean criminal record</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Physical and mental fitness</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Commitment to safety protocols</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Willingness to complete training programs</li>
+                <li className="flex items-start gap-2"><FaCheckCircle className="mt-0.5" style={{ color: colors.primary.blue }} /> Respect for NSSF rules and regulations</li>
               </ul>
             </div>
           </div>
@@ -402,21 +406,21 @@ export default function Clubs() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold mb-6">Ready to Join NSSF Sri Lanka?</h2>
+          <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6">Ready to Join NSSF Sri Lanka?</h2>
           <p className="font-sans text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Take the first step towards excellence in shooting sports. Join our community of champions today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="font-montserrat px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg text-lg"
+              className="font-sans px-8 py-4 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg text-lg"
               style={{ backgroundColor: colors.primary.blue }}
             >
               Apply for Membership
             </Link>
             <Link
               href="/contact"
-              className="font-montserrat px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg"
+              className="font-sans px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-lg border-2 border-white text-white hover:bg-white hover:text-gray-900 text-lg"
             >
               Schedule a Visit
             </Link>
@@ -426,3 +430,4 @@ export default function Clubs() {
     </div>
   );
 }
+

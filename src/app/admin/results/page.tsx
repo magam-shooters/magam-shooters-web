@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -69,7 +69,7 @@ export default function AdminResultsPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h2 className="text-xl font-montserrat font-bold text-gray-800">Competition Results</h2>
+          <h2 className="text-xl font-sans font-bold text-gray-800">Competition Results</h2>
           <p className="text-sm text-gray-500">{results.length} results</p>
         </div>
         <button onClick={openCreate} className="px-4 py-2 bg-[#002B7F] text-white rounded-lg font-semibold text-sm hover:bg-[#001B5F] transition">
@@ -83,8 +83,8 @@ export default function AdminResultsPage() {
             <table className="w-full text-sm">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  {['Competition', 'Category', 'Date', 'Location', '🥇 Gold', '🥈 Silver', '🥉 Bronze', 'Actions'].map(h => (
-                    <th key={h} className="px-4 py-3 text-left font-montserrat font-semibold text-gray-600 text-xs uppercase">{h}</th>
+                  {['Competition', 'Category', 'Date', 'Location', 'ðŸ¥‡ Gold', 'ðŸ¥ˆ Silver', 'ðŸ¥‰ Bronze', 'Actions'].map(h => (
+                    <th key={h} className="px-4 py-3 text-left font-sans font-semibold text-gray-600 text-xs uppercase">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -93,7 +93,7 @@ export default function AdminResultsPage() {
                 {results.map((r) => (
                   <tr key={r._id} className="hover:bg-gray-50">
                     <td className="px-4 py-3 font-medium text-gray-800 max-w-xs truncate">{r.competition}</td>
-                    <td className="px-4 py-3"><span className="bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full text-xs font-semibold">{r.category}</span></td>
+                    <td className="px-4 py-3"><span className="bg-[#FFF7CC] text-[#002B7F] border border-[#FFD100] px-2 py-0.5 rounded-full text-xs font-semibold">{r.category}</span></td>
                     <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{r.date}</td>
                     <td className="px-4 py-3 text-gray-600 max-w-xs truncate">{r.location}</td>
                     <td className="px-4 py-3 text-gray-700">{r.winners.gold}</td>
@@ -116,35 +116,35 @@ export default function AdminResultsPage() {
       <Modal isOpen={modalOpen} title={editing ? 'Edit Result' : 'Add Competition Result'} onClose={() => setModalOpen(false)} size="lg">
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Competition Name *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Competition Name *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.competition} onChange={e => setForm(f => ({ ...f, competition: e.target.value }))} placeholder="e.g. NSSF-SL Open Rifle Championship 2026" />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Category *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Category *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.category} onChange={e => setForm(f => ({ ...f, category: e.target.value }))} placeholder="e.g. 10m Air Rifle" />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Date *</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Date *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} placeholder="e.g. February 18, 2026" />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">Location *</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">Location *</label>
             <input className="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.location} onChange={e => setForm(f => ({ ...f, location: e.target.value }))} placeholder="Venue, City" />
           </div>
           <div className="border border-gray-200 rounded-lg p-4 bg-gray-50 space-y-3">
-            <p className="text-sm font-semibold text-gray-700 font-montserrat">Medalists</p>
+            <p className="text-sm font-semibold text-gray-700 font-sans">Medalists</p>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">🥇 Gold Medalist *</label>
+              <label className="block text-xs text-gray-600 mb-1">ðŸ¥‡ Gold Medalist *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.winners.gold} onChange={e => setForm(f => ({ ...f, winners: { ...f.winners, gold: e.target.value } }))} placeholder="Athlete name" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">🥈 Silver Medalist *</label>
+              <label className="block text-xs text-gray-600 mb-1">ðŸ¥ˆ Silver Medalist *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.winners.silver} onChange={e => setForm(f => ({ ...f, winners: { ...f.winners, silver: e.target.value } }))} placeholder="Athlete name" />
             </div>
             <div>
-              <label className="block text-xs text-gray-600 mb-1">🥉 Bronze Medalist *</label>
+              <label className="block text-xs text-gray-600 mb-1">ðŸ¥‰ Bronze Medalist *</label>
               <input className="w-full px-3 py-2 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#002B7F]" value={form.winners.bronze} onChange={e => setForm(f => ({ ...f, winners: { ...f.winners, bronze: e.target.value } }))} placeholder="Athlete name" />
             </div>
           </div>
@@ -161,3 +161,4 @@ export default function AdminResultsPage() {
     </div>
   );
 }
+

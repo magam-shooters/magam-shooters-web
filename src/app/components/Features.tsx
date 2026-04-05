@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { ReactNode } from 'react';
 
@@ -31,7 +31,7 @@ export default function Features({ features, className = '' }: Readonly<Features
               </div>
 
               {/* Title */}
-              <h3 className="text-sm sm:text-base md:text-lg font-montserrat font-semibold text-gray-800 mb-1 sm:mb-2">
+              <h3 className="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800 mb-1 sm:mb-2">
                 {feature.title}
               </h3>
 
@@ -46,3 +46,4 @@ export default function Features({ features, className = '' }: Readonly<Features
     </section>
   );
 }
+

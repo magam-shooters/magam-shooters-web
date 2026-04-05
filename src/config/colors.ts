@@ -44,7 +44,7 @@ export const styleBuilders = {
   }),
 
   secondaryButton: () => ({
-    className: `bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 transition duration-300`,
+    className: `bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold py-2 px-4 transition duration-300`,
   }),
 
   card: () => ({

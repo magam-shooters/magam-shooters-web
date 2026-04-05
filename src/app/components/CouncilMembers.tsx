@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import Image from 'next/image';
@@ -87,10 +87,10 @@ export default function CouncilMembers() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-montserrat font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Leadership
           </p>
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Council Members
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
@@ -114,24 +114,31 @@ function MemberCard({ member }: { member: CouncilMember }) {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200"
+      className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 min-h-[310px] border border-gray-200 p-2 flex flex-col"
     >
       {/* Member Avatar/Image */}
-      <div className="relative h-48 overflow-hidden flex items-center justify-center" style={{ backgroundColor: colors.primary.navy }}>
+      <div
+        className="relative h-60 overflow-hidden rounded-2xl flex items-center justify-center border"
+        style={{
+          backgroundColor: '#F8FAFC',
+          borderColor: '#E5E7EB'
+        }}
+      >
         {member.image && !imageError ? (
           <div className="relative w-full h-full">
             <Image
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover object-[center_20%] scale-100"
+              className="object-cover object-[center_20%]"
               onError={() => setImageError(true)}
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
             />
           </div>
         ) : (
           <svg
-            className="w-20 h-20 text-white opacity-70"
+            className="w-20 h-20 opacity-70"
+            style={{ color: colors.primary.navy }}
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -141,13 +148,13 @@ function MemberCard({ member }: { member: CouncilMember }) {
       </div>
 
       {/* Member Info */}
-      <div className="p-4">
-        <h3 className="text-base font-montserrat font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
+      <div className="pt-2">
+        <h3 className="text-base font-sans font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
           {member.name}
         </h3>
         <p
-          className="text-xs font-montserrat font-semibold uppercase tracking-wide"
-          style={{ color: colors.primary.blue }}
+          className="text-xs font-sans font-semibold uppercase tracking-wide"
+          style={{ color: '#6B7280' }}
         >
           {member.role}
         </p>
@@ -155,3 +162,4 @@ function MemberCard({ member }: { member: CouncilMember }) {
     </div>
   );
 }
+

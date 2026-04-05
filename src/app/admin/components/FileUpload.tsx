@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { faArrowUpFromBracket, faFile, faImage } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +16,7 @@ interface FileUploadProps {
 function extractS3Key(url: string): string | null {
   try {
     const { pathname } = new URL(url);
-    // pathname is like /gallery/abc.jpg — strip the leading slash
+    // pathname is like /gallery/abc.jpg â€” strip the leading slash
     return pathname.slice(1) || null;
   } catch {
     return null;
@@ -71,7 +71,7 @@ export default function FileUpload({ label, accept, folder, currentUrl, onUpload
     setErrorMsg(null);
     setUploadProgress(0);
 
-    // Show a local preview immediately — no S3 public access needed
+    // Show a local preview immediately â€” no S3 public access needed
     if (localObjectUrlRef.current) URL.revokeObjectURL(localObjectUrlRef.current);
     const localObjectUrl = URL.createObjectURL(file);
     localObjectUrlRef.current = localObjectUrl;
@@ -92,7 +92,7 @@ export default function FileUpload({ label, accept, folder, currentUrl, onUpload
 
       const { presignedUrl, key, publicUrl } = await presignRes.json();
 
-      // Step 2: Upload directly to S3 using the presigned URL — no Next.js size limit
+      // Step 2: Upload directly to S3 using the presigned URL â€” no Next.js size limit
       await new Promise<void>((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open('PUT', presignedUrl, true);
@@ -145,7 +145,7 @@ export default function FileUpload({ label, accept, folder, currentUrl, onUpload
 
   return (
     <div>
-      <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">{label}</label>
+      <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">{label}</label>
       <div
         role="button"
         tabIndex={0}
@@ -195,12 +195,12 @@ export default function FileUpload({ label, accept, folder, currentUrl, onUpload
               <FontAwesomeIcon icon={faArrowUpFromBracket} className="w-3.5 h-3.5" />
               Click to upload {label}
             </p>
-            <p className="text-xs text-gray-400 mt-1">Any image format · No size limit</p>
+            <p className="text-xs text-gray-400 mt-1">Any image format Â· No size limit</p>
           </div>
         )}
       </div>
       {errorMsg && (
-        <p className="mt-1.5 text-xs text-red-600 font-sans">{errorMsg}</p>
+        <p className="mt-1.5 text-xs text-[#002B7F] font-sans">{errorMsg}</p>
       )}
       <input
         ref={inputRef}
@@ -212,3 +212,4 @@ export default function FileUpload({ label, accept, folder, currentUrl, onUpload
     </div>
   );
 }
+

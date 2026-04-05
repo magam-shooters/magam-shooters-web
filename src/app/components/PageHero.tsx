@@ -1,4 +1,4 @@
-interface PageHeroProps {
+﻿interface PageHeroProps {
   readonly title: string;
   readonly subtitle?: string;
   readonly description?: string;
@@ -30,11 +30,11 @@ export default function PageHero({
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
           {subtitle && (
-            <p className="text-white text-sm sm:text-base uppercase tracking-widest font-montserrat font-bold mb-2 drop-shadow-lg">
+            <p className="text-white text-sm sm:text-base uppercase tracking-widest font-sans font-bold mb-2 drop-shadow-lg">
               {subtitle}
             </p>
           )}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-montserrat font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-bold text-white mb-4 drop-shadow-lg">
             {title}
           </h1>
           {description && (

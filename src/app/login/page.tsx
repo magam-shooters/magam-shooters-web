@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -29,18 +29,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002B7F] to-[#004A9F] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-[#002B7F] to-[#004A9F] px-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
         {/* Logo & Title */}
         <div className="text-center mb-8">
           <img src="/logo.png" alt="NSSF Logo" className="w-16 mx-auto mb-4" />
-          <h1 className="text-2xl font-montserrat font-bold text-[#002B7F]">Admin Login</h1>
+          <h1 className="text-2xl font-sans font-bold text-[#002B7F]">Admin Login</h1>
           <p className="text-gray-500 text-sm mt-1 font-sans">NSSF Sri Lanka Admin Panel</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">
               Email Address
             </label>
             <input
@@ -54,7 +54,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-montserrat">
+            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">
               Password
             </label>
             <input
@@ -63,12 +63,12 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002B7F] font-sans text-gray-800"
-              placeholder="••••••••"
+              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
             />
           </div>
 
           {error && (
-            <div className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg text-sm font-sans">
+            <div className="bg-[#FFF7CC] border border-[#FFD100] text-[#002B7F] px-4 py-3 rounded-lg text-sm font-sans">
               {error}
             </div>
           )}
@@ -76,16 +76,17 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#002B7F] text-white font-montserrat font-bold py-3 rounded-lg hover:bg-[#001B5F] transition-colors duration-200 disabled:opacity-60"
+            className="w-full bg-[#002B7F] text-white font-sans font-bold py-3 rounded-lg hover:bg-[#001B5F] transition-colors duration-200 disabled:opacity-60"
           >
-            {loading ? 'Signing in…' : 'Sign In'}
+            {loading ? 'Signing inâ€¦' : 'Sign In'}
           </button>
         </form>
 
         <p className="text-center text-xs text-gray-400 mt-6 font-sans">
-          © {new Date().getFullYear()} NSSF Sri Lanka. All rights reserved.
+          Â© {new Date().getFullYear()} NSSF Sri Lanka. All rights reserved.
         </p>
       </div>
     </div>
   );
 }
+

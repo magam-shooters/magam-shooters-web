@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { colors } from '@/config';
 import { useRef, useState } from 'react';
@@ -46,13 +46,13 @@ export default function ImageGalleryScroll() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.red }}>
+          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
             Moments
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: colors.primary.navy }}>
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
             Gallery
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
             Capturing the excellence and dedication of Sri Lanka's shooting sports community
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function ImageGalleryScroll() {
                       >
                         {image.category}
                       </span>
-                      <h3 className="text-white text-xl font-bold">{image.title}</h3>
+                      <h3 className="text-white text-xl font-sans font-bold">{image.title}</h3>
                     </div>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export default function ImageGalleryScroll() {
         <div className="text-center mt-8">
           <a
             href="/gallery"
-            className="inline-block px-8 py-3 rounded-lg font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
+            className="inline-block px-8 py-3 rounded-lg font-sans font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
             style={{ backgroundColor: colors.primary.navy }}
           >
             View Full Gallery
@@ -163,9 +163,9 @@ export default function ImageGalleryScroll() {
               className="w-full h-auto rounded-lg"
             />
             <div className="mt-4 text-white text-center">
-              <h3 className="text-2xl font-bold mb-2">{selectedImage.title}</h3>
+              <h3 className="text-2xl font-sans font-bold mb-2">{selectedImage.title}</h3>
               <span
-                className="inline-block px-4 py-2 rounded-full text-sm font-semibold"
+                className="inline-block px-4 py-2 rounded-full text-sm font-sans font-semibold"
                 style={{
                   backgroundColor: colors.primary.yellow,
                   color: colors.primary.navy
@@ -186,3 +186,4 @@ export default function ImageGalleryScroll() {
     </section>
   );
 }
+

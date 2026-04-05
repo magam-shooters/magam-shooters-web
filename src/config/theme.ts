@@ -10,14 +10,14 @@ export const theme = {
       dark: 'blue-700',
     },
     secondary: {
-      light: 'orange-500',
-      main: 'orange-600',
-      dark: 'orange-700',
+      light: 'yellow-300',
+      main: 'yellow-400',
+      dark: 'yellow-500',
     },
     accent: {
-      light: 'lime-500',
-      main: 'lime-600',
-      dark: 'lime-700',
+      light: 'blue-400',
+      main: 'blue-500',
+      dark: 'blue-600',
     },
     // Background Colors
     background: {
@@ -43,17 +43,17 @@ export const theme = {
     },
     // Gradient Colors
     gradient: {
-      lime: 'from-lime-500 to-lime-600',
+      lime: 'from-blue-500 to-blue-700',
       slate: 'from-slate-50 to-slate-100',
       dark: 'from-slate-800 to-slate-900',
       dark_left: 'from-slate-800 to-slate-900',
-      orange_bg: 'from-slate-800 to-slate-900',
+      orange_bg: 'from-blue-700 to-blue-900',
     },
   },
 
   // Font Family Configuration
   fonts: {
-    primary: 'font-roboto', // Roboto font
+    primary: 'font-inter',
     body: 'font-sans',
   },
 
@@ -118,8 +118,8 @@ export const theme = {
   // Common Button Styles
   buttons: {
     primary: `bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 transition duration-300`,
-    secondary: `bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 transition duration-300`,
-    accent: `bg-lime-500 hover:bg-lime-600 text-white font-semibold py-2 px-4 transition duration-300`,
+    secondary: `bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold py-2 px-4 transition duration-300`,
+    accent: `bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 transition duration-300`,
     outline: `border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-2 px-4 transition duration-300`,
   },
 

@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ["var(--font-roboto)", "system-ui", "-apple-system", "sans-serif"],
-        sans: ["var(--font-roboto)", "system-ui", "-apple-system", "sans-serif"],
+        inter: ["var(--font-inter)"],
+        sans: ["var(--font-inter)"],
       },
       colors: {
         // Primary Brand Colors (Core Identity)

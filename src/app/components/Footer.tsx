@@ -1,24 +1,24 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#002B7F] border-t border-[#001A4D]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">NSSF Sri Lanka</h3>
-            <p className="text-gray-200">
+            <h3 className="text-xl font-sans font-bold text-white mb-4">NSSF Sri Lanka</h3>
+            <p className="text-gray-200 font-sans">
               National Shooting Sports Federation of Sri Lanka - Promoting excellence in shooting sports through world-class training, competitions, and athlete development.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-sans font-semibold text-white mb-4">Quick Links</h4>
+            <ul className="space-y-2 font-sans">
               <li>
                 <Link
                   href="/"
@@ -56,8 +56,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-sans font-semibold text-white mb-4">Services</h4>
+            <ul className="space-y-2 font-sans">
               <li>
                 <Link
                   href="/clubs"
@@ -95,8 +95,8 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
-                        <ul className="space-y-2 text-gray-200">
+            <h4 className="text-lg font-sans font-semibold text-white mb-4">Contact</h4>
+                        <ul className="space-y-2 text-gray-200 font-sans">
               <li>
                 <a
                   href="tel:+15551234567"
@@ -116,7 +116,7 @@ export default function Footer() {
               <li className="mt-4">
                 <Link
                   href="/contact"
-                  className="inline-block bg-[#00AEEF] hover:bg-[#0096C7] text-white font-semibold py-2 px-4 transition duration-200"
+                  className="inline-block bg-[#00AEEF] hover:bg-[#0096C7] text-white font-sans font-medium py-2 px-4 transition duration-200"
                 >
                   Contact Us
                 </Link>
@@ -178,10 +178,10 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="border-t border-[#3A4E8C] pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-200 text-sm mb-4 md:mb-0">
+            <p className="text-gray-200 font-sans text-sm mb-4 md:mb-0">
               &copy; {currentYear} NSSF Sri Lanka. All rights reserved.
             </p>
-            <div className="flex space-x-6">
+            <div className="flex space-x-6 font-sans">
               <a
                 href="/privacy"
                 className="text-gray-200 hover:text-[#FFD100] text-sm transition duration-200"
@@ -201,3 +201,4 @@ export default function Footer() {
     </footer>
   );
 }
+

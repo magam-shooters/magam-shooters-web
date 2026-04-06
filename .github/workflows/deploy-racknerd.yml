@@ -1,0 +1,59 @@
+name: Deploy to RackNerd VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: racknerd-deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sync project files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "."
+          target: ${{ secrets.DEPLOY_PATH }}
+          overwrite: true
+          strip_components: 0
+          rm: true
+          exclude: |
+            .git/
+            .github/
+            node_modules/
+            .next/
+            .env
+            .env.local
+            .env.production
+            .env.*
+
+      - name: Install dependencies, build, and restart app
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script_stop: true
+          script: |
+            set -e
+            cd "${{ secrets.DEPLOY_PATH }}"
+            npm ci
+            npm run build
+            export PORT="${{ secrets.APP_PORT || 3000 }}"
+            if pm2 describe "${{ secrets.APP_NAME }}" >/dev/null 2>&1; then
+              pm2 reload "${{ secrets.APP_NAME }}" --update-env
+            else
+              pm2 start npm --name "${{ secrets.APP_NAME }}" -- start
+            fi
+            pm2 save || true

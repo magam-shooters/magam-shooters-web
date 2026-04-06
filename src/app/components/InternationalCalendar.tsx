@@ -4,11 +4,12 @@ import { colors } from '@/config';
 import { useEffect, useState } from 'react';
 
 interface CalendarEvent {
-  _id: string;
+  id?: number;
+  _id?: string;
   dateRange: string;
   title: string;
   location: string;
-  month: string;
+  month?: string;
 }
 
 interface MonthData {
@@ -140,6 +141,7 @@ export default function InternationalCalendar() {
         if (!Array.isArray(events)) return;
         const grouped: Record<string, CalendarEvent[]> = {};
         events.forEach((e) => {
+          if (!e.month) return;
           if (!grouped[e.month]) grouped[e.month] = [];
           grouped[e.month].push(e);
         });

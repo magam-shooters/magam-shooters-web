@@ -29,6 +29,10 @@ const NewsSchema = new Schema<INews>(
   { timestamps: true }
 );
 
+// Supports public/news listing and admin listing sorted by newest first.
+NewsSchema.index({ published: 1, createdAt: -1 });
+NewsSchema.index({ createdAt: -1 });
+
 const News: Model<INews> =
   mongoose.models.News || mongoose.model<INews>('News', NewsSchema);
 

@@ -25,6 +25,9 @@ const TrainingProgramSchema = new Schema<ITrainingProgram>(
   { timestamps: true }
 );
 
+// Supports training programs listing by newest first.
+TrainingProgramSchema.index({ createdAt: -1 });
+
 const TrainingProgram: Model<ITrainingProgram> =
   mongoose.models.TrainingProgram ||
   mongoose.model<ITrainingProgram>('TrainingProgram', TrainingProgramSchema);

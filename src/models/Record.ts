@@ -23,6 +23,9 @@ const RecordSchema = new Schema<IRecord>(
   { timestamps: true }
 );
 
+// Supports records listing by newest first.
+RecordSchema.index({ createdAt: -1 });
+
 const Record: Model<IRecord> =
   mongoose.models.NSSFRecord || mongoose.model<IRecord>('NSSFRecord', RecordSchema);
 

@@ -20,6 +20,9 @@ const GallerySchema = new Schema<IGallery>(
   { timestamps: true }
 );
 
+// Supports gallery listing by newest first.
+GallerySchema.index({ createdAt: -1 });
+
 const Gallery: Model<IGallery> =
   mongoose.models.Gallery || mongoose.model<IGallery>('Gallery', GallerySchema);
 

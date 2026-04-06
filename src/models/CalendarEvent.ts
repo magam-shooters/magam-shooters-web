@@ -21,6 +21,9 @@ const CalendarEventSchema = new Schema<ICalendarEvent>(
   { timestamps: true }
 );
 
+// Supports calendar listing sort order.
+CalendarEventSchema.index({ month: 1, dateRange: 1 });
+
 const CalendarEvent: Model<ICalendarEvent> =
   mongoose.models.CalendarEvent ||
   mongoose.model<ICalendarEvent>('CalendarEvent', CalendarEventSchema);

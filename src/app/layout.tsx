@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Play } from "next/font/google";
 import LayoutWrapper from "./components/LayoutWrapper";
 // @ts-ignore: no type declarations for CSS side-effect import
 import "./globals.css";
 
-const inter = Inter({
-  weight: ["400", "500", "600", "700", "800"],
+const play = Play({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-play",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans flex flex-col min-h-screen bg-white`} suppressHydrationWarning>
+      <body className={`${play.variable} font-sans flex flex-col min-h-screen bg-white`} suppressHydrationWarning>
         <LayoutWrapper>
           {children}
         </LayoutWrapper>

@@ -29,6 +29,9 @@ const CompetitionResultSchema = new Schema<ICompetitionResult>(
   { timestamps: true }
 );
 
+// Supports competition results listing by newest first.
+CompetitionResultSchema.index({ createdAt: -1 });
+
 const CompetitionResult: Model<ICompetitionResult> =
   mongoose.models.CompetitionResult ||
   mongoose.model<ICompetitionResult>('CompetitionResult', CompetitionResultSchema);

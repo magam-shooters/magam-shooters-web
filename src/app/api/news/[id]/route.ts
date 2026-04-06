@@ -7,9 +7,11 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
   try {
     await connectDB();
-    const news = await News.findById(params.id);
+    const news = await News.findById(params.id).lean();
     if (!news) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-    return NextResponse.json(news);
+    return NextResponse.json(news, {
+      headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300' },
+    });
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

@@ -10,7 +10,7 @@ export async function GET() {
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   try {
     await connectDB();
-    const news = await News.find().sort({ createdAt: -1 });
+    const news = await News.find().sort({ createdAt: -1 }).lean();
     return NextResponse.json(news);
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });

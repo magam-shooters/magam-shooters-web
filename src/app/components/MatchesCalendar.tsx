@@ -24,7 +24,7 @@ export default function MatchesCalendar() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/matches')
+    fetch('/api/matches?limit=3')
       .then((r) => r.json())
       .then((data) => { setMatches(Array.isArray(data) ? data.slice(0, 3) : []); setLoading(false); })
       .catch(() => setLoading(false));

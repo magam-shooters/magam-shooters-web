@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["var(--font-inter)"],
-        sans: ["var(--font-inter)"],
+        play: ["var(--font-play)", "sans-serif"],
+        sans: ["var(--font-play)", "sans-serif"],
       },
       colors: {
         // Primary Brand Colors (Core Identity)

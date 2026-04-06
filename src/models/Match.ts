@@ -29,6 +29,9 @@ const MatchSchema = new Schema<IMatch>(
   { timestamps: true }
 );
 
+// Supports match listing by newest first.
+MatchSchema.index({ createdAt: -1 });
+
 const Match: Model<IMatch> =
   mongoose.models.Match || mongoose.model<IMatch>('Match', MatchSchema);
 

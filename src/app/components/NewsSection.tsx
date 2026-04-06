@@ -19,7 +19,7 @@ const NewsSection = () => {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
 
   useEffect(() => {
-    fetch('/api/news')
+    fetch('/api/news?limit=6')
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) setNewsItems(data.slice(0, 6));

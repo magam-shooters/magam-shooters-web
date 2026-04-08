@@ -3,7 +3,7 @@
 import { colors } from "@/config";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaArrowRight, FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
+import { FaArrowRight, FaCalendar, FaMapMarkerAlt, FaMedal } from "react-icons/fa";
 
 interface CompetitionResult {
   _id: string;
@@ -27,7 +27,7 @@ const CompetitionResults = () => {
       .then((data) => {
         if (Array.isArray(data)) setResults(data);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   if (results.length === 0) return null;
@@ -46,66 +46,82 @@ const CompetitionResults = () => {
             Recent championship outcomes and podium finishes from NSSF competitions
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {results.map((result) => (
             <article
               key={result._id}
-              className="card-unified group"
+              className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-[0_12px_30px_rgba(2,6,23,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(2,6,23,0.22)]"
             >
-              <div className="relative h-48 bg-linear-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <div className="w-10 h-10 rounded-full bg-[#FFD100] flex items-center justify-center">
-                      <span className="text-[#002B7F] font-bold text-lg">ðŸ¥‡</span>
+              <div className="relative h-56 p-2">
+
+                {/* Blue gradient box with border */}
+                <div
+                  className="relative h-full w-full rounded-2xl border-4 border-white overflow-hidden"
+                  style={{
+                    background: `linear-gradient(145deg, ${colors.primary.navy} 0%, ${colors.primary.blue} 100%)`,
+                  }}
+                >
+
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white_0%,transparent_45%),radial-gradient(circle_at_80%_70%,white_0%,transparent_35%)]" />
+
+                  {/* Center icon */}
+                  <div className="relative z-10 h-full flex items-center justify-center">
+                    <div className="h-20 w-20 rounded-2xl bg-white/90 flex items-center justify-center shadow-lg">
+                      <FaMedal className="text-3xl" style={{ color: colors.primary.navy }} />
                     </div>
                   </div>
-                  <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
-                    {result.category}
-                  </span>
-                </div>
-                <div className="absolute top-3 right-3">
-                  <span className="tag-unified text-xs font-bold px-2 py-1 rounded-full">
+
+                  {/* Results badge */}
+                  <span
+                    className="absolute top-5 right-5 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide uppercase"
+                    style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
+                  >
                     Results
                   </span>
+
                 </div>
+
               </div>
-              
-              <div className="p-6">
-                <div className="flex items-center gap-4 text-xs text-gray-500 mb-3 font-sans">
-                  <div className="flex items-center gap-1">
+
+              <div className="p-5 flex flex-col gap-4">
+                <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
+                  <div className="flex items-center gap-1.5">
                     <FaCalendar className="text-xs" />
                     <span>{result.date}</span>
                   </div>
+                  <span className="rounded-full bg-slate-100 px-2.5 py-1 font-semibold">{result.category}</span>
                 </div>
 
-                <h3 className="text-xl font-sans font-bold text-[#002B7F] mb-2 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
+                <h3 className="min-h-10 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
                   {result.competition}
                 </h3>
 
-                <div className="flex items-start gap-1 text-gray-600 text-xs mb-4 font-sans">
+                <div className="flex items-start gap-1.5 text-slate-600 text-sm font-sans">
                   <FaMapMarkerAlt className="text-xs mt-0.5 shrink-0" />
                   <span>{result.location}</span>
                 </div>
-                
-                <div className="space-y-2 mb-4 bg-[#F7FAFF] p-3 rounded-lg border border-[#D6E2FF] font-sans">
+
+                <div className="space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-200 font-sans">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">ðŸ¥‡ Gold:</span>
-                    <span className="text-sm font-sans font-bold text-[#FFD100]">{result.winners.gold}</span>
+                    <span className="text-sm font-medium text-slate-600">Gold</span>
+                    <span className="text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{result.winners.gold}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">ðŸ¥ˆ Silver:</span>
-                    <span className="text-sm font-sans font-bold text-[#002B7F]">{result.winners.silver}</span>
+                    <span className="text-sm font-medium text-slate-600">Silver</span>
+                    <span className="text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{result.winners.silver}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600">ðŸ¥‰ Bronze:</span>
-                    <span className="text-sm font-sans font-bold text-[#002B7F]">{result.winners.bronze}</span>
+                    <span className="text-sm font-medium text-slate-600">Bronze</span>
+                    <span className="text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{result.winners.bronze}</span>
                   </div>
                 </div>
-                
+
                 <Link
                   href={`/results/${result._id}`}
-                  className="inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-sans font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                  className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
+                  style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                 >
                   Full Results
                   <FaArrowRight className="text-xs" />
@@ -114,7 +130,7 @@ const CompetitionResults = () => {
             </article>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Link
             href="/results"

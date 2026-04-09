@@ -22,13 +22,7 @@ export async function register() {
         console.log('[NSSF] Admin user already exists:', email);
       }
     } catch (err) {
-      const message = err instanceof Error ? err.message : String(err);
-
-      if (message.includes('MongoDB connection refused')) {
-        console.warn('[NSSF] Admin seed skipped:', message);
-      } else {
-        console.error('[NSSF] Failed to seed admin user:', err);
-      }
+      console.error('[NSSF] Failed to seed admin user:', err);
     }
 
     // Configure S3 bucket CORS to allow direct browser uploads (presigned URLs)

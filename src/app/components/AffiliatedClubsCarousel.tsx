@@ -89,14 +89,9 @@ export default function AffiliatedClubsCarousel() {
                 {/* Club Logo Panel */}
                 <div
                   className="w-full h-48 rounded-2xl flex items-center justify-center text-4xl font-bold border overflow-hidden"
-                  // style={{
-                  //   backgroundColor: colors.primary.navy,
-                  //   borderColor: colors.primary.navy,
-                  //   color: '#FFFFFF'
-                  // }}
-
                   style={{
-                    background: `linear-gradient(145deg, ${colors.primary.navy} 0%, ${colors.primary.blue} 100%)`,
+                    backgroundColor: colors.primary.navy,
+                    borderColor: colors.primary.navy,
                     color: '#FFFFFF'
                   }}
                 >
@@ -115,7 +110,7 @@ export default function AffiliatedClubsCarousel() {
                     className="w-full py-2 rounded-lg font-sans font-semibold transition-all duration-200 hover:shadow-md mt-auto"
                     style={{
                       backgroundColor: colors.primary.yellow,
-                      color: colors.primary.navy
+                      color: '#FFFFFF'
                     }}
                   >
                     View Details
@@ -140,7 +135,7 @@ export default function AffiliatedClubsCarousel() {
 
         {/* Scroll Indicator */}
         <div className="text-center mt-6 text-sm text-gray-500">
-          <p className="font-sans">Scroll horizontally to explore all affiliated clubs.</p>
+          <p className="font-sans">â† Scroll to explore all affiliated clubs â†’</p>
         </div>
       </div>
 

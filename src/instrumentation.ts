@@ -4,6 +4,17 @@ export async function register() {
     const { default: connectDB } = await import('@/lib/mongodb');
     const { default: AdminUser } = await import('@/models/AdminUser');
 
+    const getMongoHostForLogs = () => {
+      const uri = process.env.MONGODB_URI;
+      if (!uri) return undefined;
+      try {
+        const parsed = new URL(uri);
+        return `${parsed.protocol}//${parsed.hostname}`;
+      } catch {
+        return undefined;
+      }
+    };
+
     try {
       await connectDB();
 
@@ -23,6 +34,15 @@ export async function register() {
       }
     } catch (err) {
       console.error('[NSSF] Failed to seed admin user:', err);
+
+      const message = (err as any)?.message as string | undefined;
+      if (message?.includes('querySrv ENOTFOUND') || message?.includes('getaddrinfo ENOTFOUND')) {
+        const host = getMongoHostForLogs();
+        console.error(
+          '[NSSF] MongoDB hostname could not be resolved. Check MONGODB_URI (Atlas cluster host/connection string) or use a local Mongo URI for dev. Host:',
+          host || '(unparseable)'
+        );
+      }
     }
 
     // Configure S3 bucket CORS to allow direct browser uploads (presigned URLs)

@@ -26,6 +26,7 @@ export async function GET(req: NextRequest) {
       message.includes('Could not connect to any servers') ||
       message.includes('IP that is not whitelisted') ||
       message.includes('querySrv ETIMEOUT') ||
+      message.includes('querySrv ENOTFOUND') ||
       message.includes('ECONNREFUSED');
 
     if (isAtlasConnectivityError) {

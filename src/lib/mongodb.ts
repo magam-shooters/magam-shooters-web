@@ -6,6 +6,8 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable in .env.local');
 }
 
+const MONGODB_URI_STRING: string = MONGODB_URI;
+
 interface MongooseCache {
   conn: mongoose.Connection | null;
   promise: Promise<mongoose.Connection> | null;
@@ -25,7 +27,7 @@ async function connectDB(): Promise<mongoose.Connection> {
 
   if (!cached.promise) {
     cached.promise = mongoose
-      .connect(MONGODB_URI)
+      .connect(MONGODB_URI_STRING)
       .then((m) => m.connection)
       .catch((err) => {
         cached.promise = null;

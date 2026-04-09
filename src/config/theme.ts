@@ -53,7 +53,7 @@ export const theme = {
 
   // Font Family Configuration
   fonts: {
-    primary: 'font-inter',
+    primary: 'font-sans',
     body: 'font-sans',
   },
 

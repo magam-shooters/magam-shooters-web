@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -10,6 +11,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,10 +42,11 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">
+            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1 font-sans">
               Email Address
             </label>
             <input
+              id="email"
               type="email"
               required
               value={email}
@@ -54,17 +57,29 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1 font-sans">
+            <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-1 font-sans">
               Password
             </label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002B7F] font-sans text-gray-800"
-              placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
-            />
+            <div className="relative">
+              <input
+                id="password"
+                type={showPassword ? 'text' : 'password'}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#002B7F] font-sans text-gray-800 pr-12"
+                placeholder="••••••••"
+              />
+              <button
+                type="button"
+                tabIndex={-1}
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-[#002B7F] focus:outline-none"
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+              >
+                {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+              </button>
+            </div>
           </div>
 
           {error && (
@@ -80,7 +95,16 @@ export default function LoginPage() {
           >
             {loading ? 'Signing inâ€¦' : 'Sign In'}
           </button>
+
         </form>
+        {/* Back to Home Button */}
+        <button
+          type="button"
+          onClick={() => router.push('/')}
+          className="w-full mt-4 bg-gray-200 text-[#002B7F] font-sans font-bold py-3 rounded-lg hover:bg-gray-300 transition-colors duration-200"
+        >
+          Back to Home
+        </button>
 
         <p className="text-center text-xs text-gray-400 mt-6 font-sans">
           Â© {new Date().getFullYear()} NSSF Sri Lanka. All rights reserved.

@@ -45,7 +45,7 @@ export const COLORS = {
 // FONTS
 export const FONTS = {
   // Font Family
-  FAMILY_PRIMARY: 'font-roboto',
+  FAMILY_PRIMARY: 'font-sans',
   FAMILY_SECONDARY: 'font-sans',
 
   // Font Sizes

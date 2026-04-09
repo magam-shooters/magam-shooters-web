@@ -7,6 +7,13 @@
   --nssf-yellow-soft: #fff7cc;
 }
 
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
 .card-unified {
   background: #ffffff;
   border: 2px solid var(--nssf-yellow);
@@ -29,25 +36,28 @@
 
 @layer base {
   html {
-    font-family: var(--font-play);
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
   }
   
   body {
-    font-family: var(--font-play);
+    font-family: inherit;
   }
   
   h1 {
-    font-family: var(--font-play);
+    font-family: inherit;
     @apply text-5xl md:text-6xl font-extrabold;
   }
   
   h2 {
-    font-family: var(--font-play);
+    font-family: inherit;
     @apply text-4xl md:text-5xl font-extrabold;
   }
   
   h3 {
-    font-family: var(--font-play);
+    font-family: inherit;
     @apply text-3xl md:text-4xl font-bold;
   }
   

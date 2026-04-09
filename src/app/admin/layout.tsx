@@ -19,7 +19,11 @@ const navItems: { label: string; href: string; icon: IconDefinition }[] = [
   { label: 'Gallery', href: '/admin/gallery', icon: faImage },
 ];
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const { data: session, status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
@@ -45,7 +49,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (status === 'unauthenticated') return null;
 
   return (
-    <div className="flex h-screen bg-gray-100 overflow-hidden font-roboto">
+    <div className="flex h-screen bg-gray-100 overflow-hidden font-sans">
       {/* Sidebar */}
       <aside
         className={`fixed inset-y-0 left-0 z-50 w-64 bg-[#002B7F] text-white flex flex-col transform transition-transform duration-300 ease-in-out
@@ -103,9 +107,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Overlay */}
       {sidebarOpen && (
-        <div
+        <button
+          type="button"
           className="fixed inset-0 z-40 bg-black/50 lg:hidden"
           onClick={() => setSidebarOpen(false)}
+          aria-label="Close sidebar"
         />
       )}
 

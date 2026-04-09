@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Play } from "next/font/google";
 import LayoutWrapper from "./components/LayoutWrapper";
 // @ts-ignore: no type declarations for CSS side-effect import
 import "./globals.css";
-
-const play = Play({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-play",
-});
 
 export const metadata: Metadata = {
   title: "NSSF Sri Lanka - National Shooting Sports Federation",
@@ -22,7 +15,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${play.variable} font-sans flex flex-col min-h-screen bg-white`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="roboto-font flex flex-col min-h-screen bg-white" suppressHydrationWarning>
         <LayoutWrapper>
           {children}
         </LayoutWrapper>

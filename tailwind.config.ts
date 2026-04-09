@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -7,10 +8,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      ...defaultTheme.fontFamily,
+      sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+    },
     extend: {
       fontFamily: {
-        play: ["var(--font-play)", "sans-serif"],
-        sans: ["var(--font-play)", "sans-serif"],
+        roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         // Primary Brand Colors (Core Identity)

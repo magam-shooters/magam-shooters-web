@@ -1,4 +1,112 @@
-﻿import { MdArrowForward } from "react-icons/md";
+﻿
+
+// interface ModernSectionHeaderProps {
+//   readonly title: string;
+//   readonly subtitle?: string;
+//   readonly description?: string;
+//   readonly alignment?: 'left' | 'center' | 'right';
+//   readonly className?: string;
+//   readonly titleColor?: string;
+//   readonly subtitleColor?: string;
+//   readonly descriptionColor?: string;
+// }
+
+// export default function ModernSectionHeader({
+//   title,
+//   subtitle,
+//   description,
+//   alignment = 'center',
+//   className = "",
+//   titleColor = {colors.primary.blue},
+//   subtitleColor = {colors.primary.navy}, 
+//   descriptionColor = "#4B5563"
+// }: ModernSectionHeaderProps) {
+//   const alignmentClass = {
+//     left: 'text-left',
+//     center: 'text-center',
+//     right: 'text-right'
+//   }[alignment];
+
+//   const justifyClass = {
+//     left: 'justify-start',
+//     center: 'justify-center',
+//     right: 'justify-end'
+//   }[alignment];
+
+//   return (
+//     <div className={`mb-12 md:mb-20 ${alignmentClass} ${className}`}>
+//       {/* Accent Line */}
+//       {/* {showAccent && (
+//         <div className={`flex items-center gap-4 mb-6 ${justifyClass}`}>
+//           <div
+//             className="h-1 w-16"
+//             style={{ backgroundColor: accentColor }}
+//           ></div>
+//           <MdArrowForward
+//             className="text-2xl"
+//             style={{ color: accentColor }}
+//           />
+//           <div
+//             className="h-1 w-16"
+//             style={{ backgroundColor: accentColor }}
+//           ></div>
+//         </div>
+//       )} */}
+
+//       {/* Subtitle */}
+//       {subtitle && (
+//         <p
+//           className="text-sm font-sans font-semibold uppercase tracking-wider mb-2"
+//           style={{ color: subtitleColor }}
+//         >
+//           {subtitle}
+//         </p>
+//       )}
+
+//       {/* Title */}
+//       <h2
+//         className="text-4xl md:text-5xl font-sans font-bold mb-4"
+//         style={{ 
+//           color: titleColor
+//         }}
+//       >
+//         {title}
+//       </h2>
+
+//       {/* Description */}
+//       {description && (
+//         <div className={`max-w-4xl ${alignment === 'center' ? 'mx-auto' : ''}`}>
+//           <p
+//             className="text-lg md:text-xl   font-sans"
+//             style={{ color: descriptionColor }}
+//           >
+//             {description}
+//           </p>
+//         </div>
+//       )}
+
+//       {/* Bottom Accent */}
+//       {/* {showAccent && (
+//         <div className={`flex items-center gap-2 mt-8 ${justifyClass}`}>
+//           <div
+//             className="h-0.5 w-8"
+//             style={{ backgroundColor: accentColor }}
+//           ></div>
+//           <div
+//             className="h-0.5 w-12"
+//             style={{ backgroundColor: `${accentColor}80` }}
+//           ></div>
+//           <div
+//             className="h-0.5 w-6"
+//             style={{ backgroundColor: `${accentColor}40` }}
+//           ></div>
+//         </div>
+//       )} */}
+//     </div>
+//   );
+// }
+
+import { colors } from "@/config";
 
 interface ModernSectionHeaderProps {
   readonly title: string;
@@ -6,8 +114,6 @@ interface ModernSectionHeaderProps {
   readonly description?: string;
   readonly alignment?: 'left' | 'center' | 'right';
   readonly className?: string;
-  readonly showAccent?: boolean;
-  readonly accentColor?: string;
   readonly titleColor?: string;
   readonly subtitleColor?: string;
   readonly descriptionColor?: string;
@@ -19,48 +125,24 @@ export default function ModernSectionHeader({
   description,
   alignment = 'center',
   className = "",
-  showAccent = true,
-  accentColor = "#00AEEF",
-  titleColor = "#002B7F",
-  subtitleColor = "#002B7F", 
-  descriptionColor = "#1F2937"
+  titleColor = colors.primary.navy,        // ✅ FIXED
+  subtitleColor = colors.primary.blue,     // ✅ FIXED
+  descriptionColor = "#4B5563"
 }: ModernSectionHeaderProps) {
+
   const alignmentClass = {
     left: 'text-left',
     center: 'text-center',
     right: 'text-right'
   }[alignment];
 
-  const justifyClass = {
-    left: 'justify-start',
-    center: 'justify-center',
-    right: 'justify-end'
-  }[alignment];
-
   return (
-    <div className={`mb-12 md:mb-20 ${alignmentClass} ${className}`}>
-      {/* Accent Line */}
-      {showAccent && (
-        <div className={`flex items-center gap-4 mb-6 ${justifyClass}`}>
-          <div
-            className="h-1 w-16"
-            style={{ backgroundColor: accentColor }}
-          ></div>
-          <MdArrowForward
-            className="text-2xl"
-            style={{ color: accentColor }}
-          />
-          <div
-            className="h-1 w-16"
-            style={{ backgroundColor: accentColor }}
-          ></div>
-        </div>
-      )}
-
+    <div className={`mb-16 ${alignmentClass} ${className}`}>
+      
       {/* Subtitle */}
       {subtitle && (
         <p
-          className="text-sm font-sans font-bold uppercase tracking-[0.2em] mb-4"
+          className="text-sm font-sans font-semibold uppercase tracking-wider mb-2"
           style={{ color: subtitleColor }}
         >
           {subtitle}
@@ -69,19 +151,17 @@ export default function ModernSectionHeader({
 
       {/* Title */}
       <h2
-        className="text-4xl md:text-5xl font-sans font-bold leading-tight mb-6"
-        style={{ 
-          color: titleColor
-        }}
+        className="text-4xl md:text-5xl font-sans font-bold mb-4"
+        style={{ color: titleColor }}
       >
         {title}
       </h2>
 
       {/* Description */}
       {description && (
-        <div className={`max-w-4xl ${alignment === 'center' ? 'mx-auto' : ''}`}>
+        <div className={`${alignment === 'center' ? 'max-w-2xl mx-auto' : ''}`}>
           <p
-            className="text-lg md:text-xl leading-relaxed font-sans font-normal"
+            className="text-lg text-gray-600 font-sans"
             style={{ color: descriptionColor }}
           >
             {description}
@@ -89,23 +169,6 @@ export default function ModernSectionHeader({
         </div>
       )}
 
-      {/* Bottom Accent */}
-      {showAccent && (
-        <div className={`flex items-center gap-2 mt-8 ${justifyClass}`}>
-          <div
-            className="h-0.5 w-8"
-            style={{ backgroundColor: accentColor }}
-          ></div>
-          <div
-            className="h-0.5 w-12"
-            style={{ backgroundColor: `${accentColor}80` }}
-          ></div>
-          <div
-            className="h-0.5 w-6"
-            style={{ backgroundColor: `${accentColor}40` }}
-          ></div>
-        </div>
-      )}
     </div>
   );
 }

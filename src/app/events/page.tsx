@@ -2,6 +2,7 @@
 import { IMAGES } from "@/config/images";
 import Link from "next/link";
 import { FaAward, FaCalendarAlt, FaCheckCircle, FaClock, FaMapMarkerAlt, FaMedal, FaShieldAlt, FaTrophy, FaUsers } from "react-icons/fa";
+import ModernSectionHeader from "../components/ModernSectionHeader";
 import PageHero from "../components/PageHero";
 
 export default function Events() {
@@ -105,17 +106,12 @@ export default function Events() {
       {/* Upcoming Events Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              2025 Calendar
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Upcoming Championships
-            </h2>
-            <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
-              Join our upcoming competitions and test your skills against Sri Lanka's finest marksmen
-            </p>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="2025 Calendar"
+            title="Upcoming Championships"
+            description="Join our upcoming competitions and test your skills against Sri Lanka's finest marksmen"
+          />
 
           <div className="grid gap-8">
             {upcomingEvents.map((event) => (
@@ -219,14 +215,11 @@ export default function Events() {
       {/* Event Categories Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              Competition Types
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Event Categories
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="Competition Types"
+            title="Event Categories"
+          />
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* National Championships */}
@@ -280,21 +273,18 @@ export default function Events() {
       {/* Past Events & Results */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              2024 Champions
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Recent Results
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="2024 Champions"
+            title="Recent Results"
+          />
 
           <div className="grid md:grid-cols-3 gap-6">
             {pastEvents.map((event, index) => {
               const iconColor = [colors.primary.yellow, colors.primary.navy, colors.primary.blue][index % 3];
 
               return (
-              <div key={event.id} className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
+              <div key={event.id} className="bg-linear-to-br from-white to-gray-50 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
                 <div className="flex items-center gap-2 mb-4">
                   <FaAward className="text-2xl" style={{ color: iconColor }} />
                   <h3 className="font-sans text-lg font-semibold" style={{ color: colors.primary.navy }}>{event.title}</h3>
@@ -329,14 +319,11 @@ export default function Events() {
       {/* Event Rules & Guidelines */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              Important Information
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Competition Guidelines
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="Important Information"
+            title="Competition Guidelines"
+          />
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-xl">
@@ -407,7 +394,7 @@ export default function Events() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-20 px-4 bg-linear-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6">Ready to Compete?</h2>
           <p className="font-sans text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

@@ -2,13 +2,15 @@
 
 import { colors } from '@/config';
 import { useEffect, useState } from 'react';
+import ModernSectionHeader from './ModernSectionHeader';
 
 interface CalendarEvent {
-  _id: string;
+  id?: number | string;
+  _id?: string;
   dateRange: string;
   title: string;
   location: string;
-  month: string;
+  month?: string;
 }
 
 interface MonthData {
@@ -140,6 +142,7 @@ export default function InternationalCalendar() {
         if (!Array.isArray(events)) return;
         const grouped: Record<string, CalendarEvent[]> = {};
         events.forEach((e) => {
+          if (!e.month) return;
           if (!grouped[e.month]) grouped[e.month] = [];
           grouped[e.month].push(e);
         });
@@ -166,17 +169,11 @@ export default function InternationalCalendar() {
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-            <div className="text-center mb-16">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Global Events
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            International Calendar 2026
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            ISSF World Championships, World Cups, and Continental Championships
-          </p>
-        </div>
+        <ModernSectionHeader
+          subtitle="Global Events"
+          title="International Calendar 2026"
+          description="ISSF World Championships, World Cups, and Continental Championships"
+        />
         {/* Calendar */}
         <div className="max-w-7xl mx-auto">
           {calendarData.map((monthData) => (
@@ -212,11 +209,11 @@ export default function InternationalCalendar() {
                 <div className="px-2 pb-3 space-y-1">
                   {monthData.events.map((event) => (
                     <div
-                      key={event._id}
+                      key={event._id ?? String(event.id)}
                       className="p-2 rounded-lg bg-gray-50 hover:bg-blue-50 transition-colors"
                     >
                       <div className="flex items-start gap-2">
-                        <span className="text-xs font-semibold text-[#00AEEF] w-20 flex-shrink-0">
+                        <span className="text-xs font-semibold text-[#00AEEF] w-20 shrink-0">
                           {event.dateRange}
                         </span>
                         <span className="text-sm font-medium flex-1" style={{ color: colors.primary.navy }}>

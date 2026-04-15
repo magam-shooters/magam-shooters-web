@@ -1,5 +1,6 @@
 ﻿import { colors } from "@/config";
 import { FaClock, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaPhone, FaQuestionCircle } from "react-icons/fa";
+import ModernSectionHeader from "../components/ModernSectionHeader";
 import PageHero from "../components/PageHero";
 
 export default function Contact() {
@@ -50,19 +51,14 @@ export default function Contact() {
       {/* Contact Form Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              Get in Touch
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Send Us a Message
-            </h2>
-            <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
-              Have questions about membership, training programs, or upcoming competitions? We're here to help!
-            </p>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="Get in Touch"
+            title="Send Us a Message"
+            description="Have questions about membership, training programs, or upcoming competitions? We're here to help!"
+          />
 
-          <form className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl space-y-6">
+          <form className="bg-linear-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl space-y-6">
             {/* Name, Email, Subject Row */}
             <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
               <div>
@@ -195,17 +191,12 @@ export default function Contact() {
       {/* Map Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              Our Location
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Visit Us
-            </h2>
-            <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
-              Find us at our headquarters in Colombo, Sri Lanka
-            </p>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="Our Location"
+            title="Visit Us"
+            description="Find us at our headquarters in Colombo, Sri Lanka"
+          />
 
           <div className="relative h-96 sm:h-[500px] md:h-[600px] overflow-hidden rounded-xl shadow-lg">
             <iframe
@@ -223,7 +214,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-20 px-4 bg-linear-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6">Have Questions?</h2>
           <p className="font-sans text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

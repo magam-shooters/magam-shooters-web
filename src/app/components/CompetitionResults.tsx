@@ -83,6 +83,10 @@ const CompetitionResults = () => {
               </div>
 
               <div className="p-4 flex flex-col gap-3 flex-1">
+
+                 <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
+                  {result.competition}
+                </h3>
                 <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
                   <div className="flex items-center gap-1.5">
                     <FaCalendar className="text-xs" />
@@ -91,9 +95,7 @@ const CompetitionResults = () => {
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 font-semibold">{result.category}</span>
                 </div>
 
-                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
-                  {result.competition}
-                </h3>
+               
 
 
 

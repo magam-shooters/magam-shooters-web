@@ -3,6 +3,8 @@
 import { colors } from '@/config';
 import { useRef, useState } from 'react';
 import ModernSectionHeader from './ModernSectionHeader';
+import { FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface GalleryImage {
   id: number;
@@ -124,14 +126,24 @@ export default function ImageGalleryScroll() {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <a
             href="/gallery"
-            className="inline-block px-8 py-3 rounded-lg font-sans font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
+            className="inline-block px-8 py-3  font-sans font-semibold rounded-full text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
             style={{ backgroundColor: colors.primary.navy }}
           >
             View Full Gallery
+            <FaArrowRight />
           </a>
+        </div> */}
+        <div className="text-center mt-12">
+          <Link
+            href="/gallery"
+            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+          >
+            View Full Gallery
+            <FaArrowRight />
+          </Link>
         </div>
       </div>
 

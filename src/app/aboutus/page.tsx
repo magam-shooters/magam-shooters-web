@@ -46,6 +46,7 @@ export default function AboutUs() {
       {/* Hero Section */}
       <PageHero
         title="About NSSF Sri Lanka"
+        subtitle="Leading Sri Lanka's Shooting Sports"
         description="The National Shooting Sports Federation of Sri Lanka - Championing excellence in competitive shooting since its establishment"
       />
 
@@ -290,7 +291,7 @@ export default function AboutUs() {
       </section>
 
       {/* Gallery Section */}
-      <ImageGalleryScroll />
+      {/* <ImageGalleryScroll /> */}
 
       {/* Call to Action Section */}
       <section className="py-20 px-4 bg-linear-to-br from-gray-900 to-gray-800 text-white">

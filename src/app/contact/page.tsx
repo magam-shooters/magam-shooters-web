@@ -9,6 +9,7 @@ export default function Contact() {
       {/* Hero Section */}
       <PageHero
         title="Contact Us"
+        subtitle="Get in Touch"
         description="Get in touch with NSSF Sri Lanka for membership, training, competitions, or any inquiries"
       />
 

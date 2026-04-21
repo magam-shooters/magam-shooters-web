@@ -1,6 +1,7 @@
 ﻿import { colors } from "@/config";
 import Link from "next/link";
 import { FaArrowLeft, FaCalendar, FaMapMarkerAlt, FaMedal } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 
 interface CompetitionResult {
   id: string;
@@ -233,7 +234,7 @@ export default function ResultsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <section className="bg-linear-to-br from-[#002B7F] to-[#004A9F] text-white py-16 px-4 sm:px-6 lg:px-8">
+      {/* <section className="bg-linear-to-br from-[#002B7F] to-[#004A9F] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
@@ -260,7 +261,14 @@ export default function ResultsPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <PageHero
+              title="Competition Results"
+              subtitle="Recent Outcomes"
+              description="Recent championship outcomes and podium finishes from NSSF competitions"
+            />
+
 
       {/* Results Grid */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -308,6 +316,9 @@ export default function ResultsPage() {
                 </div>
 
                 <div className="p-3.5 flex flex-col gap-2.5 flex-1">
+                  <h3 className="min-h-6 text-base font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
+                    {result.competition}
+                  </h3>
                   <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
                     <div className="flex items-center gap-1.5">
                       <FaCalendar className="text-xs" />
@@ -316,9 +327,7 @@ export default function ResultsPage() {
                     <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold">{result.category}</span>
                   </div>
 
-                  <h3 className="min-h-6 text-base font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
-                    {result.competition}
-                  </h3>
+                  
 
                   <div className="flex items-start gap-1 text-slate-600 text-xs">
                     <FaMapMarkerAlt className="text-xs mt-0.5 shrink-0" />

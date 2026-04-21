@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaArrowRight, FaCalendar, FaSearch, FaUser } from "react-icons/fa";
 import PageHero from "../components/PageHero";
+import { colors } from "@/config";
 
 interface NewsItem {
   id: string;
@@ -15,6 +16,12 @@ interface NewsItem {
   image: string;
   category: string;
 }
+
+const compactSummary = (text: string, maxWords = 14) => {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= maxWords) return text;
+  return `${words.slice(0, maxWords).join(" ")}...`;
+};
 
 // Sample news data - this would typically come from a CMS or API
 const allNewsItems: NewsItem[] = [
@@ -131,6 +138,7 @@ const allNewsItems: NewsItem[] = [
 export default function NewsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   
   const categories = ["All", "Championships", "Facilities", "Youth Programs", "Training", "International", "Technology"];
   
@@ -187,52 +195,83 @@ export default function NewsPage() {
           {/* News Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredNews.map((news) => (
+              (() => {
+                const hasImage = Boolean(news.image) && !failedImages[news.id];
+                return (
               <article
                 key={news.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-[0_12px_30px_rgba(2,6,23,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(2,6,23,0.22)]"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-[#002B7F] to-[#004A9F] flex items-center justify-center">
-                    <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
-                      {news.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-3 right-3">
-                    <span className="bg-white/90 text-[#002B7F] text-xs font-bold px-2 py-1 rounded-full">
+                <div className="relative h-56 p-2">
+                  <div
+                    className="relative h-full w-full rounded-2xl border-4 border-white overflow-hidden"
+                     style={{
+                      background: `linear-gradient(145deg, ${colors.primary.navy} 0%, ${colors.primary.blue} 100%)`,
+                    }}
+                  >
+                    {hasImage ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={news.image}
+                        alt={news.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onError={() => setFailedImages((prev) => ({ ...prev, [news.id]: true }))}
+                      />
+                    ) : null}
+
+                    {!hasImage && (
+                      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white_0%,transparent_45%),radial-gradient(circle_at_80%_70%,white_0%,transparent_35%)]" />
+                    )}
+
+                    {!hasImage && (
+                      <div className="relative z-10 h-full flex items-center justify-center px-4 text-center">
+                        <span className="text-white text-sm font-semibold px-3 py-1 bg-black/30 rounded-full">
+                          {news.category}
+                        </span>
+                      </div>
+                    )}
+
+                    <span
+                      className="absolute top-5 right-5 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide uppercase"
+                      style={{ backgroundColor: "#FFD100", color: "#002B7F" }}
+                    >
                       {news.category}
                     </span>
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                    <div className="flex items-center gap-1">
+                <div className="p-4 flex flex-col gap-3">
+                  <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors text-[#002B7F]">
+                    {news.title}
+                  </h3>
+
+                  <div className="flex items-center justify-between gap-2 text-[11px] text-slate-600 font-sans">
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                       <FaCalendar className="text-xs" />
                       <span>{news.date}</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                       <FaUser className="text-xs" />
                       <span>{news.author}</span>
                     </div>
                   </div>
-                  
-                    <h3 className="font-sans text-xl font-semibold text-[#002B7F] mb-3 line-clamp-2 group-hover:text-[#001B5F] transition-colors">
-                    {news.title}
-                  </h3>
-                  
-                  <p className="font-sans text-gray-600 text-sm mb-4 line-clamp-3">
-                    {news.excerpt}
+
+                  <p className="text-slate-600 text-xs md:text-sm leading-6 line-clamp-2 font-sans">
+                    {compactSummary(news.excerpt)}
                   </p>
                   
                   <Link
                     href={`/news/${news.id}`}
-                    className="font-sans inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                    className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
+                    style={{ backgroundColor: "#FFD100", color: "#002B7F" }}
                   >
                     Read More
                     <FaArrowRight className="text-xs" />
                   </Link>
                 </div>
               </article>
+                );
+              })()
             ))}
           </div>
           

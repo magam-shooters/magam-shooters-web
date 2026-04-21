@@ -1,6 +1,7 @@
 ﻿import { colors } from "@/config";
 import Link from "next/link";
 import { FaArrowLeft, FaTrophy } from "react-icons/fa";
+import PageHero from "../components/PageHero";
 
 interface Record {
   id: string;
@@ -155,7 +156,7 @@ export default function RecordsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
-      <section className="bg-linear-to-br from-[#FFD100] to-[#E5BC00] text-[#002B7F] py-16 px-4 sm:px-6 lg:px-8">
+      {/* <section className="bg-linear-to-br from-[#FFD100] to-[#E5BC00] text-[#002B7F] py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
@@ -180,7 +181,14 @@ export default function RecordsPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <PageHero
+                    title="Achievements"
+                    subtitle="National Records"
+                    description="Outstanding achievements and record-breaking performances by Sri Lankan athletes"
+                  />
+      
 
       {/* Records Grid */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -220,43 +228,60 @@ export default function RecordsPage() {
                       className="absolute top-5 right-5 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide uppercase"
                       style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                     >
-                      Record
+                      {record.category}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-5 flex flex-col gap-4">
-                  <div className="flex items-center justify-end">
-                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{record.category}</span>
-                  </div>
-
-                  <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
+                <div className="p-4 flex flex-col gap-2.5">
+                  <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
                     {record.title}
                   </h3>
+                  {/* <div className="flex items-center justify-end">
+                    <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{record.category}</span>
+                  </div> */}
+
+                  {/* <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
+                    {record.title}
+                  </h3> */}
 
                   <div className="space-y-1 font-sans rounded-xl border border-slate-200 bg-slate-50 p-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-600">Holder</span>
-                      <span className="text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{record.holder}</span>
+                      <span className="text-xs text-slate-600">Holder</span>
+                      <span className="text-xs md:text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{record.holder}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-600">Score</span>
-                      <span className="text-sm font-sans font-extrabold" style={{ color: colors.primary.navy }}>{record.score}</span>
+                      <span className="text-xs text-slate-600">Score</span>
+                      <span className="text-xs md:text-sm font-sans font-extrabold" style={{ color: colors.primary.navy }}>{record.score}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-600">Event</span>
-                      <span className="text-xs font-medium text-slate-700">{record.event}</span>
+                     <span className="text-xs font-medium text-slate-700">{record.event}</span>
                     </div>
-                    <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-600">Date</span>
                       <span className="text-sm font-medium text-slate-700">{record.date}</span>
                     </div>
-                    <div className="flex items-center justify-between">
+                     <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-600">Location</span>
                       <span className="text-xs font-medium text-slate-700">{record.location}</span>
                     </div>
+                      
+                    </div>
                   </div>
-                </div>
+
+                  {/* <div className="flex flex-wrap gap-1.5">
+                    <span className="max-w-full truncate rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700" title={record.discipline}>
+                      {record.discipline}
+                    </span>
+                    <span className="max-w-full truncate rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700" title={record.event}>
+                      {record.event}
+                    </span>
+                    <span className="max-w-full truncate rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-semibold text-slate-700" title={record.location}>
+                      {record.location}
+                    </span>
+                  </div> */}
+                
               </article>
             ))}
           </div>

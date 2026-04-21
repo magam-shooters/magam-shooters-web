@@ -57,8 +57,7 @@ export default function MatchesCalendar() {
                   className="relative h-full w-full rounded-2xl border-4 border-white overflow-hidden"
                   style={{
                     background: `linear-gradient(145deg, ${colors.primary.navy} 0%, ${colors.primary.blue} 100%)`,
-                  }}
-                >
+                  }}>
                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white_0%,transparent_45%),radial-gradient(circle_at_80%_70%,white_0%,transparent_35%)]" />
                   <div className="relative z-10 h-full flex items-center justify-center">
                     <div className="h-20 w-20 rounded-2xl bg-white/90 flex items-center justify-center shadow-lg">
@@ -77,16 +76,16 @@ export default function MatchesCalendar() {
               </div>
 
               <div className="p-4 flex flex-col gap-2 flex-1">
+
+                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
+                  {match.title}
+                </h3>
                 <div className="flex flex-wrap items-center justify-between text-xs text-slate-600 font-sans">
                   <span>{formatDate(match.date)}</span>
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 font-semibold">{match.category}</span>
                 </div>
 
-                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
-                  {match.title}
-                </h3>
-
-                <div className="space-y-2 rounded-xl border border-slate-200 bg-slate-50 p-3 font-sans">
+                {/* <div className="space-y-2 rounded-xl border border-slate-200 bg-slate-50 p-3 font-sans">
                   <div className="flex items-center text-slate-700 text-sm">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -101,9 +100,9 @@ export default function MatchesCalendar() {
                     </svg>
                     <span>{match.venue}</span>
                   </div>
-                </div>
+                </div> */}
 
-                {match.pdfUrl ? (
+                {/* {match.pdfUrl ? (
                   <a
                     href={match.pdfUrl}
                     target="_blank"
@@ -120,7 +119,7 @@ export default function MatchesCalendar() {
                   >
                     Register Now
                   </button>
-                )}
+                )} */}
               </div>
             </article>
           ))}

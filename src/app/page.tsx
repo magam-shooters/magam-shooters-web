@@ -10,6 +10,8 @@ import MatchesCalendar from "./components/MatchesCalendar";
 import NewsSection from "./components/NewsSection";
 import Records from "./components/Records";
 import TrainingPrograms from "./components/TrainingPrograms";
+import ImageGalleryScroll from "./components/ImageGalleryScroll";
+import Gallery from "./components/Gallery";
 
 export default function Home() {
   return (
@@ -73,7 +75,9 @@ export default function Home() {
       <Records />
       <CompetitionResults />
       <NewsSection />
+      <Gallery/>
 
+    
     </div>
   );
 }

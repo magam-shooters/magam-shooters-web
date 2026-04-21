@@ -125,8 +125,8 @@ export default function ModernSectionHeader({
   description,
   alignment = 'center',
   className = "",
-  titleColor = colors.primary.navy,        // ✅ FIXED
-  subtitleColor = colors.primary.blue,     // ✅ FIXED
+  titleColor = colors.primary.navy,        
+  subtitleColor = colors.primary.blue,     
   descriptionColor = "#4B5563"
 }: ModernSectionHeaderProps) {
 

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaTimes } from 'react-icons/fa';
+import PageHero from '../components/PageHero';
 
 interface GalleryItem {
   _id: string;
@@ -64,7 +65,7 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <section className="bg-[#002B7F] text-white py-16 px-4 sm:px-6 lg:px-8">
+      {/* <section className="bg-[#002B7F] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <Link href="/" className="font-sans inline-flex items-center gap-2 text-white hover:text-gray-200 mb-6 transition-colors">
             <FaArrowLeft />
@@ -75,7 +76,13 @@ export default function GalleryPage() {
             Explore moments from our competitions, training programs, and achievements
           </p>
         </div>
-      </section>
+      </section> */}
+      <PageHero
+              title="Gallery"
+              subtitle="Explore Our Gallery"
+              description="Explore moments from our competitions, training programs, and achievements"
+            />
+
 
       {/* Gallery Grid */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">

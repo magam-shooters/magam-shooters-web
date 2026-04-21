@@ -100,6 +100,7 @@ export default function Events() {
       {/* Hero Section */}
       <PageHero
         title="Competitions & Events"
+        subtitle="Join Our Championships"
         description="Join Sri Lanka's premier shooting sports competitions and championship events"
       />
 

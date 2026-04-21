@@ -25,7 +25,7 @@ const Records = () => {
       .then((data) => {
         if (Array.isArray(data)) setRecords(data);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   if (records.length === 0) return null;
@@ -38,7 +38,7 @@ const Records = () => {
           title="National Records"
           description="Outstanding achievements and record-breaking performances by Sri Lankan athletes"
         />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {records.map((record) => (
             <article
@@ -62,20 +62,23 @@ const Records = () => {
                     className="absolute top-5 right-5 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide uppercase"
                     style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                   >
-                    Record
+                    {record.category}
                   </span>
+
+
+
                 </div>
               </div>
-              
+
               <div className="p-5 flex flex-col gap-4">
-                <div className="flex items-center justify-end">
+                {/* <div className="flex items-center justify-end">
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{record.category}</span>
-                </div>
+                </div> */}
 
                 <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
                   {record.title}
                 </h3>
-                
+
                 <div className="space-y-1 font-sans rounded-xl border border-slate-200 bg-slate-50 p-2">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">Holder</span>
@@ -89,9 +92,9 @@ const Records = () => {
                     <span className="text-sm text-slate-600">Date</span>
                     <span className="text-sm font-medium text-slate-700">{record.date}</span>
                   </div>
-                  
+
                 </div>
-                
+
                 {/* <Link
                   href={`/records/${record._id}`}
                   className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
@@ -104,7 +107,7 @@ const Records = () => {
             </article>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Link
             href="/records"

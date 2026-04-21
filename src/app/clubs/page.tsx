@@ -150,6 +150,7 @@ export default function Clubs() {
       {/* Hero Section */}
       <PageHero
         title="Affiliated Clubs"
+        subtitle="Join Our Shooting Community"
         description="Join one of our 17 affiliated shooting clubs across Sri Lanka and become part of the NSSF family"
       />
 

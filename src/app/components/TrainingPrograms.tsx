@@ -87,9 +87,11 @@ const TrainingPrograms = () => {
               </div>
               
               <div className="p-4 flex flex-col gap-3">
-                
-
+                <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
+                  {program.title}
+                </h3>
                 <div className="flex items-center justify-between gap-2 text-xs text-slate-600 font-sans">
+                   
                   <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                     <FaClock className="text-xs" />
                     <span>{program.duration}</span>
@@ -100,9 +102,7 @@ const TrainingPrograms = () => {
                   </div>
                 </div>
                 
-                <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
-                  {program.title}
-                </h3>
+               
                 
                 <p className="text-slate-600 text-xs md:text-sm leading-6 line-clamp-2 font-sans">
                   {compactSummary(program.excerpt)}

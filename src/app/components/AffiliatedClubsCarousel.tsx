@@ -2,6 +2,7 @@
 
 import { colors } from '@/config';
 import { useRef } from 'react';
+import ModernSectionHeader from './ModernSectionHeader';
 
 interface Club {
   id: number;
@@ -49,17 +50,13 @@ export default function AffiliatedClubsCarousel() {
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Our Network
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            Affiliated Clubs
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            Proud to collaborate with 17 distinguished shooting clubs across Sri Lanka
-          </p>
-        </div>
+
+        <ModernSectionHeader
+          subtitle="Our Network"
+          title="Affiliated Clubs"
+          description="Proud to collaborate with 17 distinguished shooting clubs across Sri Lanka"
+
+        />
 
         {/* Carousel Container */}
         <div className="relative">
@@ -106,7 +103,7 @@ export default function AffiliatedClubsCarousel() {
                 {/* Card Content */}
                 <div className="pt-2 flex flex-col grow">
                   {/* Club Name - Fixed Height */}
-                  <h3 className="text-base font-sans font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
+                  <h3 className="text-base text-center font-sans font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
                     {club.name}
                   </h3>
 

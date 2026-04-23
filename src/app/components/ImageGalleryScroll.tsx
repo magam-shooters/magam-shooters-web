@@ -2,6 +2,9 @@
 
 import { colors } from '@/config';
 import { useRef, useState } from 'react';
+import ModernSectionHeader from './ModernSectionHeader';
+import { FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 interface GalleryImage {
   id: number;
@@ -45,17 +48,12 @@ export default function ImageGalleryScroll() {
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Moments
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            Gallery
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            Capturing the excellence and dedication of Sri Lanka's shooting sports community
-          </p>
-        </div>
+        <ModernSectionHeader
+          className="mb-12"
+          subtitle="Moments"
+          title="Gallery"
+          description="Capturing the excellence and dedication of Sri Lanka's shooting sports community"
+        />
 
         {/* Scrollable Gallery */}
         <div className="relative">
@@ -80,7 +78,7 @@ export default function ImageGalleryScroll() {
             {galleryImages.map((image) => (
               <button
                 key={image.id}
-                className="flex-shrink-0 w-96 cursor-pointer group border-0 bg-transparent p-0"
+                className="shrink-0 w-96 cursor-pointer group border-0 bg-transparent p-0"
                 onClick={() => setSelectedImage(image)}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedImage(image); }}
               >
@@ -95,7 +93,7 @@ export default function ImageGalleryScroll() {
                   </div>
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-6 w-full">
                       <span
                         className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-2"
@@ -128,14 +126,24 @@ export default function ImageGalleryScroll() {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <a
             href="/gallery"
-            className="inline-block px-8 py-3 rounded-lg font-sans font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
+            className="inline-block px-8 py-3  font-sans font-semibold rounded-full text-white transition-all duration-200 hover:shadow-lg hover:scale-105"
             style={{ backgroundColor: colors.primary.navy }}
           >
             View Full Gallery
+            <FaArrowRight />
           </a>
+        </div> */}
+        <div className="text-center mt-12">
+          <Link
+            href="/gallery"
+            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+          >
+            View Full Gallery
+            <FaArrowRight />
+          </Link>
         </div>
       </div>
 

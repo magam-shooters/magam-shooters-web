@@ -1,9 +1,9 @@
 ﻿'use client';
 
-import { colors } from '@/config';
 import Link from "next/link";
 import { useEffect, useState } from 'react';
 import { FaArrowRight, FaClock, FaUsers } from "react-icons/fa";
+import ModernSectionHeader from './ModernSectionHeader';
 
 
 interface TrainingProgram {
@@ -15,6 +15,12 @@ interface TrainingProgram {
   imageUrl?: string;
   category: string;
 }
+
+const compactSummary = (text: string, maxWords = 14) => {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= maxWords) return text;
+  return `${words.slice(0, maxWords).join(' ')}...`;
+};
 
 const TrainingPrograms = () => {
   const [programs, setPrograms] = useState<TrainingProgram[]>([]);
@@ -31,17 +37,11 @@ const TrainingPrograms = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-           <div className="text-center mb-16">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Our Training Programs
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            Training Programs for All Levels
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            World-class training programs designed to develop champions at every level
-          </p>
-        </div>
+        <ModernSectionHeader
+          subtitle="Our Training Programs"
+          title="Training Programs for All Levels"
+          description="World-class training programs designed to develop champions at every level"
+        />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {programs.map((program) => (
@@ -86,34 +86,36 @@ const TrainingPrograms = () => {
                 </div>
               </div>
               
-              <div className="p-5 flex flex-col gap-4">
-                <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
-                  <div className="flex items-center gap-1.5">
+              <div className="p-4 flex flex-col gap-3">
+                <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
+                  {program.title}
+                </h3>
+                <div className="flex items-center justify-between gap-2 text-xs text-slate-600 font-sans">
+                   
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                     <FaClock className="text-xs" />
                     <span>{program.duration}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                     <FaUsers className="text-xs" />
                     <span>{program.participants}</span>
                   </div>
                 </div>
                 
-                <h3 className="min-h-10 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
-                  {program.title}
-                </h3>
+               
                 
-                <p className="text-slate-600 text-sm line-clamp-3 font-sans">
-                  {program.excerpt}
+                <p className="text-slate-600 text-xs md:text-sm leading-6 line-clamp-2 font-sans">
+                  {compactSummary(program.excerpt)}
                 </p>
                 
-                <Link
+                {/* <Link
                   href={`/programs/${program._id}`}
                   className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
                   style={{ backgroundColor: '#FFD100', color: '#002B7F' }}
                 >
                   Learn More
                   <FaArrowRight className="text-xs" />
-                </Link>
+                </Link> */}
               </div>
             </article>
           ))}

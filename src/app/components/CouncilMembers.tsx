@@ -3,6 +3,7 @@
 import { colors } from '@/config';
 import Image from 'next/image';
 import { useState } from 'react';
+import ModernSectionHeader from './ModernSectionHeader';
 
 interface CouncilMember {
   name: string;
@@ -86,17 +87,12 @@ export default function CouncilMembers() {
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Leadership
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            Council Members
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            Meet the dedicated leaders guiding Sri Lanka's shooting sports federation towards excellence
-          </p>
-        </div>
+        <ModernSectionHeader
+                  subtitle="Leadership"
+                  title="Council Members"
+                  description="Meet the dedicated leaders guiding Sri Lanka's shooting sports federation towards excellence"
+                  
+                />
 
         {/* Council Members Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -149,11 +145,11 @@ function MemberCard({ member }: { member: CouncilMember }) {
 
       {/* Member Info */}
       <div className="pt-2">
-        <h3 className="text-base font-sans font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
+        <h3 className="text-base text-center font-sans font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
           {member.name}
         </h3>
         <p
-          className="text-xs font-sans font-semibold uppercase tracking-wide"
+          className="text-xs text-center font-sans font-semibold uppercase tracking-wide"
           style={{ color: '#6B7280' }}
         >
           {member.role}

@@ -4,6 +4,7 @@ import { colors } from "@/config";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaTrophy } from "react-icons/fa";
+import ModernSectionHeader from "./ModernSectionHeader";
 
 interface Record {
   _id: string;
@@ -24,7 +25,7 @@ const Records = () => {
       .then((data) => {
         if (Array.isArray(data)) setRecords(data);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   if (records.length === 0) return null;
@@ -32,18 +33,12 @@ const Records = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Achievements
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            National Records
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            Outstanding achievements and record-breaking performances by Sri Lankan athletes
-          </p>
-        </div>
-        
+        <ModernSectionHeader
+          subtitle="Achievements"
+          title="National Records"
+          description="Outstanding achievements and record-breaking performances by Sri Lankan athletes"
+        />
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {records.map((record) => (
             <article
@@ -67,56 +62,56 @@ const Records = () => {
                     className="absolute top-5 right-5 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide uppercase"
                     style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                   >
-                    Record
+                    {record.category}
                   </span>
+
+
+
                 </div>
               </div>
-              
-              <div className="p-5 flex flex-col gap-4">
-                <div className="flex items-center justify-end">
-                  <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{record.category}</span>
-                </div>
 
-                <h3 className="min-h-10 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
+              <div className="p-5 flex flex-col gap-4">
+                {/* <div className="flex items-center justify-end">
+                  <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">{record.category}</span>
+                </div> */}
+
+                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
                   {record.title}
                 </h3>
-                
-                <div className="space-y-2 font-sans rounded-xl border border-slate-200 bg-slate-50 p-3">
+
+                <div className="space-y-1 font-sans rounded-xl border border-slate-200 bg-slate-50 p-2">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">Holder</span>
                     <span className="text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{record.holder}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">Score</span>
-                    <span className="text-xl font-sans font-extrabold" style={{ color: colors.primary.navy }}>{record.score}</span>
+                    <span className="text-sm font-sans font-extrabold" style={{ color: colors.primary.navy }}>{record.score}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">Date</span>
                     <span className="text-sm font-medium text-slate-700">{record.date}</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-600">Location</span>
-                    <span className="text-xs font-medium text-slate-700">{record.location}</span>
-                  </div>
+
                 </div>
-                
-                <Link
+
+                {/* <Link
                   href={`/records/${record._id}`}
                   className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
                   style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                 >
                   View Details
                   <FaArrowRight className="text-xs" />
-                </Link>
+                </Link> */}
               </div>
             </article>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Link
             href="/records"
-            className="inline-flex items-center gap-3 bg-[#FFD100] hover:bg-[#E5BC00] text-[#002B7F] font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 bg-[#002B7F] hover:bg-[#001B5F] text-white font-sans font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105"
           >
             View All Records
             <FaArrowRight />

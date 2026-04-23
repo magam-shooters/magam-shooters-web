@@ -2,6 +2,7 @@
 import { IMAGES } from "@/config/images";
 import Link from "next/link";
 import { FaBullseye, FaChartLine, FaCheckCircle, FaIdCard, FaMedal, FaShieldAlt, FaTools, FaTrophy, FaUsers } from "react-icons/fa";
+import ModernSectionHeader from "../components/ModernSectionHeader";
 import PageHero from "../components/PageHero";
 
 export default function Clubs() {
@@ -149,23 +150,19 @@ export default function Clubs() {
       {/* Hero Section */}
       <PageHero
         title="Affiliated Clubs"
+        subtitle="Join Our Shooting Community"
         description="Join one of our 17 affiliated shooting clubs across Sri Lanka and become part of the NSSF family"
       />
 
       {/* Membership Plans Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              Choose Your Path
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Membership Plans
-            </h2>
-            <p className="font-sans text-lg text-gray-600 max-w-2xl mx-auto">
-              Select the membership that best fits your shooting goals and experience level
-            </p>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="Choose Your Path"
+            title="Membership Plans"
+            description="Select the membership that best fits your shooting goals and experience level"
+          />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {membershipPlans.map((plan, index) => {
@@ -230,14 +227,11 @@ export default function Clubs() {
       {/* Club Facilities Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              State-of-the-Art Infrastructure
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              World-Class Facilities
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="State-of-the-Art Infrastructure"
+            title="World-Class Facilities"
+          />
 
           <div className="space-y-12">
             {clubFacilities.map((facility, index) => (
@@ -279,20 +273,17 @@ export default function Clubs() {
       {/* Membership Benefits Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              What You'll Gain
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Membership Benefits
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="What You'll Gain"
+            title="Membership Benefits"
+          />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit) => {
               const IconComponent = benefit.icon;
               return (
-                <div key={benefit.title} className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div key={benefit.title} className="bg-linear-to-br from-white to-gray-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
                   <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: benefit.color }}>
                     <IconComponent className="text-3xl text-white" />
                   </div>
@@ -308,14 +299,11 @@ export default function Clubs() {
       {/* Membership Process Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              Simple Process
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              How to Join
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="Simple Process"
+            title="How to Join"
+          />
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300">
@@ -356,14 +344,11 @@ export default function Clubs() {
       {/* Requirements Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-              What You Need to Know
-            </p>
-            <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-4" style={{ color: colors.primary.navy }}>
-              Membership Requirements
-            </h2>
-          </div>
+          <ModernSectionHeader
+            className="mb-12"
+            subtitle="What You Need to Know"
+            title="Membership Requirements"
+          />
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-xl border border-gray-100">
@@ -404,7 +389,7 @@ export default function Clubs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-20 px-4 bg-linear-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="font-sans text-4xl md:text-5xl font-bold mb-6">Ready to Join NSSF Sri Lanka?</h2>
           <p className="font-sans text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

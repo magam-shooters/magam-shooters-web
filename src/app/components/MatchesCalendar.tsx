@@ -2,6 +2,8 @@
 
 import { colors } from '@/config';
 import { useEffect, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import ModernSectionHeader from './ModernSectionHeader';
 
 interface Match {
   _id: string;
@@ -36,17 +38,12 @@ export default function MatchesCalendar() {
     <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Competitions
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            Upcoming Matches
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            Stay updated with upcoming shooting competitions and championships across Sri Lanka
-          </p>
-        </div>
+        <ModernSectionHeader
+          className="mb-12"
+          subtitle="Competitions"
+          title="Upcoming Matches"
+          description="Stay updated with upcoming shooting competitions and championships across Sri Lanka"
+        />
 
         {/* Matches Grid - Only one row (first 3 matches) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -60,8 +57,7 @@ export default function MatchesCalendar() {
                   className="relative h-full w-full rounded-2xl border-4 border-white overflow-hidden"
                   style={{
                     background: `linear-gradient(145deg, ${colors.primary.navy} 0%, ${colors.primary.blue} 100%)`,
-                  }}
-                >
+                  }}>
                   <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white_0%,transparent_45%),radial-gradient(circle_at_80%_70%,white_0%,transparent_35%)]" />
                   <div className="relative z-10 h-full flex items-center justify-center">
                     <div className="h-20 w-20 rounded-2xl bg-white/90 flex items-center justify-center shadow-lg">
@@ -79,17 +75,17 @@ export default function MatchesCalendar() {
                 </div>
               </div>
 
-              <div className="p-5 flex flex-col gap-4 flex-1">
-                <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
+              <div className="p-4 flex flex-col gap-2 flex-1">
+
+                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
+                  {match.title}
+                </h3>
+                <div className="flex flex-wrap items-center justify-between text-xs text-slate-600 font-sans">
                   <span>{formatDate(match.date)}</span>
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 font-semibold">{match.category}</span>
                 </div>
 
-                <h3 className="min-h-10 text-lg font-sans font-extrabold leading-tight line-clamp-2" style={{ color: colors.primary.navy }}>
-                  {match.title}
-                </h3>
-
-                <div className="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-3 font-sans">
+                {/* <div className="space-y-2 rounded-xl border border-slate-200 bg-slate-50 p-3 font-sans">
                   <div className="flex items-center text-slate-700 text-sm">
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -104,9 +100,9 @@ export default function MatchesCalendar() {
                     </svg>
                     <span>{match.venue}</span>
                   </div>
-                </div>
+                </div> */}
 
-                {match.pdfUrl ? (
+                {/* {match.pdfUrl ? (
                   <a
                     href={match.pdfUrl}
                     target="_blank"
@@ -123,7 +119,7 @@ export default function MatchesCalendar() {
                   >
                     Register Now
                   </button>
-                )}
+                )} */}
               </div>
             </article>
           ))}
@@ -134,13 +130,14 @@ export default function MatchesCalendar() {
           <a
             href="/CALENDAR_2026.pdf"
             download
-            className="px-8 py-4 rounded-lg font-sans font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105 inline-flex items-center gap-2"
+            className="px-8 py-4 rounded-full font-sans font-semibold text-white transition-all duration-200 hover:shadow-lg hover:scale-105 inline-flex items-center gap-3"
             style={{ backgroundColor: colors.primary.navy }}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+            </svg> */}
             View Full NSSF Calendar
+            <FaArrowRight />
           </a>
         </div>
 

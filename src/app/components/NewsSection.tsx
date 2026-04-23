@@ -15,6 +15,12 @@ interface NewsItem {
   category: string;
 }
 
+const compactSummary = (text: string, maxWords = 14) => {
+  const words = text.trim().split(/\s+/);
+  if (words.length <= maxWords) return text;
+  return `${words.slice(0, maxWords).join(' ')}...`;
+};
+
 const NewsSection = () => {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
 
@@ -24,7 +30,7 @@ const NewsSection = () => {
       .then((data) => {
         if (Array.isArray(data)) setNewsItems(data.slice(0, 6));
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   if (newsItems.length === 0) return null;
@@ -32,12 +38,14 @@ const NewsSection = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
+
         <ModernSectionHeader
+          className="mb-12"
+          subtitle="NEWS & UPDATES"
           title="Latest News"
           description="Stay updated with the latest developments, achievements, and announcements from NSSF Sri Lanka"
-          alignment="center"
         />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {newsItems.map((news) => (
             <article
@@ -76,44 +84,46 @@ const NewsSection = () => {
                     className="absolute top-5 right-5 rounded-full px-3 py-1 text-[11px] font-bold tracking-wide uppercase"
                     style={{ backgroundColor: '#FFD100', color: '#002B7F' }}
                   >
-                     {news.category}
+                    {news.category}
                   </span>
                 </div>
               </div>
-              
-              <div className="p-5 flex flex-col gap-4">
-                <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
-                  <div className="flex items-center gap-1.5">
+
+              <div className="p-4 flex flex-col gap-3">
+
+                <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
+                  {news.title}
+                </h3>
+                <div className="flex items-center justify-between gap-2 text-[11px] text-slate-600 font-sans">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                     <FaCalendar className="text-xs" />
                     <span>{news.date}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
+                  <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-1 font-semibold">
                     <FaUser className="text-xs" />
                     <span>{news.author}</span>
                   </div>
                 </div>
-                
-                <h3 className="min-h-10 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
-                  {news.title}
-                </h3>
-                
-                <p className="text-slate-600 text-sm line-clamp-3 font-sans">
-                  {news.excerpt}
+
+
+
+                <p className="text-slate-600 text-xs md:text-sm leading-6 line-clamp-2 font-sans">
+                  {compactSummary(news.excerpt)}
                 </p>
-                
-                <Link
+
+                {/* <Link
                   href={`/news/${news._id}`}
                   className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
                   style={{ backgroundColor: '#FFD100', color: '#002B7F' }}
                 >
                   Read More
                   <FaArrowRight className="text-xs" />
-                </Link>
+                </Link> */}
               </div>
             </article>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Link
             href="/news"
@@ -123,6 +133,7 @@ const NewsSection = () => {
             <FaArrowRight />
           </Link>
         </div>
+
       </div>
     </section>
   );

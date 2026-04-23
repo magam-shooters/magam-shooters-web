@@ -4,6 +4,7 @@ import { colors } from "@/config";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaCalendar, FaMapMarkerAlt, FaMedal } from "react-icons/fa";
+import ModernSectionHeader from "./ModernSectionHeader";
 
 interface CompetitionResult {
   _id: string;
@@ -35,17 +36,13 @@ const CompetitionResults = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-sm font-sans font-semibold uppercase tracking-wider mb-2" style={{ color: colors.primary.blue }}>
-            Results
-          </p>
-          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-4" style={{ color: colors.primary.navy }}>
-            Latest Competition Results
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-sans">
-            Recent championship outcomes and podium finishes from NSSF competitions
-          </p>
-        </div>
+
+        <ModernSectionHeader
+          subtitle="Results"
+          title="Latest Competition Results"
+          description="Recent championship outcomes and podium finishes from NSSF competitions"
+          
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {results.map((result) => (
@@ -85,7 +82,11 @@ const CompetitionResults = () => {
 
               </div>
 
-              <div className="p-5 flex flex-col gap-4">
+              <div className="p-4 flex flex-col gap-3 flex-1">
+
+                 <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
+                  {result.competition}
+                </h3>
                 <div className="flex items-center justify-between text-xs text-slate-600 font-sans">
                   <div className="flex items-center gap-1.5">
                     <FaCalendar className="text-xs" />
@@ -94,16 +95,11 @@ const CompetitionResults = () => {
                   <span className="rounded-full bg-slate-100 px-2.5 py-1 font-semibold">{result.category}</span>
                 </div>
 
-                <h3 className="min-h-10 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
-                  {result.competition}
-                </h3>
+               
 
-                <div className="flex items-start gap-1.5 text-slate-600 text-sm font-sans">
-                  <FaMapMarkerAlt className="text-xs mt-0.5 shrink-0" />
-                  <span>{result.location}</span>
-                </div>
 
-                <div className="space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-200 font-sans">
+
+                <div className="space-y-1 bg-slate-50 p-2 rounded-xl border border-slate-200 font-sans">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-slate-600">Gold</span>
                     <span className="text-sm font-sans font-bold" style={{ color: colors.primary.navy }}>{result.winners.gold}</span>
@@ -118,14 +114,14 @@ const CompetitionResults = () => {
                   </div>
                 </div>
 
-                <Link
+                {/* <Link
                   href={`/results/${result._id}`}
                   className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
                   style={{ backgroundColor: colors.primary.yellow, color: colors.primary.navy }}
                 >
                   Full Results
                   <FaArrowRight className="text-xs" />
-                </Link>
+                </Link> */}
               </div>
             </article>
           ))}

@@ -103,7 +103,7 @@ export default function AffiliatedClubsCarousel() {
                 {/* Card Content */}
                 <div className="pt-2 flex flex-col grow">
                   {/* Club Name - Fixed Height */}
-                  <h3 className="text-base text-center font-sans font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
+                  <h3 className="text-lg text-center font-sans font-bold mb-3 h-14 line-clamp-2" style={{ color: colors.primary.navy }}>
                     {club.name}
                   </h3>
 

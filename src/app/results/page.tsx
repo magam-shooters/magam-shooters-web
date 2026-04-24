@@ -316,7 +316,7 @@ export default function ResultsPage() {
                 </div>
 
                 <div className="p-3.5 flex flex-col gap-2.5 flex-1">
-                  <h3 className="min-h-6 text-base font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
+                  <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: colors.primary.navy }}>
                     {result.competition}
                   </h3>
                   <div className="flex items-center justify-between text-xs text-slate-600 font-sans">

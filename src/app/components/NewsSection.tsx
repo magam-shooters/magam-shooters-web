@@ -47,7 +47,7 @@ const NewsSection = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {newsItems.map((news) => (
+          {newsItems.slice(0, 3).map((news) => (
             <article
               key={news._id}
               className="group relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-[0_12px_30px_rgba(2,6,23,0.12)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(2,6,23,0.22)]"
@@ -91,7 +91,7 @@ const NewsSection = () => {
 
               <div className="p-4 flex flex-col gap-3">
 
-                <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
+                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
                   {news.title}
                 </h3>
                 <div className="flex items-center justify-between gap-2 text-[11px] text-slate-600 font-sans">
@@ -111,14 +111,14 @@ const NewsSection = () => {
                   {compactSummary(news.excerpt)}
                 </p>
 
-                {/* <Link
+                <Link
                   href={`/news/${news._id}`}
                   className="mt-1 w-full rounded-xl py-2.5 text-sm font-bold tracking-wide transition-all duration-300 hover:brightness-95 hover:shadow-md active:scale-[0.99] inline-flex items-center justify-center gap-2"
                   style={{ backgroundColor: '#FFD100', color: '#002B7F' }}
                 >
                   Read More
                   <FaArrowRight className="text-xs" />
-                </Link> */}
+                </Link>
               </div>
             </article>
           ))}

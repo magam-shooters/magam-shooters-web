@@ -5,11 +5,7 @@ import { useEffect, useState } from 'react';
 import ModernSectionHeader from './ModernSectionHeader';
 
 interface CalendarEvent {
-<<<<<<< HEAD
-  id?: number;
-=======
   id?: number | string;
->>>>>>> b34211f3ba4931c85e9de2f88e6a11884de89047
   _id?: string;
   dateRange: string;
   title: string;

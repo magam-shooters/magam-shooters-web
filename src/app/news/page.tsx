@@ -7,18 +7,16 @@ import PageHero from "../components/PageHero";
 import { colors } from "@/config";
 
 interface NewsItem {
-  _id: string;
+  id: string;
   title: string;
   excerpt: string;
   content: string;
   date: string;
   author: string;
-  imageUrl?: string;
+  image?: string;
   category: string;
 }
 
-<<<<<<< HEAD
-=======
 const compactSummary = (text: string, maxWords = 14) => {
   const words = text.trim().split(/\s+/);
   if (words.length <= maxWords) return text;
@@ -137,41 +135,11 @@ const allNewsItems: NewsItem[] = [
   }
 ];
 
->>>>>>> b34211f3ba4931c85e9de2f88e6a11884de89047
 export default function NewsPage() {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-<<<<<<< HEAD
-
-  useEffect(() => {
-    fetch("/api/news", { cache: "no-store" })
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) setNewsItems(data);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
-  }, []);
-
-  const categories = useMemo(() => {
-    const unique = Array.from(new Set(newsItems.map((item) => item.category).filter(Boolean)));
-    return ["All", ...unique];
-  }, [newsItems]);
-
-  const filteredNews = useMemo(() => {
-    const q = searchQuery.toLowerCase();
-    return newsItems.filter((news) => {
-      const matchesSearch =
-        news.title.toLowerCase().includes(q) ||
-        news.excerpt.toLowerCase().includes(q) ||
-        news.author.toLowerCase().includes(q);
-      const matchesCategory = selectedCategory === "All" || news.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [newsItems, searchQuery, selectedCategory]);
-=======
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   
   const categories = ["All", "Championships", "Facilities", "Youth Programs", "Training", "International", "Technology"];
@@ -182,7 +150,6 @@ export default function NewsPage() {
     const matchesCategory = selectedCategory === "All" || news.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
->>>>>>> b34211f3ba4931c85e9de2f88e6a11884de89047
 
   return (
     <div>
@@ -224,9 +191,6 @@ export default function NewsPage() {
             </div>
           </div>
 
-<<<<<<< HEAD
-          {loading && (
-=======
           {/* News Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredNews.map((news) => (
@@ -311,7 +275,6 @@ export default function NewsPage() {
           </div>
           
           {filteredNews.length === 0 && (
->>>>>>> b34211f3ba4931c85e9de2f88e6a11884de89047
             <div className="text-center py-12">
               <p className="font-sans text-gray-500 text-lg">Loading news...</p>
             </div>
@@ -322,14 +285,14 @@ export default function NewsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredNews.map((news) => (
                   <article
-                    key={news._id}
+                    key={news.id}
                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
                   >
                     <div className="relative h-48 overflow-hidden">
-                      {news.imageUrl ? (
+                      {news.image ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
-                          src={news.imageUrl}
+                          src={news.image}
                           alt={news.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
@@ -368,7 +331,7 @@ export default function NewsPage() {
                       </p>
 
                       <Link
-                        href={`/news/${news._id}`}
+                        href={`/news/${news.id}`}
                         className="font-sans inline-flex items-center gap-2 text-[#002B7F] hover:text-[#001B5F] font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                       >
                         Read More

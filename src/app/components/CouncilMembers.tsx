@@ -145,7 +145,7 @@ function MemberCard({ member }: { member: CouncilMember }) {
 
       {/* Member Info */}
       <div className="pt-2">
-        <h3 className="text-base text-center font-sans font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
+        <h3 className="text-lg text-center font-sans font-bold mb-1 leading-tight" style={{ color: colors.primary.navy }}>
           {member.name}
         </h3>
         <p

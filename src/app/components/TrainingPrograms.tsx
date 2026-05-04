@@ -87,7 +87,7 @@ const TrainingPrograms = () => {
               </div>
               
               <div className="p-4 flex flex-col gap-3">
-                <h3 className="min-h-6 text-base md:text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
+                <h3 className="min-h-6 text-lg font-sans font-extrabold leading-tight line-clamp-2 transition-colors" style={{ color: '#002B7F' }}>
                   {program.title}
                 </h3>
                 <div className="flex items-center justify-between gap-2 text-xs text-slate-600 font-sans">
